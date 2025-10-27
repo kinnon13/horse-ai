@@ -296,23 +296,19 @@ export default function ChatPage() {
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {messages.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full py-12">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl">🐴</span>
-              </div>
-              <h3 className="text-2xl font-semibold mb-2">How can I help you today?</h3>
+              <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+                How can I help you today?
+              </h3>
               
-              {/* Sample Queries - ChatGPT Style */}
+              {/* Sample Queries - Ultra Clean */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl mx-auto mb-8">
                 {SAMPLE_QUERIES.map((query, index) => (
                   <button
                     key={index}
                     onClick={() => handleSampleQuery(query)}
-                    className="p-4 text-left bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors text-sm shadow-sm"
+                    className="p-4 text-left bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors text-sm"
                   >
-                    <div className="flex items-center gap-2">
-                      <MessageSquare className="w-4 h-4 text-gray-500" />
-                      <span className="font-medium text-gray-900">{query}</span>
-                    </div>
+                    <span className="text-gray-700">{query}</span>
                   </button>
                 ))}
               </div>
@@ -402,7 +398,7 @@ export default function ChatPage() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Message HorseGPT..."
-                className="w-full px-4 py-3 pr-12 bg-white border border-gray-300 rounded-2xl focus:outline-none focus:border-gray-400 transition-colors shadow-sm"
+                className="w-full px-6 py-4 pr-16 bg-gray-50 border border-gray-200 rounded-2xl text-lg focus:outline-none focus:border-gray-300 transition-colors"
                 disabled={isLoading || hasHitLimit}
               />
               <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
@@ -426,9 +422,9 @@ export default function ChatPage() {
             <button
               type="submit"
               disabled={!input.trim() || isLoading || hasHitLimit}
-              className="px-4 py-3 bg-gray-900 text-white rounded-2xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-4 bg-gray-900 text-white rounded-2xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              <Send className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </button>
           </form>
           
