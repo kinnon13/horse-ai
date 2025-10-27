@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useAuth } from '@/components/AuthProvider'
 import { Button } from '@/components/ui/Button'
@@ -17,7 +17,8 @@ import {
   Menu,
   Settings,
   User,
-  LogOut
+  LogOut,
+  ArrowRight
 } from 'lucide-react'
 
 interface Message {
@@ -138,7 +139,7 @@ export default function ChatPage() {
     setUserProfile(prev => ({ ...prev, messages_used: newCount }))
 
     // Show upsell prompt before limit
-    if (newCount === 9 && prev.subscription_tier === 'free') {
+    if (newCount === 9 && userProfile.subscription_tier === 'free') {
       setUpsellPrompt({
         show: true,
         tier: 'mid',
