@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { useAuth } from '@/components/AuthProvider'
 import { Button } from '@/components/ui/Button'
 import { 
@@ -52,6 +53,7 @@ const SAMPLE_QUERIES = [
 
 export default function ChatPage() {
   const { user, loading } = useAuth()
+  const searchParams = useSearchParams()
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -78,6 +80,16 @@ export default function ChatPage() {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  // Handle query from homepage
+  useEffect(() => {
+    const query = searchParams.get('q')
+    if (query) {
+      setInput(query)
+      // Auto-send the query
+      sendMessage(query)
+    }
+  }, [searchParams])
 
   // Update user profile based on subscription tier
   useEffect(() => {

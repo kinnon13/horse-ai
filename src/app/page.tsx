@@ -1,4 +1,8 @@
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { 
   ArrowRight,
@@ -12,6 +16,16 @@ import {
 } from 'lucide-react'
 
 export default function HomePage() {
+  const [query, setQuery] = useState('')
+  const router = useRouter()
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (query.trim()) {
+      // Redirect to chat page with the query
+      router.push(`/chat?q=${encodeURIComponent(query.trim())}`)
+    }
+  }
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Top Bar - ChatGPT Style */}
@@ -49,18 +63,23 @@ export default function HomePage() {
         </h1>
 
         {/* Input Field */}
-        <div className="w-full max-w-3xl mb-6">
+        <form onSubmit={handleSubmit} className="w-full max-w-3xl mb-6">
           <div className="relative">
             <input
               type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               placeholder="Ask anything about horses..."
               className="w-full px-6 py-4 pr-16 bg-gray-50 border border-gray-200 rounded-2xl text-lg focus:outline-none focus:border-gray-300 transition-colors"
             />
-            <button className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors">
+            <button 
+              type="submit"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors"
+            >
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
-        </div>
+        </form>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-4 mb-8">
