@@ -7,9 +7,9 @@ import { Navbar } from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Horse.AI - Intelligent Equine Database',
-  description: 'The ultimate AI-powered equine database with breeding recommendations, performance analytics, and comprehensive horse data management.',
-  keywords: 'horse database, equine AI, breeding recommendations, horse analytics, equine data',
+  title: 'HorseGPT - ChatGPT for Horses',
+  description: 'Ask anything about horses. Get instant AI-powered answers about barrel racing, horse breeding, training, health, and more. ChatGPT for horses.',
+  keywords: 'horse AI, ChatGPT horses, barrel racing AI, horse breeding, equine AI, horse training',
 }
 
 export default function RootLayout({

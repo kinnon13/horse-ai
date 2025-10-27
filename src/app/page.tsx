@@ -19,12 +19,11 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">
-            The Global Performance Horse Ledger
+            HorseGPT - ChatGPT for Horses
           </h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Track runs, payouts, bloodlines, and ownership across barrel racing, roping, 
-            reining, cutting, and more. Ask Horse.AI anything about horses. 
-            Get instant answers.
+            Ask anything about horses. Get instant AI-powered answers about barrel racing, 
+            horse breeding, training, health, and more. The world's most advanced horse AI.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/auth/signup">
@@ -40,9 +39,9 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">The Answer to Everything</h2>
+            <h2 className="text-4xl font-bold mb-4">Ask HorseGPT Anything</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Simple, powerful tools for tracking performance, bloodlines, and ownership
+              Get instant answers about horses, breeding, training, health, and performance
             </p>
           </div>
 

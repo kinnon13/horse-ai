@@ -25,7 +25,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Database className="w-8 h-8 text-primary-600" />
-            <span className="text-xl font-bold text-gray-900">Horse.AI</span>
+            <span className="text-xl font-bold text-gray-900">HorseGPT</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,7 +34,7 @@ export function Navbar() {
               Dashboard
             </Link>
             <Link href="/chat" className="text-gray-600 hover:text-gray-900">
-              AI Chat
+              Chat
             </Link>
             <Link href="/pricing" className="text-gray-600 hover:text-gray-900">
               Pricing

@@ -12,7 +12,11 @@ import {
   Crown,
   Zap,
   X,
-  Upload
+  Upload,
+  Menu,
+  Settings,
+  User,
+  LogOut
 } from 'lucide-react'
 
 interface Message {
@@ -100,47 +104,35 @@ export default function ChatPage() {
     if (hasHitLimit) {
       setUpsellPrompt({
         show: true,
-        tier: 'pro',
-        message: `You've used all ${userProfile.messages_limit} messages. Upgrade to Pro for unlimited access!`
+        tier: 'mid',
+        message: "You've reached your message limit! Upgrade to get more messages."
       })
       return
     }
 
-    const userMessage: Message = {
+    const newMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
       content: content.trim(),
       timestamp: new Date()
     }
 
-    setMessages(prev => [...prev, userMessage])
+    setMessages(prev => [...prev, newMessage])
     setInput('')
     setIsLoading(true)
 
-    // Update usage count
-    setUserProfile(prev => {
-      const newCount = prev.messages_used + 1
-      
-      // Trigger upsells at specific message counts
-      if (newCount === 8 && prev.subscription_tier === 'free') {
-        setUpsellPrompt({
-          show: true,
-          tier: 'pro',
-          message: "You're almost at your limit! Upgrade to Pro for unlimited access to everything barrel racing!"
-        })
-      } else if (newCount === 9 && prev.subscription_tier === 'free') {
-        setUpsellPrompt({
-          show: true,
-          tier: 'mid',
-          message: "Last message! Get 50 more messages with Mid for just $9.99/mo!"
-        })
-      }
-      
-      return {
-        ...prev,
-        messages_used: newCount
-      }
-    })
+    // Update message count
+    const newCount = userProfile.messages_used + 1
+    setUserProfile(prev => ({ ...prev, messages_used: newCount }))
+
+    // Show upsell prompt before limit
+    if (newCount === 9 && prev.subscription_tier === 'free') {
+      setUpsellPrompt({
+        show: true,
+        tier: 'mid',
+        message: "Last message! Get 50 more messages with Mid for just $9.99/mo!"
+      })
+    }
 
     try {
       // Call real Grok API
@@ -181,192 +173,261 @@ export default function ChatPage() {
     }
   }
 
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     sendMessage(input)
   }
 
   const handleSampleQuery = (query: string) => {
-    setInput(query)
+    sendMessage(query)
   }
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
-    if (!file) return
-
-    // Handle CSV file upload
-    if (file.type === 'text/csv' || file.name.endsWith('.csv')) {
-      const reader = new FileReader()
-      reader.onload = async (event) => {
-        const csvData = event.target?.result as string
-        // Send CSV to AI for processing
-        sendMessage(`Upload CSV file: ${file.name}\n\n${csvData.substring(0, 500)}...`)
-      }
-      reader.readAsText(file)
-    } else {
-      sendMessage(`Uploaded file: ${file.name}`)
+    if (file) {
+      // Handle file upload logic here
+      console.log('File uploaded:', file.name)
     }
   }
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded w-1/4 mb-8"></div>
-          <div className="h-96 bg-gray-200 rounded"></div>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-gray-600">Loading HorseGPT...</p>
         </div>
       </div>
     )
   }
 
-  // Allow testing without auth (temporary for development)
-  const testUser = true // Set to false when ready for production
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center max-w-md mx-auto px-4">
+          <h1 className="text-3xl font-bold mb-4">Welcome to HorseGPT</h1>
+          <p className="text-gray-600 mb-6">
+            ChatGPT for horses. Ask anything about barrel racing, breeding, training, and more.
+          </p>
+          <Button className="w-full">
+            Sign In to Start Chatting
+          </Button>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="flex flex-col h-screen bg-white">
-      {/* Minimal Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-        <h1 className="text-lg font-semibold text-gray-900">🐴 Horse.AI</h1>
-        <div className="flex items-center space-x-4">
-          <span className="text-sm text-gray-500">
-            {userProfile.messages_used}/{userProfile.messages_limit}
-          </span>
-          {userProfile.subscription_tier !== 'pro' && (
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
-              Upgrade
+    <div className="min-h-screen bg-white flex">
+      {/* ChatGPT-style Sidebar */}
+      <div className="w-64 bg-gray-900 text-white flex flex-col">
+        {/* Header */}
+        <div className="p-4 border-b border-gray-700">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+              <span className="text-gray-900 font-bold text-sm">H</span>
+            </div>
+            <h1 className="text-lg font-semibold">HorseGPT</h1>
+          </div>
+          <button className="w-full flex items-center gap-2 px-3 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+            <Plus className="w-4 h-4" />
+            <span>New Chat</span>
+          </button>
+        </div>
+
+        {/* Chat History */}
+        <div className="flex-1 overflow-y-auto p-4">
+          <div className="space-y-2">
+            <div className="text-xs text-gray-400 uppercase tracking-wide mb-2">Recent</div>
+            <div className="space-y-1">
+              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                Barrel Racing Tips
+              </button>
+              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                Horse Breeding Advice
+              </button>
+              <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                Training Techniques
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* User Profile */}
+        <div className="p-4 border-t border-gray-700">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+              <User className="w-4 h-4 text-white" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-sm font-medium truncate">{user.email}</div>
+              <div className="text-xs text-gray-400 capitalize">{userProfile.subscription_tier}</div>
+            </div>
+            <button className="p-1 hover:bg-gray-800 rounded">
+              <Settings className="w-4 h-4" />
             </button>
-          )}
+          </div>
         </div>
       </div>
 
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full">
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <div className="border-b border-gray-200 p-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold">HorseGPT</h2>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <span>{userProfile.messages_used}/{userProfile.messages_limit} messages</span>
+              {userProfile.subscription_tier === 'free' && (
+                <button className="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  Upgrade
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-6 py-8">
-          {messages.length === 0 && (
-            <div className="flex flex-col items-center justify-center h-full">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mb-6">
-                <Zap className="w-10 h-10 text-blue-600" />
+        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {messages.length === 0 ? (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🐴</span>
               </div>
-              <h2 className="text-2xl font-semibold text-gray-900 mb-2">Welcome to Horse.AI</h2>
-              <p className="text-gray-600 mb-8 text-center">Ask me anything about barrel racing, breeding, events, or horses</p>
+              <h3 className="text-xl font-semibold mb-2">Welcome to HorseGPT</h3>
+              <p className="text-gray-600 mb-6">Ask me anything about horses, barrel racing, breeding, training, and more!</p>
               
-              {/* Simple query suggestions */}
-              <div className="grid grid-cols-2 gap-3 w-full max-w-2xl">
-                {SAMPLE_QUERIES.slice(0, 4).map((query, index) => (
+              {/* Sample Queries */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
+                {SAMPLE_QUERIES.map((query, index) => (
                   <button
                     key={index}
                     onClick={() => handleSampleQuery(query)}
-                    className="p-4 text-left bg-gray-50 hover:bg-gray-100 rounded-xl text-sm transition-all hover:shadow-sm border border-gray-200"
+                    className="p-3 text-left bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                   >
                     {query}
                   </button>
                 ))}
               </div>
             </div>
-          )}
-          
-          {messages.map((message) => (
-            <div
-              key={message.id}
-              className={`flex mb-6 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-            >
+          ) : (
+            messages.map((message) => (
               <div
-                className={`max-w-[75%] rounded-2xl px-5 py-4 ${
-                  message.role === 'user'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-900'
-                }`}
+                key={message.id}
+                className={`flex gap-3 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <p className="text-base leading-relaxed whitespace-pre-wrap">{message.content}</p>
+                {message.role === 'assistant' && (
+                  <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-sm">🐴</span>
+                  </div>
+                )}
+                <div
+                  className={`max-w-3xl px-4 py-3 rounded-2xl ${
+                    message.role === 'user'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-100 text-gray-900'
+                  }`}
+                >
+                  <div className="whitespace-pre-wrap">{message.content}</div>
+                  <div className={`text-xs mt-2 ${
+                    message.role === 'user' ? 'text-blue-100' : 'text-gray-500'
+                  }`}>
+                    {message.timestamp.toLocaleTimeString()}
+                  </div>
+                </div>
+                {message.role === 'user' && (
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <User className="w-4 h-4 text-white" />
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            ))
+          )}
           
           {isLoading && (
-            <div className="flex justify-start mb-6">
-              <div className="bg-gray-100 rounded-2xl px-5 py-4 flex items-center">
-                <Loader2 className="w-5 h-5 animate-spin mr-3 text-gray-600" />
-                <span className="text-sm text-gray-600">Thinking...</span>
+            <div className="flex gap-3 justify-start">
+              <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-sm">🐴</span>
+              </div>
+              <div className="bg-gray-100 rounded-2xl px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span className="text-gray-600">HorseGPT is thinking...</span>
+                </div>
               </div>
             </div>
           )}
+          
           <div ref={messagesEndRef} />
         </div>
 
         {/* Input Area */}
-        <div className="border-t border-gray-200 px-6 py-4">
+        <div className="border-t border-gray-200 p-4">
           {upsellPrompt.show && (
-            <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl">
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-sm font-medium text-blue-900">{upsellPrompt.message}</p>
+            <div className="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h4 className="font-semibold text-blue-900 mb-1">Upgrade to {upsellPrompt.tier === 'pro' ? 'Pro' : 'Mid'}</h4>
+                  <p className="text-blue-700 text-sm mb-3">{upsellPrompt.message}</p>
+                  <div className="flex space-x-2">
+                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium">
+                      Pro - $19.99/mo
+                    </button>
+                    <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 text-sm font-medium">
+                      Mid - $9.99/mo
+                    </button>
+                  </div>
+                </div>
                 <button
                   onClick={() => setUpsellPrompt({ show: false, tier: 'pro', message: '' })}
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-blue-400 hover:text-blue-600"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
-              
-              <div className="flex space-x-2">
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium">
-                  Pro - $19.99/mo
-                </button>
-                <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 text-sm font-medium">
-                  Mid - $9.99/mo
+            </div>
+          )}
+          
+          <form onSubmit={handleSubmit} className="flex gap-2">
+            <div className="flex-1 relative">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask HorseGPT anything about horses..."
+                className="w-full px-4 py-3 pr-12 bg-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
+                disabled={isLoading || hasHitLimit}
+              />
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  accept=".csv,.xlsx,.pdf"
+                />
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="p-1 hover:bg-gray-200 rounded"
+                  disabled={isLoading}
+                >
+                  <Upload className="w-4 h-4 text-gray-600" />
                 </button>
               </div>
             </div>
-          )}
-          
-          <form onSubmit={handleSubmit} className="flex items-end space-x-3">
-            <div className="flex-1 relative">
-              <textarea
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Message Horse.AI..."
-                className="w-full px-5 py-4 border border-gray-300 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
-                rows={1}
-                disabled={isLoading || hasHitLimit}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault()
-                    handleSubmit(e)
-                  }
-                }}
-              />
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".csv,.txt"
-                onChange={handleFileUpload}
-                className="hidden"
-              />
-            </div>
             <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              disabled={isLoading || hasHitLimit}
-              className="p-4 bg-gray-100 text-gray-600 rounded-2xl hover:bg-gray-200 disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
-              title="Upload CSV"
+              type="submit"
+              disabled={!input.trim() || isLoading || hasHitLimit}
+              className="px-4 py-3 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              <Upload className="w-5 h-5" />
-            </button>
-            <button 
-              type="submit" 
-              disabled={isLoading || !input.trim() || hasHitLimit}
-              className="p-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-            >
-              <Send className="w-5 h-5" />
+              <Send className="w-4 h-4" />
             </button>
           </form>
           
-          {hasHitLimit && (
-            <p className="text-xs text-gray-500 mt-3 text-center">
-              You've used all {userProfile.messages_limit} messages. Upgrade for unlimited access!
-            </p>
-          )}
+          <div className="mt-2 text-xs text-gray-500 text-center">
+            HorseGPT can make mistakes. Check important information.
+          </div>
         </div>
       </div>
     </div>

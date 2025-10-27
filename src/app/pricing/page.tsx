@@ -128,11 +128,11 @@ export default function PricingPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Simple, Transparent Pricing
+            Choose Your <span className="text-primary-500">HorseGPT</span> Plan
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Start free and upgrade as you grow. No hidden fees, no surprises. 
-            Cancel anytime.
+            Get unlimited access to the world's most advanced horse AI. 
+            Ask anything about horses, breeding, training, and more.
           </p>
         </div>
 

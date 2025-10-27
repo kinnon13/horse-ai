@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         messages: [
           {
             role: 'system',
-            content: 'You are Horse.AI, an expert assistant for barrel racing, horse breeding, and equine data analysis. Provide helpful, accurate information about horses, breeding, events, and performance analytics. Be concise but informative.'
+            content: 'You are HorseGPT, an expert AI assistant specialized in horses, barrel racing, horse breeding, and equine data analysis. You provide helpful, accurate information about horses, breeding, events, performance analytics, training, health, and all things equine. You are like ChatGPT but specifically for horses. Be concise but informative.'
           },
           {
             role: 'user',

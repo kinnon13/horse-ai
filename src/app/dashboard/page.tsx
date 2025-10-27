@@ -125,7 +125,7 @@ export default function DashboardPage() {
           <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-900 rounded-full flex items-center justify-center">
             <Database className="w-5 h-5 md:w-6 md:h-6 text-white" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Horse.AI</h1>
+           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">HorseGPT</h1>
         </div>
 
         {/* Main Input Field */}
@@ -133,7 +133,7 @@ export default function DashboardPage() {
           <div className="relative">
             <input
               type="text"
-              placeholder="What do you want to know about your horses?"
+              placeholder="Ask HorseGPT anything about horses..."
               className="w-full px-4 md:px-5 py-3 md:py-4 pr-24 md:pr-32 bg-gray-100 rounded-2xl text-base md:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
             />
             <div className="absolute right-2 md:right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 md:gap-2">
@@ -190,7 +190,7 @@ export default function DashboardPage() {
         <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 bg-gradient-to-br from-blue-900 to-blue-700 text-white px-4 md:px-6 py-3 md:py-4 rounded-2xl shadow-lg z-50 max-w-[280px] md:max-w-none">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-4">
             <div>
-              <h3 className="font-semibold text-base md:text-lg">SuperHorse.AI</h3>
+              <h3 className="font-semibold text-base md:text-lg">Upgrade to HorseGPT Pro</h3>
               <p className="text-xs md:text-sm text-blue-100">Unlock extended capabilities</p>
             </div>
             <button className="w-full md:w-auto px-3 md:px-4 py-1.5 md:py-2 bg-white text-blue-900 rounded-lg font-medium hover:bg-blue-50 transition-colors text-sm">
