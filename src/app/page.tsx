@@ -79,6 +79,10 @@ export default function HomePage() {
             <button 
               type="submit"
               className="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors"
+              onClick={(e) => {
+                e.preventDefault()
+                handleSubmit(e)
+              }}
             >
               <ArrowRight className="w-5 h-5" />
             </button>
