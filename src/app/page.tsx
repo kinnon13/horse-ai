@@ -7,7 +7,8 @@ import {
   Globe,
   BookOpen,
   Mic,
-  ChevronDown
+  ChevronDown,
+  Building2
 } from 'lucide-react'
 
 export default function HomePage() {
@@ -79,6 +80,10 @@ export default function HomePage() {
             <Mic className="w-4 h-4" />
             <span>Voice</span>
           </button>
+          <Link href="/pricing" className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors text-sm text-gray-700">
+            <Building2 className="w-4 h-4" />
+            <span>For Businesses</span>
+          </Link>
         </div>
       </div>
 
