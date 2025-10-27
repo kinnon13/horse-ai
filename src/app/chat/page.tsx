@@ -224,8 +224,8 @@ export default function ChatPage() {
         {/* Header */}
         <div className="p-4 border-b border-gray-700">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-6 h-6" />
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden">
+              <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full object-contain" />
             </div>
             <h1 className="text-lg font-semibold">HorseGPT</h1>
           </div>
@@ -276,8 +276,8 @@ export default function ChatPage() {
         <div className="border-b border-gray-200 p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
-                <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-6 h-6" />
+              <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
+                <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full object-contain" />
               </div>
               <h2 className="text-lg font-semibold">HorseGPT</h2>
             </div>
