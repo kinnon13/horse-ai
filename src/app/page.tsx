@@ -18,7 +18,7 @@ export default function HomePage() {
         {/* Left Side - Logo */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-sm">🐴</span>
+            <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-6 h-6" />
           </div>
           <span className="text-lg font-semibold text-gray-900">HorseGPT</span>
           <ChevronDown className="w-4 h-4 text-gray-600" />
