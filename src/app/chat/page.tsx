@@ -85,7 +85,9 @@ export default function ChatPage() {
   // Handle query from homepage
   useEffect(() => {
     const query = searchParams.get('q')
+    console.log('Chat page received query:', query)
     if (query) {
+      console.log('Setting input and sending query:', query)
       setInput(query)
       // Auto-send the query
       sendMessage(query)

@@ -21,9 +21,13 @@ export default function HomePage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    console.log('Form submitted with query:', query)
     if (query.trim()) {
+      console.log('Redirecting to chat with query:', query.trim())
       // Redirect to chat page with the query
       router.push(`/chat?q=${encodeURIComponent(query.trim())}`)
+    } else {
+      console.log('Empty query, not redirecting')
     }
   }
   return (
