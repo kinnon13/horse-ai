@@ -17,7 +17,7 @@ export default function HomePage() {
       <div className="flex items-center justify-between px-4 py-4">
         {/* Left Side - Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8">
+          <div className="w-12 h-12">
             <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full" />
           </div>
           <span className="text-lg font-semibold text-gray-900">HorseGPT</span>
