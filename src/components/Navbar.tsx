@@ -23,8 +23,8 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12">
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-20 h-20">
               <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full" />
             </div>
             <span className="text-xl font-bold text-gray-900">HorseGPT</span>

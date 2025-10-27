@@ -121,11 +121,11 @@ export default function DashboardPage() {
         </div>
 
         {/* Logo */}
-        <div className="mb-8 md:mb-12 flex items-center gap-2">
-          <div className="w-16 h-16 md:w-20 md:h-20">
+        <div className="mb-8 md:mb-12 flex items-center gap-4">
+          <div className="w-24 h-24 md:w-32 md:h-32">
             <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full" />
           </div>
-           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">HorseGPT</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">HorseGPT</h1>
         </div>
 
         {/* Main Input Field */}

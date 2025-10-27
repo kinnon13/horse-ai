@@ -223,11 +223,11 @@ export default function ChatPage() {
       <div className="w-64 bg-gray-900 text-white flex flex-col">
         {/* Header */}
         <div className="p-4 border-b border-gray-700">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-12 h-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-20 h-20">
               <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full" />
             </div>
-            <h1 className="text-lg font-semibold">HorseGPT</h1>
+            <h1 className="text-xl font-bold text-white">HorseGPT</h1>
           </div>
           <button className="w-full flex items-center gap-2 px-3 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
             <Plus className="w-4 h-4" />
@@ -276,10 +276,10 @@ export default function ChatPage() {
         <div className="border-b border-gray-200 p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12">
+              <div className="w-20 h-20">
                 <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full" />
               </div>
-              <h2 className="text-lg font-semibold">HorseGPT</h2>
+              <h2 className="text-xl font-bold text-gray-900">HorseGPT</h2>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <span>{userProfile.messages_used}/{userProfile.messages_limit} messages</span>

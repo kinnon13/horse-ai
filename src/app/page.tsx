@@ -16,11 +16,11 @@ export default function HomePage() {
       {/* Top Bar - ChatGPT Style */}
       <div className="flex items-center justify-between px-4 py-4">
         {/* Left Side - Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-12 h-12">
+        <div className="flex items-center gap-3">
+          <div className="w-20 h-20">
             <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full" />
           </div>
-          <span className="text-lg font-semibold text-gray-900">HorseGPT</span>
+          <span className="text-xl font-bold text-gray-900">HorseGPT</span>
           <ChevronDown className="w-4 h-4 text-gray-600" />
         </div>
 
