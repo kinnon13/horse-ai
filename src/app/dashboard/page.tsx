@@ -122,8 +122,8 @@ export default function DashboardPage() {
 
         {/* Logo */}
         <div className="mb-8 md:mb-12 flex items-center gap-2">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-900 rounded-full flex items-center justify-center overflow-hidden">
-            <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full object-contain" />
+          <div className="w-10 h-10 md:w-12 md:h-12">
+            <img src="/horsegpt-logo-transparent.png" alt="HorseGPT" className="w-full h-full" />
           </div>
            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">HorseGPT</h1>
         </div>
