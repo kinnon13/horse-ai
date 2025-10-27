@@ -1,258 +1,231 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
 import { 
-  Database, 
-  Brain, 
-  Upload, 
-  TrendingUp, 
-  Users, 
+  ArrowRight,
+  Sparkles,
   Shield,
   Zap,
-  Target
+  MessageSquare,
+  Brain,
+  TrendingUp,
+  Users,
+  Database,
+  BarChart3
 } from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">
-            HorseGPT - ChatGPT for Horses
-          </h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Ask anything about horses. Get instant AI-powered answers about barrel racing, 
-            horse breeding, training, health, and more. The world's most advanced horse AI.
+    <div className="min-h-screen bg-white">
+      {/* ChatGPT-style Hero Section */}
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12">
+        {/* Logo */}
+        <div className="mb-8">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-lg">🐴</span>
+            </div>
+            <h1 className="text-3xl font-bold text-gray-900">HorseGPT</h1>
+          </div>
+        </div>
+
+        {/* Main Input Field - ChatGPT Style */}
+        <div className="w-full max-w-3xl mb-8">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Ask HorseGPT anything about horses..."
+              className="w-full px-6 py-4 pr-16 bg-white border-2 border-gray-300 rounded-2xl text-lg focus:outline-none focus:border-gray-400 transition-colors shadow-sm"
+            />
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors">
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Examples */}
+        <div className="w-full max-w-3xl mb-8">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4">Try asking:</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <button className="p-4 text-left bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-200">
+              <div className="flex items-center gap-2 mb-1">
+                <MessageSquare className="w-4 h-4 text-gray-600" />
+                <span className="font-medium text-gray-900">"What are the best breeding combinations for barrel racing?"</span>
+              </div>
+            </button>
+            <button className="p-4 text-left bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-200">
+              <div className="flex items-center gap-2 mb-1">
+                <TrendingUp className="w-4 h-4 text-gray-600" />
+                <span className="font-medium text-gray-900">"How do I improve my horse's barrel racing time?"</span>
+              </div>
+            </button>
+            <button className="p-4 text-left bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-200">
+              <div className="flex items-center gap-2 mb-1">
+                <Brain className="w-4 h-4 text-gray-600" />
+                <span className="font-medium text-gray-900">"Explain horse nutrition for performance horses"</span>
+              </div>
+            </button>
+            <button className="p-4 text-left bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors border border-gray-200">
+              <div className="flex items-center gap-2 mb-1">
+                <Database className="w-4 h-4 text-gray-600" />
+                <span className="font-medium text-gray-900">"What's the bloodline of Dash Ta Fame?"</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Sign In Prompt */}
+        <div className="text-center">
+          <p className="text-gray-600 mb-4">
+            <Link href="/auth/signin" className="text-blue-600 hover:underline">Sign in</Link> to save your conversations
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth/signup">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
-                Join Now for Free
-              </Button>
-            </Link>
+          <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
+            <Link href="/auth/signup" className="hover:text-gray-700">Sign up</Link>
+            <span>•</span>
+            <Link href="/pricing" className="hover:text-gray-700">Pricing</Link>
+            <span>•</span>
+            <Link href="/chat" className="hover:text-gray-700">Start Chatting</Link>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Ask HorseGPT Anything</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get instant answers about horses, breeding, training, health, and performance
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Database className="w-6 h-6 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Instant CSV Upload</h3>
-              <p className="text-gray-600">
-                Upload your data instantly with AI-powered validation and mapping. 
-                Unlimited rows, automatic verification.
-              </p>
-            </Card>
-
-            <Card className="text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Brain className="w-6 h-6 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">AI Breeding Recommendations</h3>
-              <p className="text-gray-600">
-                Get intelligent breeding suggestions powered by advanced AI analysis 
-                of bloodlines, performance, and market trends.
-              </p>
-            </Card>
-
-            <Card className="text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Upload className="w-6 h-6 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Free Data Import</h3>
-              <p className="text-gray-600">
-                Import your event results, pedigrees, and performance data. 
-                Earn points for verified uploads.
-              </p>
-            </Card>
-
-            <Card className="text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-6 h-6 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Performance Analytics</h3>
-              <p className="text-gray-600">
-                Advanced analytics and trend analysis to optimize your breeding 
-                and training decisions.
-              </p>
-            </Card>
-
-            <Card className="text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-6 h-6 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Create Your Horse Profiles</h3>
-              <p className="text-gray-600">
-                Build your personal database of horses. Upload pedigrees, 
-                track performance, save everything.
-              </p>
-            </Card>
-
-            <Card className="text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-6 h-6 text-primary-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">AI Chat Interface</h3>
-              <p className="text-gray-600">
-                Ask anything about horses. Get instant answers about bloodlines, 
-                breeding, performance, and more.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-gray-600">
-              Start free, upgrade when you need more power
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Free Tier */}
-            <Card className="relative h-full flex flex-col">
-              <div className="text-center flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold mb-2">Free</h3>
-                <div className="text-4xl font-bold mb-4">$0<span className="text-lg text-gray-500">/month</span></div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    Basic horse profiles
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    10 messages every 2 hours
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    Unlimited CSV uploads
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    Create horse profiles
-                  </li>
-                </ul>
-                <div className="mt-auto">
-                  <Link href="/auth/signup">
-                    <Button className="w-full">Get Started</Button>
-                  </Link>
+      {/* Capabilities Section - ChatGPT Style */}
+      <div className="bg-gray-50 py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-12">Capabilities</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Brain className="w-4 h-4 text-blue-600" />
                 </div>
+                <h3 className="font-semibold text-gray-900">Horse Knowledge</h3>
               </div>
-            </Card>
-
-            {/* Mid Tier */}
-            <Card className="relative border-2 border-primary-500 h-full flex flex-col">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary-500 text-white px-3 py-0.5 rounded text-xs font-medium tracking-wide">
-                  POPULAR
-                </span>
-              </div>
-              <div className="text-center flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold mb-2">Mid</h3>
-                <div className="text-4xl font-bold mb-4">$9.99<span className="text-lg text-gray-500">/month</span></div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  <li className="flex items-center justify-center">
-                    <Target className="w-5 h-5 text-primary-500 mr-2" />
-                    Everything in Free
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Target className="w-5 h-5 text-primary-500 mr-2" />
-                    50 messages per 2 hours
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Target className="w-5 h-5 text-primary-500 mr-2" />
-                    Advanced analytics
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Target className="w-5 h-5 text-primary-500 mr-2" />
-                    Priority support
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Target className="w-5 h-5 text-primary-500 mr-2" />
-                    Custom reports
-                  </li>
-                </ul>
-                <div className="mt-auto">
-                  <Link href="/auth/signup">
-                    <Button className="w-full bg-primary-600 hover:bg-primary-700">
-                      Start Free Trial
-                    </Button>
-                  </Link>
+              <p className="text-gray-600">
+                Comprehensive knowledge about horse breeds, bloodlines, training methods, 
+                health care, and performance optimization.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                  <TrendingUp className="w-4 h-4 text-green-600" />
                 </div>
+                <h3 className="font-semibold text-gray-900">Performance Analysis</h3>
               </div>
-            </Card>
-
-            {/* Pro Tier */}
-            <Card className="relative h-full flex flex-col">
-              <div className="text-center flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold mb-2">Pro</h3>
-                <div className="text-4xl font-bold mb-4">$19.99<span className="text-lg text-gray-500">/month</span></div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    Everything in Mid
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    Unlimited messages
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    First access to leads
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    Featured placement
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-green-500 mr-2" />
-                    Dedicated support
-                  </li>
-                </ul>
-                <div className="mt-auto">
-                  <Link href="/auth/signup">
-                    <Button className="w-full bg-purple-600 hover:bg-purple-700">Upgrade to Pro</Button>
-                  </Link>
+              <p className="text-gray-600">
+                Analyze race times, breeding patterns, and performance data to help you 
+                make informed decisions about your horses.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <Users className="w-4 h-4 text-purple-600" />
                 </div>
+                <h3 className="font-semibold text-gray-900">Breeding Guidance</h3>
               </div>
-            </Card>
+              <p className="text-gray-600">
+                Get expert advice on breeding combinations, bloodline analysis, 
+                and genetic considerations for your breeding program.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <BarChart3 className="w-4 h-4 text-orange-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900">Data Insights</h3>
+              </div>
+              <p className="text-gray-600">
+                Upload your horse data and get personalized insights, 
+                trend analysis, and performance recommendations.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Join?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Start free. Ask questions. Upload data. See everything in one place.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth/signup">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
-                Join Now for Free
-              </Button>
-            </Link>
+      {/* Limitations Section - ChatGPT Style */}
+      <div className="py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-12">Limitations</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Shield className="w-4 h-4 text-red-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">May occasionally generate incorrect information</h3>
+                <p className="text-gray-600 text-sm">
+                  HorseGPT can make mistakes. Consider checking important information about horse health, 
+                  breeding, or performance data.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Zap className="w-4 h-4 text-yellow-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Limited knowledge of events after 2024</h3>
+                <p className="text-gray-600 text-sm">
+                  HorseGPT's knowledge is current up to 2024. For the latest race results, 
+                  breeding news, or industry updates, verify with current sources.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MessageSquare className="w-4 h-4 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">May occasionally produce harmful instructions</h3>
+                <p className="text-gray-600 text-sm">
+                  While HorseGPT is designed to be helpful, always consult with veterinarians 
+                  and equine professionals for health and safety decisions.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Database className="w-4 h-4 text-gray-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-2">Limited knowledge of specific horse records</h3>
+                <p className="text-gray-600 text-sm">
+                  While HorseGPT has extensive knowledge, it may not have access to all 
+                  individual horse records or private breeding data.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Footer */}
+      <div className="border-t border-gray-200 py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">🐴</span>
+              </div>
+              <span className="font-semibold text-gray-900">HorseGPT</span>
+            </div>
+            <div className="flex items-center gap-6 text-sm text-gray-600">
+              <Link href="/pricing" className="hover:text-gray-900">Pricing</Link>
+              <Link href="/legal/privacy" className="hover:text-gray-900">Privacy Policy</Link>
+              <Link href="/legal/terms" className="hover:text-gray-900">Terms of Service</Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

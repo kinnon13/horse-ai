@@ -272,10 +272,15 @@ export default function ChatPage() {
 
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col">
-        {/* Header */}
+        {/* Header - ChatGPT Style */}
         <div className="border-b border-gray-200 p-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold">HorseGPT</h2>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">🐴</span>
+              </div>
+              <h2 className="text-lg font-semibold">HorseGPT</h2>
+            </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <span>{userProfile.messages_used}/{userProfile.messages_limit} messages</span>
               {userProfile.subscription_tier === 'free' && (
@@ -290,22 +295,24 @@ export default function ChatPage() {
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {messages.length === 0 ? (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="flex flex-col items-center justify-center h-full py-12">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl">🐴</span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Welcome to HorseGPT</h3>
-              <p className="text-gray-600 mb-6">Ask me anything about horses, barrel racing, breeding, training, and more!</p>
+              <h3 className="text-2xl font-semibold mb-2">How can I help you today?</h3>
               
-              {/* Sample Queries */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
+              {/* Sample Queries - ChatGPT Style */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl mx-auto mb-8">
                 {SAMPLE_QUERIES.map((query, index) => (
                   <button
                     key={index}
                     onClick={() => handleSampleQuery(query)}
-                    className="p-3 text-left bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                    className="p-4 text-left bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors text-sm shadow-sm"
                   >
-                    {query}
+                    <div className="flex items-center gap-2">
+                      <MessageSquare className="w-4 h-4 text-gray-500" />
+                      <span className="font-medium text-gray-900">{query}</span>
+                    </div>
                   </button>
                 ))}
               </div>
@@ -394,8 +401,8 @@ export default function ChatPage() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask HorseGPT anything about horses..."
-                className="w-full px-4 py-3 pr-12 bg-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
+                placeholder="Message HorseGPT..."
+                className="w-full px-4 py-3 pr-12 bg-white border border-gray-300 rounded-2xl focus:outline-none focus:border-gray-400 transition-colors shadow-sm"
                 disabled={isLoading || hasHitLimit}
               />
               <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
@@ -409,7 +416,7 @@ export default function ChatPage() {
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="p-1 hover:bg-gray-200 rounded"
+                  className="p-1 hover:bg-gray-100 rounded"
                   disabled={isLoading}
                 >
                   <Upload className="w-4 h-4 text-gray-600" />
@@ -419,7 +426,7 @@ export default function ChatPage() {
             <button
               type="submit"
               disabled={!input.trim() || isLoading || hasHitLimit}
-              className="px-4 py-3 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-3 bg-gray-900 text-white rounded-2xl hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <Send className="w-4 h-4" />
             </button>
