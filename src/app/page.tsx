@@ -75,10 +75,6 @@ export default function HomePage() {
             <BookOpen className="w-4 h-4" />
             <span>Study</span>
           </button>
-        </div>
-
-        {/* Voice Input Button */}
-        <div className="flex justify-center">
           <button className="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 transition-colors text-sm text-gray-700">
             <Mic className="w-4 h-4" />
             <span>Voice</span>
