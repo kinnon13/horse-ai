@@ -22,3 +22,11 @@ export interface ServiceRequest {
   provider_claims?: any[]
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequest(_props?: any): never { throw new Error("Stubbed component used: ./RequestsTypes.ServiceRequest"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function DispatchStats(_props?: any): never { throw new Error("Stubbed component used: ./RequestsTypes.DispatchStats"); }

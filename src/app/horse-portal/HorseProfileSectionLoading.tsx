@@ -1,4 +1,4 @@
-import { CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
 import { Heart } from 'lucide-react'
 
 export function HorseProfileSectionLoading() {
@@ -19,4 +19,6 @@ export function HorseProfileSectionLoading() {
     </Card>
   )
 }
+
+
 

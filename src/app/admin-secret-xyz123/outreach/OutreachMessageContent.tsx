@@ -22,7 +22,7 @@ export function OutreachMessageContent({ message }: OutreachMessageContentProps)
       <div className="mt-1 flex items-center space-x-4 text-sm text-gray-600">
         <span>To: {message.target}</span>
         <span>Type: {message.type}</span>
-        <span>Template: {message.template}</span>
+        <span>Template: {message.template_id || 'None'}</span>
       </div>
       
       {message.horse_name && (
@@ -43,4 +43,6 @@ export function OutreachMessageContent({ message }: OutreachMessageContentProps)
     </div>
   )
 }
+
+
 

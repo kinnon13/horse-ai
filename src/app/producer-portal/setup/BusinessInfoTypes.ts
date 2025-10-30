@@ -31,3 +31,20 @@ export interface BusinessInfoStepActions {
   saveData: () => Promise<void>
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BusinessInfoActionsProps(_props?: any): never { throw new Error("Stubbed component used: ./BusinessInfoTypes.BusinessInfoActionsProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BusinessInfoFormProps(_props?: any): never { throw new Error("Stubbed component used: ./BusinessInfoTypes.BusinessInfoFormProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BusinessInfoStepProps(_props?: any): never { throw new Error("Stubbed component used: ./BusinessInfoTypes.BusinessInfoStepProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BusinessInfoStepState(_props?: any): never { throw new Error("Stubbed component used: ./BusinessInfoTypes.BusinessInfoStepState"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BusinessInfoStepActions(_props?: any): never { throw new Error("Stubbed component used: ./BusinessInfoTypes.BusinessInfoStepActions"); }

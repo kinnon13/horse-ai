@@ -25,3 +25,5 @@ export const BUSINESS_TYPE_LABELS = {
   horse_owner: 'Horse Owner'
 } as const
 
+
+

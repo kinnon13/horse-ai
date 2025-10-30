@@ -84,3 +84,5 @@ CREATE TRIGGER update_health_monitoring_timestamp BEFORE UPDATE ON health_monito
 CREATE TRIGGER update_vaccinations_timestamp BEFORE UPDATE ON vaccinations FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 CREATE TRIGGER update_injuries_timestamp BEFORE UPDATE ON injuries FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 
+
+

@@ -119,3 +119,5 @@ CREATE TABLE IF NOT EXISTS dynamic_column_requests (
 CREATE TRIGGER trig_dynamic_column_requests_updated_at BEFORE UPDATE ON dynamic_column_requests FOR EACH ROW EXECUTE PROCEDURE update_timestamp();
 CREATE INDEX idx_dynamic_column_requests_table_name ON dynamic_column_requests(table_name);
 
+
+

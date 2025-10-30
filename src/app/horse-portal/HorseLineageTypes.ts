@@ -29,3 +29,17 @@ export interface LineageStatsCardProps {
   iconColor: string
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function HorseWithLineage(_props?: any): never { throw new Error("Stubbed component used: ./HorseLineageTypes.HorseWithLineage"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function HorseLineageSectionProps(_props?: any): never { throw new Error("Stubbed component used: ./HorseLineageTypes.HorseLineageSectionProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function LineageStatsCardProps(_props?: any): never { throw new Error("Stubbed component used: ./HorseLineageTypes.LineageStatsCardProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function HorseLineageStats(_props?: any): never { throw new Error("Stubbed component used: ./HorseLineageTypes.HorseLineageStats"); }

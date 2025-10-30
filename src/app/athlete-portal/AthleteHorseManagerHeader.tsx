@@ -24,3 +24,5 @@ export function AthleteHorseManagerHeader({ horses, onAddHorse }: AthleteHorseMa
   )
 }
 
+
+

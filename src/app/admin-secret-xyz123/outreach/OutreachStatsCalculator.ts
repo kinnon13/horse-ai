@@ -1,4 +1,4 @@
-import { OutreachMessage, OutreachStats } from './OutreachMessageOperations'
+import { OutreachMessage, OutreachStats } from './OutreachData'
 
 export class OutreachData {
   static calculateStats(messages: OutreachMessage[]): OutreachStats {
@@ -11,6 +11,10 @@ export class OutreachData {
       Math.round((repliedMessages / totalMessages) * 100 * 10) / 10 : 0
 
     return {
+      total: totalMessages,
+      sent: sentMessages,
+      pending: pendingMessages,
+      failed: failedMessages,
       totalMessages,
       pendingMessages,
       sentMessages,
@@ -21,3 +25,8 @@ export class OutreachData {
   }
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function OutreachStatsCalculator(_props?: any): never { throw new Error("Stubbed component used: ./OutreachStatsCalculator.OutreachStatsCalculator"); }

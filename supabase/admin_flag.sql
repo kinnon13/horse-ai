@@ -12,3 +12,5 @@ COMMENT ON COLUMN public.users.is_admin IS 'Flag to identify admin users who can
 
 
 
+
+

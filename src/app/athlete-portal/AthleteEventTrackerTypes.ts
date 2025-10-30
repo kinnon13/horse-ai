@@ -1,26 +1,21 @@
+// Athlete Event Tracker Types - Single responsibility
 export interface CompetitionEvent {
   id: string
   athlete_id: string
   horse_id: string
   event_name: string
   event_date: string
-  location_city: string | null
-  location_state: string | null
+  location: string
   discipline: string
-  competition_level: string | null
-  placement: number | null
-  earnings: number
-  notes: string | null
+  class: string
+  placing: number
+  score: number
+  notes: string
   created_at: string
   updated_at: string
+  prize_money: number
+  points_earned: number
+  qualification_status: string
+  next_event: string
+  preparation_notes: string
 }
-
-export interface AthleteEventTrackerSectionProps {
-  events: CompetitionEvent[]
-  horses: any[]
-  loading: boolean
-  onAddEvent: () => void
-  onEditEvent: (event: CompetitionEvent) => void
-  onDeleteEvent: (eventId: string) => void
-}
-

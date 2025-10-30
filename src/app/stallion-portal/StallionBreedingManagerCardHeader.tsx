@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/Button'
+import { Edit, Trash2 } from 'lucide-react'
 import { StallionProfile } from './StallionProfileTypes'
 
 interface StallionBreedingManagerCardHeaderProps {
@@ -32,4 +34,6 @@ export function StallionBreedingManagerCardHeader({ stallion, onEditStallion, on
     </div>
   )
 }
+
+
 

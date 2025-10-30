@@ -19,3 +19,5 @@ export function AthleteHorseCardDisciplines({ horse }: AthleteHorseCardDisciplin
   )
 }
 
+
+

@@ -29,3 +29,5 @@ export interface HorseDatabaseSearchProps {
 
 export type SearchType = 'name' | 'registration' | 'pedigree'
 
+
+

@@ -31,3 +31,5 @@ export function AthleteEventCardDetails({ event }: AthleteEventCardDetailsProps)
   )
 }
 
+
+

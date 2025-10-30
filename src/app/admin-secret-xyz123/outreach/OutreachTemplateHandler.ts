@@ -1,5 +1,6 @@
 import React from 'react'
 import { OutreachData, ComposeData, OutreachMessage } from './OutreachData'
+import { OutreachUtils } from './OutreachUtils'
 
 interface OutreachTemplateHandlerProps {
   outreachMessages: OutreachMessage[]
@@ -9,15 +10,15 @@ interface OutreachTemplateHandlerProps {
   editingMessage: any
   setEditingMessage: (message: any) => void
   composeData: ComposeData
-  setComposeData: (data: ComposeData) => void
+  setComposeData: (data: ComposeData | ((prev: ComposeData) => ComposeData)) => void
 }
 
 export class OutreachTemplateHandler {
   static createHandler(props: OutreachTemplateHandlerProps) {
     return (templateId: string) => {
-      const template = OutreachData.getTemplate(templateId)
+      const template = OutreachUtils.getTemplate(templateId)
       if (template) {
-        props.setComposeData(prev => ({
+        props.setComposeData((prev: ComposeData) => ({
           ...prev,
           template: templateId,
           subject: template.subject,
@@ -27,4 +28,6 @@ export class OutreachTemplateHandler {
     }
   }
 }
+
+
 

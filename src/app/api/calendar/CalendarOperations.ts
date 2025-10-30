@@ -29,3 +29,5 @@ export async function deleteCalendarEvent(eventId: string): Promise<void> {
   if (error) throw new Error(`Failed to delete calendar event: ${error.message}`)
 }
 
+
+

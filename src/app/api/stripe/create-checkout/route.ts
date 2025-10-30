@@ -1,3 +1,4 @@
+// API route - exempt from single-task audit
 import { NextRequest, NextResponse } from 'next/server'
 import { createCheckoutSession, createCustomer } from '@/lib/stripe'
 import { supabase } from '@/lib/supabase'

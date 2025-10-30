@@ -2,50 +2,40 @@ export interface OnboardingStep {
   id: string
   title: string
   description: string
-  component: React.ReactNode
+  component: React.ComponentType<any>
+  isCompleted: boolean
 }
 
 export interface OnboardingData {
-  importedData?: ImportedData
-  verifiedData?: VerifiedData
-  scrubbingConfig?: ScrubbingConfig
-  preferences?: Preferences
-}
-
-export interface ImportedData {
-  method: 'csv' | 'api' | 'manual'
-  file?: string
-  source?: string
-  records: number
-}
-
-export interface VerifiedData {
-  verified: number
-  flagged: number
-  enriched: number
-  newData: number
-}
-
-export interface ScrubbingConfig {
-  enabled: boolean
-  sources: {
-    equibase: boolean
-    aqha: boolean
-    social: boolean
-    news: boolean
+  horseData: {
+    horses: Array<{
+      name: string
+      breed: string
+      type: string
+      value?: number
+    }>
   }
-  frequency: string
+  preferences: {
+    notifications: boolean
+    marketUpdates: boolean
+    breedingAlerts: boolean
+    priceAlerts: boolean
+    newsletter: boolean
+  }
+  scrubbingOptions: {
+    removeDuplicates: boolean
+    standardizeBreeds: boolean
+    validatePricing: boolean
+    cleanContactInfo: boolean
+  }
 }
 
-export interface Preferences {
-  notifications: boolean
-  dataSharing: boolean
-  marketing: boolean
-  analytics: boolean
+export interface OnboardingContextType {
+  currentStep: number
+  data: OnboardingData
+  updateData: (updates: Partial<OnboardingData>) => void
+  nextStep: () => void
+  prevStep: () => void
+  goToStep: (step: number) => void
+  isComplete: boolean
 }
-
-export interface VerificationStatus {
-  status: 'pending' | 'processing' | 'completed'
-  results?: VerifiedData
-}
-

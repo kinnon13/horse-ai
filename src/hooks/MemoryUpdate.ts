@@ -46,3 +46,11 @@ export async function updateLocation(
   })
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export const updateUserMemory = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateUserMemory"); })();
+export const updateUserPreferences = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateUserPreferences"); })();
+export const updateTravelPattern = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateTravelPattern"); })();
+export const updateLocation = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateLocation"); })();

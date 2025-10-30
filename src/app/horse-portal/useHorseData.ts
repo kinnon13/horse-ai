@@ -1,42 +1,30 @@
+// Horse Data Hook - Single responsibility
 import { useState, useEffect } from 'react'
-import { useAuth } from '@/components/AuthProvider'
-import { useRouter } from 'next/navigation'
-import { loadOwnerData } from './dataLoader'
-import { HorseOwnerProfile, HorseProfile } from './types'
+import { loadHorseData } from './dataLoader'
+import { HorseProfile } from './types'
 
-export function useHorseData() {
-  const { user, loading } = useAuth()
-  const router = useRouter()
-  const [owner, setOwner] = useState<HorseOwnerProfile | null>(null)
-  const [horses, setHorses] = useState<HorseProfile[]>([])
-  const [loadingProfile, setLoadingProfile] = useState(true)
+export function useHorseData(horseId: string) {
+  const [horse, setHorse] = useState<HorseProfile | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.push('/auth/signin')
-      return
+    async function fetchHorse() {
+      try {
+        setLoading(true)
+        const data = await loadHorseData(horseId)
+        setHorse(data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to load horse data')
+      } finally {
+        setLoading(false)
+      }
     }
-    if (user) {
-      loadData()
-    }
-  }, [user, loading, router])
 
-  const loadData = async () => {
-    if (!user) return
-    setLoadingProfile(true)
-    const data = await loadOwnerData(user.id)
-    if (data) {
-      setOwner(data.owner)
-      setHorses(data.horses)
+    if (horseId) {
+      fetchHorse()
     }
-    setLoadingProfile(false)
-  }
+  }, [horseId])
 
-  return {
-    owner,
-    horses,
-    loadingProfile,
-    setHorses
-  }
+  return { horse, loading, error }
 }
-

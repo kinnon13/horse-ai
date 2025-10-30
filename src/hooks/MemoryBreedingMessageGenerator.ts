@@ -27,3 +27,5 @@ export function generateBreedingIntroMessage(
   return `${greeting}, that ${mareInfo.breed} mare line is so nice. Who are you thinking of breeding her to next?`
 }
 
+
+

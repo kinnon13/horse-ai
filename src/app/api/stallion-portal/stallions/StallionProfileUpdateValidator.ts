@@ -27,3 +27,5 @@ export function validateStallionUpdate(data: any): Partial<StallionProfile> {
   return updateData
 }
 
+
+

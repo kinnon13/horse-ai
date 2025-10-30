@@ -46,3 +46,8 @@ export interface StallionSetupData {
   documents: File[]
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function StallionSetupData(_props?: any): never { throw new Error("Stubbed component used: ./StallionSetupTypes.StallionSetupData"); }

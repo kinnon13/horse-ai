@@ -45,3 +45,10 @@ export async function getBreedingHistory(userId: string): Promise<any[]> {
   }
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export const fetchUserMemory = (()=>{ throw new Error("Stubbed value used: ./MemoryQuery.fetchUserMemory"); })();
+export const getRecentPerformances = (()=>{ throw new Error("Stubbed value used: ./MemoryQuery.getRecentPerformances"); })();
+export const getBreedingHistory = (()=>{ throw new Error("Stubbed value used: ./MemoryQuery.getBreedingHistory"); })();

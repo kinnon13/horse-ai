@@ -29,3 +29,5 @@ export function AthleteEventCard({ event, horse, onEditEvent, onDeleteEvent }: A
   )
 }
 
+
+

@@ -15,7 +15,7 @@ interface OutreachHandlersProps {
   editingMessage: any
   setEditingMessage: (message: any) => void
   composeData: ComposeData
-  setComposeData: (data: ComposeData) => void
+  setComposeData: (data: ComposeData | ((prev: ComposeData) => ComposeData)) => void
 }
 
 export class OutreachHandlers {

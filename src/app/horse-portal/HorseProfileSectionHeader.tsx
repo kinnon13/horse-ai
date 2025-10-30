@@ -24,3 +24,5 @@ export function HorseProfileSectionHeader({ horsesCount, onAddHorse }: HorseProf
   )
 }
 
+
+

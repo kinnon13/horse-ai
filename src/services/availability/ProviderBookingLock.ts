@@ -25,3 +25,6 @@ export async function finalizeReservation(jobId: string) {
   await confirmSlot(jobId);
   await logEvent(CRITICAL_EVENTS.BOOKING_CONFIRMED, { jobId });
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export const tryReserveSlot = (()=>{ throw new Error("Stubbed value used: ../availability/ProviderBookingLock.tryReserveSlot"); })();

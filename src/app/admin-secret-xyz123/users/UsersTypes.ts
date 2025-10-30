@@ -16,3 +16,11 @@ export interface UserStats {
   churnRiskUsers: number
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function User(_props?: any): never { throw new Error("Stubbed component used: ./UsersTypes.User"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function UserStats(_props?: any): never { throw new Error("Stubbed component used: ./UsersTypes.UserStats"); }

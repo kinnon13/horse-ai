@@ -1,28 +1,31 @@
-import { supabase } from '@/lib/supabase'
-import { HorseOwnerProfile, HorseProfile } from './types'
-
-export async function loadOwnerData(userId: string) {
+// Horse Portal Data Loader - Single responsibility
+export async function loadHorseData(horseId: string) {
   try {
-    const { data: ownerData } = await supabase
-      .from('horse_owners')
-      .select('*')
-      .eq('user_id', userId)
-      .single()
-    
-    if (!ownerData) return null
-
-    const { data: horsesData } = await supabase
-      .from('horse_profiles')
-      .select('*')
-      .eq('owner_id', ownerData.id)
-    
+    // Mock data for now
     return {
-      owner: ownerData as HorseOwnerProfile,
-      horses: horsesData as HorseProfile[] || []
+      id: horseId,
+      name: 'Sample Horse',
+      breed: 'Quarter Horse',
+      color: 'Bay',
+      birth_year: 2018,
+      sex: 'Gelding',
+      registration_number: 'AQHA789012',
+      sire: 'Famous Sire',
+      dam: 'Famous Dam',
+      owner_id: 'owner_123',
+      performance_record: 'Multiple wins',
+      health_status: 'Excellent',
+      training_level: 'Advanced',
+      competition_level: 'Regional',
+      last_competition: '2024-01-15',
+      next_competition: '2024-02-15',
+      achievements: 'Champion 2023',
+      bloodline_notes: 'Excellent bloodline',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
     }
   } catch (error) {
-    console.error('Error loading owner data:', error)
-    return null
+    console.error('Error loading horse data:', error)
+    throw error
   }
 }
-

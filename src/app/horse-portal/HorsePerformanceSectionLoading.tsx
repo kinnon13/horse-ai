@@ -1,4 +1,4 @@
-import { CardContent } from '@/components/ui/Card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { TrendingUp } from 'lucide-react'
 
 export function HorsePerformanceSectionLoading() {
@@ -19,4 +19,6 @@ export function HorsePerformanceSectionLoading() {
     </Card>
   )
 }
+
+
 

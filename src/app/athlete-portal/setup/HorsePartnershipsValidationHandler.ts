@@ -10,3 +10,5 @@ export function validateHorsePartnerships(
   return Object.keys(newErrors).length === 0
 }
 
+
+

@@ -38,3 +38,5 @@ export async function verifyHorseOwnership(horseId: string, userId: string): Pro
   return !error && !!horse
 }
 
+
+

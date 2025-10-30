@@ -15,3 +15,8 @@ export async function saveRidingExperienceWithState(
   }
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export const saveRidingExperienceWithState = (()=>{ throw new Error("Stubbed value used: ./RidingExperienceSaveHandler.saveRidingExperienceWithState"); })();

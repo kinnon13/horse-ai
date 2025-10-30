@@ -51,3 +51,6 @@ export class HaulSupportParser {
     }
   }
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function HaulSupportIntent(_props?: any): never { throw new Error("Stubbed component used: ./HaulSupportParser.HaulSupportIntent"); }

@@ -16,3 +16,5 @@ export function StallionProfileActions({ onEdit, onViewStallions }: StallionProf
   )
 }
 
+
+

@@ -373,3 +373,5 @@ CREATE POLICY "Owners can view their horse analytics" ON horse_analytics FOR SEL
 );
 
 
+
+

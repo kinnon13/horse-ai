@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { NotificationSendRepo } from './NotificationSendRepo'
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,19 +10,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Get user's FCM token
-    const { data: user, error } = await supabase
-      .from('users')
-      .select('fcm_token')
-      .eq('id', userId)
-      .single()
-
-    if (error || !user?.fcm_token) {
+    const fcmToken = await NotificationSendRepo.getUserFCMToken(userId)
+    
+    if (!fcmToken) {
       return NextResponse.json({ error: 'User not found or no FCM token' }, { status: 404 })
     }
 
     // Send notification via Firebase Admin SDK (server-side)
     const message = {
-      token: user.fcm_token,
+      token: fcmToken,
       notification: {
         title: notification.title,
         body: notification.body,
@@ -37,15 +33,7 @@ export async function POST(request: NextRequest) {
     console.log('Sending notification:', message)
 
     // Store notification in database
-    await supabase
-      .from('notifications')
-      .insert({
-        user_id: userId,
-        title: notification.title,
-        body: notification.body,
-        data: notification.data,
-        sent_at: new Date().toISOString()
-      })
+    await NotificationSendRepo.saveNotification(userId, notification)
 
     return NextResponse.json({
       success: true,

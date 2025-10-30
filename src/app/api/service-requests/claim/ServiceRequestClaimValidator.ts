@@ -1,20 +1,23 @@
-import { ProviderClaim } from './ServiceRequestClaimService'
-
-export function validateProviderClaim(data: any): Omit<ProviderClaim, 'id' | 'created_at' | 'updated_at'> {
-  if (!data.provider_id || !data.service_request_id) {
-    throw new Error('Provider ID and service request ID are required')
+// Service Request Claim Validator - Single responsibility
+export function validateServiceRequest(serviceRequest: any) {
+  if (!serviceRequest.id) {
+    throw new Error('Service request ID is required')
   }
-
-  if (data.price_quoted && (typeof data.price_quoted !== 'number' || data.price_quoted < 0)) {
-    throw new Error('Invalid price quoted')
+  if (!serviceRequest.provider_id) {
+    throw new Error('Provider ID is required')
   }
-
-  return {
-    provider_id: data.provider_id,
-    service_request_id: data.service_request_id,
-    price_quoted: data.price_quoted ? parseFloat(data.price_quoted) : undefined,
-    notes: data.notes?.trim(),
-    status: 'pending'
+  if (!serviceRequest.status) {
+    throw new Error('Status is required')
   }
+  return true
 }
 
+export function validateProviderClaim(claim: any) {
+  if (!claim.provider_id) {
+    throw new Error('Provider ID is required')
+  }
+  if (!claim.request_id) {
+    throw new Error('Request ID is required')
+  }
+  return true
+}

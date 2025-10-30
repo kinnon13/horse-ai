@@ -144,3 +144,5 @@ echo "2. Set up n8n workflows (30-40 workflows)"
 echo "3. Configure edge functions"
 echo "4. Import contacts and go live!"
 
+
+

@@ -17,3 +17,7 @@ export async function confirmSlot(jobId: string): Promise<void> {
   const { error } = await supabaseAdmin.from('provider_availability').update({status: 'booked', updated_at: new Date().toISOString()}).eq('job_id', jobId).eq('status', 'held')
   if (error) throw error
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export const holdSlot = (()=>{ throw new Error("Stubbed value used: ./ProviderAvailabilityStore.holdSlot"); })();
+export const confirmSlot = (()=>{ throw new Error("Stubbed value used: ./ProviderAvailabilityStore.confirmSlot"); })();

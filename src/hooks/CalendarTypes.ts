@@ -47,3 +47,13 @@ export interface CalendarActions {
   cancelBooking: (id: string) => Promise<void>
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function CalendarEvent(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarEvent"); }
+export function CalendarFilters(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarFilters"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function CalendarState(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarState"); }
+export function CalendarActions(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarActions"); }

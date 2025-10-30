@@ -22,3 +22,8 @@ export async function saveRidingExperienceData(formData: AthleteSetupData): Prom
   }
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export const saveRidingExperienceData = (()=>{ throw new Error("Stubbed value used: ./RidingExperienceService.saveRidingExperienceData"); })();

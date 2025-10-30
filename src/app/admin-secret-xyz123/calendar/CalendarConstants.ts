@@ -8,6 +8,13 @@ export const EVENT_TYPES = [
 ] as const
 
 export const EVENT_TYPE_COLORS = {
+  reminder: 'bg-yellow-100 text-yellow-800',
+  show_date: 'bg-blue-100 text-blue-800',
+  haul_date: 'bg-purple-100 text-purple-800',
+  vet_appointment: 'bg-green-100 text-green-800',
+  farrier_appointment: 'bg-orange-100 text-orange-800',
+  entry_deadline: 'bg-red-100 text-red-800',
+  // Legacy support
   show: 'bg-blue-100 text-blue-800',
   deadline: 'bg-red-100 text-red-800',
   breeding: 'bg-green-100 text-green-800',
@@ -29,4 +36,6 @@ export function formatEventTime(dateString: string): string {
     hour12: true
   })
 }
+
+
 

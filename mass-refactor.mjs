@@ -26,3 +26,5 @@ console.log(`Found ${files.length} files to potentially refactor`);
 
 // Manual batch approach - let me fix files directly
 
+
+

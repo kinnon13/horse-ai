@@ -15,3 +15,9 @@ export interface ServiceRequest {
   user_id: string
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequest(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestClaimTypes.ServiceRequest"); }
+export function ProviderClaim(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestClaimTypes.ProviderClaim"); }

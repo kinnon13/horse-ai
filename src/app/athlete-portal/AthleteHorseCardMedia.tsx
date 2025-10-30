@@ -29,3 +29,5 @@ export function AthleteHorseCardMedia({ horse }: AthleteHorseCardMediaProps) {
   )
 }
 
+
+

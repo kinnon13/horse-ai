@@ -108,3 +108,5 @@ CREATE POLICY "Providers can view own availability" ON provider_availability
 CREATE POLICY "Users can view own booking locks" ON booking_locks
   FOR SELECT USING (auth.uid() = user_id);
 
+
+

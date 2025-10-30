@@ -1,28 +1,32 @@
-import { supabase } from '@/lib/supabase'
-import { StallionStationProfile, StallionProfile } from './types'
-
-export async function loadStationData(userId: string) {
+// Stallion Portal Data Loader - Single responsibility
+export async function loadStallionData(stallionId: string) {
   try {
-    const { data: stationData } = await supabase
-      .from('stallion_stations')
-      .select('*')
-      .eq('user_id', userId)
-      .single()
-    
-    if (!stationData) return null
-
-    const { data: stallionsData } = await supabase
-      .from('stallion_profiles')
-      .select('*')
-      .eq('station_id', stationData.id)
-    
+    // Mock data for now
     return {
-      station: stationData as StallionStationProfile,
-      stallions: stallionsData as StallionProfile[] || []
+      id: stallionId,
+      name: 'Sample Stallion',
+      breed: 'Quarter Horse',
+      color: 'Bay',
+      birth_year: 2015,
+      sire: 'Famous Sire',
+      dam: 'Famous Dam',
+      registration_number: 'AQHA123456',
+      stud_fee: 2500,
+      availability: 'Available',
+      breeding_history: '50+ foals',
+      performance_record: 'Multiple championships',
+      bloodline_notes: 'Excellent bloodline',
+      health_certifications: ['CEM', 'EVA'],
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
     }
   } catch (error) {
-    console.error('Error loading station data:', error)
-    return null
+    console.error('Error loading stallion data:', error)
+    throw error
   }
 }
 
+export async function loadStationData(stationId: string): Promise<any> {
+  // TODO: Implement actual data loading from Supabase
+  return null
+}

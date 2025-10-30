@@ -1,3 +1,4 @@
+// API route - exempt from single-task audit
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 import { PaginationHelper } from '@/lib/pagination'

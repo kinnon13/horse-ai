@@ -17,3 +17,5 @@ export function ClaimHorseInfo({ claim }: ClaimHorseInfoProps) {
   )
 }
 
+
+

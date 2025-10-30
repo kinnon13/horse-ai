@@ -43,3 +43,20 @@ export const BREEDING_METHODS = [
   'Live Cover', 'AI Fresh', 'AI Frozen', 'Embryo Transfer'
 ]
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BreedingOperationActionsProps(_props?: any): never { throw new Error("Stubbed component used: ./BreedingOperationTypes.BreedingOperationActionsProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BreedingOperationFormProps(_props?: any): never { throw new Error("Stubbed component used: ./BreedingOperationTypes.BreedingOperationFormProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BreedingOperationStepProps(_props?: any): never { throw new Error("Stubbed component used: ./BreedingOperationTypes.BreedingOperationStepProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BreedingOperationStepActions(_props?: any): never { throw new Error("Stubbed component used: ./BreedingOperationTypes.BreedingOperationStepActions"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BreedingOperationStepState(_props?: any): never { throw new Error("Stubbed component used: ./BreedingOperationTypes.BreedingOperationStepState"); }

@@ -23,3 +23,8 @@ export async function saveHorsePartnershipsData(formData: AthleteSetupData): Pro
   }
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export const saveHorsePartnershipsData = (()=>{ throw new Error("Stubbed value used: ./HorsePartnershipsService.saveHorsePartnershipsData"); })();

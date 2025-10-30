@@ -12,3 +12,5 @@ export function BreedingMethodsList({ breedingMethods }: { breedingMethods: stri
   )
 }
 
+
+

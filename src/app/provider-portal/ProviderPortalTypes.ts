@@ -29,3 +29,6 @@ export interface ProviderClaim {
   created_at: string
   updated_at: string
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequest(_props?: any): never { throw new Error("Stubbed component used: ./ProviderPortalTypes.ServiceRequest"); }

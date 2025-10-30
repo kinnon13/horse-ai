@@ -1,11 +1,11 @@
-import { fetchDispatchStats } from './RequestsStatsService'
+import { fetchDispatchStats as fetchStats } from './RequestsStatsService'
 import { updateServiceRequestStatus } from './RequestsService'
 
 export function useRequestsHandlers(updateServiceRequest: any, setDispatchStats: any, setLoadingStats: any) {
   const fetchDispatchStats = async () => {
     try {
       setLoadingStats(true)
-      const stats = await fetchDispatchStats()
+      const stats = await fetchStats()
       setDispatchStats(stats)
     } catch (error) {
       console.error('Error fetching dispatch stats:', error)
@@ -29,4 +29,6 @@ export function useRequestsHandlers(updateServiceRequest: any, setDispatchStats:
     handleUpdateStatus
   }
 }
+
+
 

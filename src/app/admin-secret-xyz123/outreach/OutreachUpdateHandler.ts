@@ -1,5 +1,6 @@
 import React from 'react'
 import { OutreachData, ComposeData, OutreachMessage } from './OutreachData'
+import { OutreachUtils } from './OutreachUtils'
 
 interface OutreachUpdateHandlerProps {
   outreachMessages: OutreachMessage[]
@@ -17,12 +18,14 @@ export class OutreachUpdateHandler {
     return (e: React.FormEvent) => {
       e.preventDefault()
       props.setOutreachMessages(prev => prev.map(m => 
-        m.id === props.editingMessage.id ? OutreachData.updateMessage(m, props.composeData) : m
+        m.id === props.editingMessage.id ? OutreachUtils.updateMessage(m, props.composeData) : m
       ))
       props.setEditingMessage(null)
-      props.setComposeData(OutreachData.getInitialComposeData())
+      props.setComposeData(OutreachUtils.getInitialComposeData())
       alert('Outreach message updated successfully!')
     }
   }
 }
+
+
 

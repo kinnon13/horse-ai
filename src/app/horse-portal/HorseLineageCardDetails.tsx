@@ -30,3 +30,5 @@ export function HorseLineageCardDetails({ horse }: HorseLineageCardDetailsProps)
   )
 }
 
+
+

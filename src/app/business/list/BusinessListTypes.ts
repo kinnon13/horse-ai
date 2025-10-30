@@ -26,3 +26,8 @@ export const AVAILABLE_SERVICES = [
   'Other'
 ]
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function BusinessFormData(_props?: any): never { throw new Error("Stubbed component used: ./BusinessListTypes.BusinessFormData"); }

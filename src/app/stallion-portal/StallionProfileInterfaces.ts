@@ -27,3 +27,8 @@ export interface StallionStationProfile {
   updated_at: string
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function StallionStationProfile(_props?: any): never { throw new Error("Stubbed component used: ./StallionProfileInterfaces.StallionStationProfile"); }

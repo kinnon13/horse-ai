@@ -28,4 +28,18 @@ export interface OutreachTemplate {
   subject: string
   content: string
   variables: string[]
+  created_at?: string
+  updated_at?: string
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function OutreachMessage(_props?: any): never { throw new Error("Stubbed component used: ./OutreachTypes.OutreachMessage"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function OutreachStats(_props?: any): never { throw new Error("Stubbed component used: ./OutreachTypes.OutreachStats"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function OutreachTemplate(_props?: any): never { throw new Error("Stubbed component used: ./OutreachTypes.OutreachTemplate"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ComposeData(_props?: any): never { throw new Error("Stubbed component used: ./OutreachTypes.ComposeData"); }

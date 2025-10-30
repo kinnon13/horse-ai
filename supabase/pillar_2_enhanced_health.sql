@@ -173,3 +173,5 @@ CREATE TABLE IF NOT EXISTS therapy_outcomes (
 CREATE TRIGGER trig_therapy_outcomes_updated_at BEFORE UPDATE ON therapy_outcomes FOR EACH ROW EXECUTE PROCEDURE update_timestamp();
 CREATE INDEX idx_therapy_outcomes_horse_id ON therapy_outcomes(horse_id);
 
+
+

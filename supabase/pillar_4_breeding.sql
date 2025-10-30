@@ -76,3 +76,5 @@ CREATE TRIGGER update_pedigree_timestamp BEFORE UPDATE ON pedigree FOR EACH ROW 
 CREATE TRIGGER update_genetic_tests_timestamp BEFORE UPDATE ON genetic_tests FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 CREATE TRIGGER update_stud_services_timestamp BEFORE UPDATE ON stud_services FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 
+
+

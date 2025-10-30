@@ -1,39 +1,33 @@
+// Competition Horse Form Types - Single responsibility
 export interface CompetitionHorse {
   id: string
   athlete_id: string
   horse_name: string
-  registered_name: string | null
-  registration_number: string | null
+  registered_name: string
+  registration_number: string
   breed: string
+  color: string
   sex: string
-  birth_year: number | null
-  color: string | null
-  ownership_type: string
-  owner_name: string | null
-  owner_contact: string | null
-  sire_name: string | null
-  dam_name: string | null
-  primary_discipline: string | null
-  performance_disciplines: string[]
-  performance_earnings: number
-  performance_highlights: string | null
-  best_times: string[]
-  competition_status: string
-  competition_level: string | null
-  trainer_name: string | null
-  farrier_name: string | null
-  vet_name: string | null
-  feed_program: string | null
-  profile_photo_url: string | null
-  video_url: string | null
-  performance_videos: string[]
+  birth_year: number
+  sire: string
+  dam: string
+  owner_name: string
+  owner_phone: string
+  owner_email: string
+  location_city: string
+  location_state: string
+  value: number
+  notes: string
   created_at: string
   updated_at: string
+  performance_summary: string
+  recent_results: string
+  breeding_potential: string
+  health_status: string
+  training_level: string
+  competition_level: string
+  last_competition: string
+  next_competition: string
+  achievements: string
+  bloodline_notes: string
 }
-
-export interface CompetitionHorseFormModalProps {
-  horse: CompetitionHorse | null
-  onSave: (data: any) => void
-  onClose: () => void
-}
-

@@ -21,3 +21,17 @@ export interface ServiceRequestCardActionsProps {
   onViewDetails: (requestId: string) => void
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequestCardProps(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestCardTypes.ServiceRequestCardProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequestCardActionsProps(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestCardTypes.ServiceRequestCardActionsProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequestCardDetailsProps(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestCardTypes.ServiceRequestCardDetailsProps"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequestCardHeaderProps(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestCardTypes.ServiceRequestCardHeaderProps"); }

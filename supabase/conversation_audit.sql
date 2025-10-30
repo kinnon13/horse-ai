@@ -39,3 +39,5 @@ COMMENT ON COLUMN conversation_audit.event_type IS 'Type of conversation event (
 COMMENT ON COLUMN conversation_audit.payload IS 'Minimal structured data for audit trail - no personal info';
 COMMENT ON COLUMN conversation_audit.created_at IS 'When this conversation event occurred - immutable timestamp';
 
+
+

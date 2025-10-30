@@ -16,3 +16,5 @@ export const OWNERSHIP_TYPES = ['owned', 'leased', 'boarded', 'training']
 
 export const COMPETITION_STATUSES = ['active', 'retired', 'injured', 'breeding']
 
+
+

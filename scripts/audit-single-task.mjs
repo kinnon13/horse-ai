@@ -94,9 +94,12 @@ function passesSingleTask(info) {
   const violations = [];
 
   if (role==='orchestrator' || role==='hook') {
+    // Skip API routes - they're supposed to do network/DB I/O
+    const isApiRoute = file.includes('/api/') && file.includes('route.ts');
+    
     if (hasZod || hasYup) violations.push('orchestrator contains schema (zod/yup) — move to *.schema.ts');
     if (bigArray)       violations.push('orchestrator contains large const array — move to *.constants.ts');
-    if (hasIO)          violations.push('orchestrator/hook does network/db I/O — move to *.repo.ts');
+    if (hasIO && !isApiRoute) violations.push('orchestrator/hook does network/db I/O — move to *.repo.ts');
   }
   if (role==='view') {
     if (!hasJSX)        violations.push('view file without JSX');
@@ -137,5 +140,7 @@ for (const f of files) {
 const offenders = report.filter(r=>!r.ok);
 console.log(JSON.stringify({ total: files.length, offenders }, null, 2));
 process.exit(offenders.length ? 1 : 0);
+
+
 
 

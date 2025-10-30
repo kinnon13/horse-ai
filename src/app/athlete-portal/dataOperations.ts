@@ -47,3 +47,5 @@ export async function deleteEvent(eventId: string) {
   if (error) throw error
 }
 
+
+

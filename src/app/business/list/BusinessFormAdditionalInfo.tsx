@@ -38,3 +38,5 @@ export function BusinessFormAdditionalInfo({ formData, onFieldUpdate }: Business
   )
 }
 
+
+

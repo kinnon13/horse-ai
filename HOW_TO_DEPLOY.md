@@ -104,3 +104,5 @@ supabase link --project-ref YOUR_PROJECT_REF
 
 Your SQL files are ready. They're created locally but need to be executed in Supabase.
 
+
+

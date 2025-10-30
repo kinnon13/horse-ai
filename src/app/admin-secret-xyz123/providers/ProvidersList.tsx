@@ -1,5 +1,6 @@
 import React from 'react'
 import { Provider } from './ProvidersTypes'
+import { ProvidersListItem } from './ProvidersListItem'
 
 interface ProvidersListProps {
   providers: Provider[]
@@ -46,4 +47,6 @@ export function ProvidersList({ providers, loading, onEdit, onToggleBlocked, onT
     </div>
   )
 }
+
+
 

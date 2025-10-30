@@ -20,24 +20,26 @@ export function ProvidersListItemActions({ provider, onEdit, onToggleBlocked, on
       <button
         onClick={() => onToggleVerified(provider)}
         className={`px-3 py-1 rounded-md text-sm ${
-          provider.is_verified 
+          provider.verified 
             ? 'bg-yellow-600 text-white hover:bg-yellow-700' 
             : 'bg-green-600 text-white hover:bg-green-700'
         }`}
       >
-        {provider.is_verified ? 'Unverify' : 'Verify'}
+        {provider.verified ? 'Unverify' : 'Verify'}
       </button>
       <button
         onClick={() => onToggleBlocked(provider)}
         className={`px-3 py-1 rounded-md text-sm ${
-          provider.is_blocked 
+          provider.admin_blocked 
             ? 'bg-green-600 text-white hover:bg-green-700' 
             : 'bg-red-600 text-white hover:bg-red-700'
         }`}
       >
-        {provider.is_blocked ? 'Unblock' : 'Block'}
+        {provider.admin_blocked ? 'Unblock' : 'Block'}
       </button>
     </div>
   )
 }
+
+
 

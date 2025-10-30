@@ -7,3 +7,5 @@ CREATE INDEX IF NOT EXISTS idx_user_memory_location_opt_in ON public.user_memory
 
 
 
+
+

@@ -60,3 +60,6 @@ export class OnboardingParser {
     return 'greeting'
   }
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function OnboardingIntent(_props?: any): never { throw new Error("Stubbed component used: ./OnboardingParser.OnboardingIntent"); }

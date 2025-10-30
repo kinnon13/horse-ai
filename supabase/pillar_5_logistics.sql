@@ -66,3 +66,5 @@ CREATE TRIGGER update_hauling_services_timestamp BEFORE UPDATE ON hauling_servic
 CREATE TRIGGER update_transportation_records_timestamp BEFORE UPDATE ON transportation_records FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 CREATE TRIGGER update_hauling_equipment_timestamp BEFORE UPDATE ON hauling_equipment FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 
+
+

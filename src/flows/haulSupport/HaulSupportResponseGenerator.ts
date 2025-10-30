@@ -48,3 +48,6 @@ export class HaulSupportResponseGenerator {
     return HaulSupportResponseTemplates.getSuccessResponse(intent, supportPoints, safetyRanking)
   }
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function HaulSupportResponse(_props?: any): never { throw new Error("Stubbed component used: ./HaulSupportResponseGenerator.HaulSupportResponse"); }

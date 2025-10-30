@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase'
+import { getUserHorses, createUserHorse, updateUserHorse, deleteUserHorse } from './UserHorsesRepo.repo'
 
 interface Horse {
   id: string
@@ -11,21 +11,41 @@ interface Horse {
 
 export async function fetchUserHorses(userId: string): Promise<Horse[]> {
   try {
-    const { data, error } = await supabase
-      .from('user_horses')
-      .select('id, name, sex, year, location_city, location_state')
-      .eq('user_id', userId)
-      .order('created_at', { ascending: false })
-
-    if (error) {
-      console.error('Error fetching horses:', error)
-      return []
-    }
-
-    return data || []
+    const horses = await getUserHorses(userId)
+    return horses.map(horse => ({
+      id: horse.id,
+      name: horse.horse_name,
+      sex: horse.horse_type as any,
+      year: null,
+      location_city: null,
+      location_state: null
+    }))
   } catch (error) {
     console.error('Error fetching horses:', error)
     return []
   }
 }
 
+export async function addUserHorse(userId: string, horseData: Omit<Horse, 'id'>): Promise<Horse | null> {
+  try {
+    const horse = await createUserHorse({
+      user_id: userId,
+      horse_name: horseData.name,
+      horse_type: horseData.sex,
+      breed: 'Unknown', // Default breed
+      value: undefined
+    })
+
+    return {
+      id: horse.id,
+      name: horse.horse_name,
+      sex: horse.horse_type as any,
+      year: null,
+      location_city: null,
+      location_state: null
+    }
+  } catch (error) {
+    console.error('Error adding horse:', error)
+    return null
+  }
+}

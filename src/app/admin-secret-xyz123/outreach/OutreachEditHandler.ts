@@ -1,5 +1,5 @@
 import React from 'react'
-import { OutreachData, ComposeData, OutreachMessage } from './OutreachData'
+import { ComposeData, OutreachMessage, OutreachUtils } from './OutreachData'
 
 interface OutreachEditHandlerProps {
   outreachMessages: OutreachMessage[]
@@ -16,8 +16,10 @@ export class OutreachEditHandler {
   static createHandler(props: OutreachEditHandlerProps) {
     return (message: any) => {
       props.setEditingMessage(message)
-      props.setComposeData(OutreachData.getEditData(message))
+      props.setComposeData(OutreachUtils.getEditData(message))
     }
   }
 }
+
+
 

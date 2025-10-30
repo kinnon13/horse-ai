@@ -50,3 +50,8 @@ export class ServiceRequestResponseGenerator {
   }
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function ServiceRequestResponse(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestResponseGenerator.ServiceRequestResponse"); }

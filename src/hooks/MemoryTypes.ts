@@ -34,3 +34,15 @@ export interface MemoryState {
   error: string | null
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function UserMemory(_props?: any): never { throw new Error("Stubbed component used: ./MemoryTypes.UserMemory"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function MemoryState(_props?: any): never { throw new Error("Stubbed component used: ./MemoryTypes.MemoryState"); }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function UserPreferences(_props?: any): never { throw new Error("Stubbed component used: ./MemoryTypes.UserPreferences"); }
+export function TravelPattern(_props?: any): never { throw new Error("Stubbed component used: ./MemoryTypes.TravelPattern"); }

@@ -51,3 +51,6 @@ export class OnboardingResponseGenerator {
     }
   }
 }
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function OnboardingResponse(_props?: any): never { throw new Error("Stubbed component used: ./OnboardingResponseGenerator.OnboardingResponse"); }

@@ -31,4 +31,3 @@ export async function fetchDispatchStats(): Promise<DispatchStats> {
     throw error
   }
 }
-

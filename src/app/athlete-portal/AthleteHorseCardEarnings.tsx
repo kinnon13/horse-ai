@@ -15,3 +15,5 @@ export function AthleteHorseCardEarnings({ horse }: AthleteHorseCardEarningsProp
   )
 }
 
+
+

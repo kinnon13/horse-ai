@@ -118,3 +118,5 @@ COMMENT ON COLUMN service_requests.source_user_id IS 'User who requested this se
 COMMENT ON COLUMN service_requests.source_type IS 'How this request was made: self, crm_upload, public_web, other_user, event_import';
 COMMENT ON COLUMN service_requests.created_at IS 'When this request was made - immutable timestamp';
 
+
+

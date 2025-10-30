@@ -1,61 +1,15 @@
-export interface AthleteProfile {
-  id: string
-  user_id: string
-  athlete_name: string
-  contact_name: string
-  email: string
-  phone: string | null
-  website: string | null
-  location_city: string | null
-  location_state: string | null
-  location_country: string
-  years_competing: number | null
-  primary_disciplines: string[]
-  competition_level: string | null
-  professional_rider: boolean
-  trainer: boolean
-  lesson_instructor: boolean
-  taking_clients: boolean
-  instagram_handle: string | null
-  facebook_page: string | null
-  bio: string | null
-  subscription_tier: string
-  verified: boolean
-  featured: boolean
-  active: boolean
-  created_at: string
-  updated_at: string
-}
-
 export interface CompetitionHorse {
   id: string
   athlete_id: string
   horse_name: string
-  registered_name: string | null
-  registration_number: string | null
+  registered_name: string
+  registration_number: string
   breed: string
-  sex: string
-  birth_year: number | null
-  color: string | null
-  ownership_type: string
-  owner_name: string | null
-  owner_contact: string | null
-  sire_name: string | null
-  dam_name: string | null
-  primary_discipline: string | null
-  performance_disciplines: string[]
-  performance_earnings: number
-  performance_highlights: string | null
-  best_times: string[]
-  competition_status: string
-  competition_level: string | null
-  trainer_name: string | null
-  farrier_name: string | null
-  vet_name: string | null
-  feed_program: string | null
-  profile_photo_url: string | null
-  video_url: string | null
-  performance_videos: string[]
+  age: number
+  color: string
+  gender: 'stallion' | 'mare' | 'gelding'
+  performance_data?: PerformanceData[]
+  health_records?: HealthRecord[]
   created_at: string
   updated_at: string
 }
@@ -66,27 +20,68 @@ export interface CompetitionEvent {
   horse_id: string
   event_name: string
   event_date: string
-  location_city: string | null
-  location_state: string | null
+  location: string
   discipline: string
-  competition_level: string | null
-  placement: number | null
-  earnings: number
-  notes: string | null
+  placement?: number
+  total_entries?: number
+  time?: number
+  score?: number
+  notes?: string
   created_at: string
   updated_at: string
 }
 
-export interface ServiceRequest {
+export interface PerformanceData {
   id: string
-  athlete_id: string
   horse_id: string
-  request_type: string
-  details: string | null
-  location_city: string | null
-  location_state: string | null
-  status: string
+  event_name: string
+  event_date: string
+  placement: number
+  total_entries: number
+  time?: number
+  score?: number
+  discipline: string
+  location: string
+  notes?: string
+}
+
+export interface HealthRecord {
+  id: string
+  horse_id: string
+  record_date: string
+  type: 'vaccination' | 'deworming' | 'injury' | 'illness' | 'checkup'
+  description: string
+  veterinarian?: string
+  notes?: string
+}
+
+export interface AthleteProfile {
+  id: string
+  name: string
+  email: string
+  phone?: string
+  location?: string
+  experience_level: string
+  primary_discipline: string
+  riding_experience: RidingExperience
+  horse_partnerships: HorsePartnership[]
   created_at: string
   updated_at: string
 }
 
+export interface RidingExperience {
+  years_riding: number
+  primary_discipline: string
+  competition_level: string
+  training_frequency: string
+  goals: string[]
+}
+
+export interface HorsePartnership {
+  id: string
+  horse_name: string
+  relationship_type: 'owner' | 'lessee' | 'trainer' | 'rider'
+  start_date: string
+  end_date?: string
+  notes?: string
+}

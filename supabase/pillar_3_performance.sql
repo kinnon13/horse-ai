@@ -82,3 +82,5 @@ CREATE TRIGGER update_competition_results_timestamp BEFORE UPDATE ON competition
 CREATE TRIGGER update_training_sessions_timestamp BEFORE UPDATE ON training_sessions FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 CREATE TRIGGER update_performance_metrics_timestamp BEFORE UPDATE ON performance_metrics FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 
+
+

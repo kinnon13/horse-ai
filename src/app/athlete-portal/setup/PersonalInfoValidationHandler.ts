@@ -10,3 +10,5 @@ export function validatePersonalInfo(
   return Object.keys(newErrors).length === 0
 }
 
+
+

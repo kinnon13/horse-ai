@@ -1,55 +1,101 @@
 export interface ProducerProfile {
   id: string
-  business_name: string
-  contact_name: string
+  name: string
   email: string
-  phone: string | null
-  website: string | null
-  location_city: string | null
-  location_state: string | null
-  location_country: string
-  years_in_business: number | null
+  phone?: string
+  location?: string
+  business_type: 'breeding' | 'training' | 'boarding' | 'all'
+  years_in_business: number
+  breeding_operation?: BreedingOperation
+  created_at: string
+  updated_at: string
+}
+
+export interface BreedingOperation {
+  id: string
+  producer_id: string
+  operation_name: string
+  location: string
+  years_active: number
   specialties: string[]
-  breeding_focus: string | null
-  total_mares: number
-  total_stallions: number
-  annual_foals: number
-  breeding_methods: string[]
-  taking_clients: boolean
-  verified: boolean
-  featured: boolean
-  subscription_tier: string
-  subscription_expires_at: string | null
+  breeding_policies: BreedingPolicy[]
+  stallions: StallionProfile[]
+  mares: MareProfile[]
   created_at: string
   updated_at: string
 }
 
-export interface ProducerHorse {
+export interface BreedingPolicy {
   id: string
-  producer_id: string
-  horse_name: string
-  registered_name: string | null
-  registration_number: string | null
+  operation_id: string
+  policy_type: 'breeding_fees' | 'health_requirements' | 'contract_terms'
+  title: string
+  description: string
+  is_active: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface StallionProfile {
+  id: string
+  operation_id: string
+  name: string
   breed: string
-  year_born: number
-  sex: string
+  age: number
   color: string
-  sire: string | null
-  dam: string | null
-  notes: string | null
+  bloodline: string
+  breeding_fees: number
+  performance_data?: PerformanceData[]
+  health_records?: HealthRecord[]
   created_at: string
   updated_at: string
 }
 
-export interface ProducerEvent {
+export interface MareProfile {
   id: string
-  producer_id: string
-  event_name: string
-  event_type: string
-  event_date: string
-  location: string | null
-  description: string | null
+  operation_id: string
+  name: string
+  breed: string
+  age: number
+  color: string
+  bloodline: string
+  breeding_history: BreedingHistory[]
+  health_records?: HealthRecord[]
   created_at: string
   updated_at: string
 }
 
+export interface PerformanceData {
+  id: string
+  horse_id: string
+  event_name: string
+  event_date: string
+  placement: number
+  total_entries: number
+  time?: number
+  score?: number
+  discipline: string
+  location: string
+  notes?: string
+}
+
+export interface HealthRecord {
+  id: string
+  horse_id: string
+  record_date: string
+  type: 'vaccination' | 'deworming' | 'injury' | 'illness' | 'checkup'
+  description: string
+  veterinarian?: string
+  notes?: string
+}
+
+export interface BreedingHistory {
+  id: string
+  mare_id: string
+  sire_id: string
+  breeding_date: string
+  foal_date?: string
+  foal_name?: string
+  foal_gender?: 'stallion' | 'mare' | 'gelding'
+  notes?: string
+}

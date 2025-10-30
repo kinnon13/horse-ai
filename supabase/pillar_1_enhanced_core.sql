@@ -265,3 +265,5 @@ CREATE TRIGGER trig_real_estate_assets_updated_at BEFORE UPDATE ON real_estate_a
 CREATE INDEX idx_real_estate_assets_location ON real_estate_assets(location);
 CREATE INDEX idx_real_estate_assets_value_history ON real_estate_assets USING GIN (value_history);
 
+
+

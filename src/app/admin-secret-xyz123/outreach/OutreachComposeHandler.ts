@@ -1,5 +1,6 @@
 import React from 'react'
-import { OutreachData, ComposeData, OutreachMessage } from './OutreachData'
+import { ComposeData, OutreachMessage } from './OutreachData'
+import { OutreachUtils } from './OutreachUtils'
 
 interface OutreachComposeHandlerProps {
   outreachMessages: OutreachMessage[]
@@ -16,12 +17,11 @@ export class OutreachComposeHandler {
   static createHandler(props: OutreachComposeHandlerProps) {
     return (e: React.FormEvent) => {
       e.preventDefault()
-      const newMessage = OutreachData.createNewMessage(props.composeData)
+      const newMessage = OutreachUtils.createNewMessage(props.composeData)
       props.setOutreachMessages(prev => [newMessage, ...prev])
       props.setShowComposeForm(false)
-      props.setComposeData(OutreachData.getInitialComposeData())
+      props.setComposeData(OutreachUtils.getInitialComposeData())
       alert('Outreach message created successfully!')
     }
   }
 }
-

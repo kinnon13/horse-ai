@@ -62,3 +62,5 @@ CREATE TRIGGER update_users_timestamp BEFORE UPDATE ON users FOR EACH ROW EXECUT
 CREATE TRIGGER update_horses_timestamp BEFORE UPDATE ON horses FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 CREATE TRIGGER update_relationships_timestamp BEFORE UPDATE ON human_horse_relationships FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 
+
+

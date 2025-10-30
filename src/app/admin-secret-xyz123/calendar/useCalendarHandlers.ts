@@ -1,5 +1,5 @@
-import { CalendarTypes } from './CalendarTypes'
-import { CalendarUtils } from './CalendarUtils'
+import { CalendarEvent, CalendarFormData } from './CalendarTypes'
+import CalendarUtils from './CalendarUtils'
 
 export function useCalendarHandlers(
   user: any,
@@ -9,7 +9,7 @@ export function useCalendarHandlers(
   setShowAddForm: (show: boolean) => void,
   setEditingEvent: (event: any) => void
 ) {
-  const handleCreateEvent = async (formData: CalendarTypes.CalendarFormData) => {
+  const handleCreateEvent = async (formData: CalendarFormData) => {
     if (!user) return
     
     try {
@@ -23,7 +23,7 @@ export function useCalendarHandlers(
     }
   }
 
-  const handleUpdateEvent = async (eventId: string, updates: CalendarTypes.CalendarFormData) => {
+  const handleUpdateEvent = async (eventId: string, updates: CalendarFormData) => {
     if (!user) return
     
     try {

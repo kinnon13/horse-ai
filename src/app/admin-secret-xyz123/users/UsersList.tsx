@@ -1,5 +1,6 @@
 import React from 'react'
 import { User } from './UsersTypes'
+import { UsersListItem } from './UsersListItem'
 
 interface UsersListProps {
   users: User[]
@@ -27,4 +28,6 @@ export function UsersList({ users, onViewDetails }: UsersListProps) {
     </div>
   )
 }
+
+
 

@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/Button'
+import { Heart, Plus } from 'lucide-react'
 import { StallionProfile } from './StallionProfileTypes'
 
 interface StallionBreedingManagerEmptyProps {
@@ -19,4 +21,6 @@ export function StallionBreedingManagerEmpty({ onAddStallion }: StallionBreeding
     </div>
   )
 }
+
+
 

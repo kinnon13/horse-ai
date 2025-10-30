@@ -27,3 +27,5 @@ export function validateHorseUpdate(data: any): Partial<HorseProfile> {
   return updateData
 }
 
+
+

@@ -38,3 +38,5 @@ export function HorseProfileCardHeader({ horse, onEditHorse, onDeleteHorse }: Ho
   )
 }
 
+
+

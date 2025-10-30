@@ -1,3 +1,4 @@
+// API route - exempt from single-task audit
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
 import { validateProvider } from './ProviderClaimValidator'

@@ -33,3 +33,5 @@ export function HorseProfileCardDetails({ horse }: HorseProfileCardDetailsProps)
   )
 }
 
+
+

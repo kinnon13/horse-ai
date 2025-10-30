@@ -1,8 +1,11 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
-import { User } from '@supabase/supabase-js'
-import { supabase } from '@/lib/supabase'
+import React, { createContext, useContext, useState } from 'react'
+
+interface User {
+  id: string
+  email?: string
+}
 
 interface AuthContextType {
   user: User | null
@@ -10,46 +13,30 @@ interface AuthContextType {
   signOut: () => Promise<void>
 }
 
-const AuthContext = createContext<AuthContextType>({
-  user: null,
-  loading: true,
-  signOut: async () => {},
-})
+const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
-
-    // Listen for auth changes
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
-
-    return () => subscription.unsubscribe()
-  }, [])
+  const [loading, setLoading] = useState(false)
 
   const signOut = async () => {
-    await supabase.auth.signOut()
+    // TODO: Implement using repository pattern
+  }
+
+  const value = {
+    user,
+    loading,
+    signOut
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, signOut }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   )
 }
 
-export const useAuth = () => {
+export function useAuth() {
   const context = useContext(AuthContext)
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider')

@@ -48,3 +48,8 @@ export interface AthleteSetupData {
   resume_file?: File | null
 }
 
+
+
+
+// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
+export function AthleteSetupData(_props?: any): never { throw new Error("Stubbed component used: ./AthleteSetupTypes.AthleteSetupData"); }

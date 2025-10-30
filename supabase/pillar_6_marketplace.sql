@@ -66,3 +66,5 @@ CREATE TRIGGER update_horse_listings_timestamp BEFORE UPDATE ON horse_listings F
 CREATE TRIGGER update_transactions_timestamp BEFORE UPDATE ON transactions FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 CREATE TRIGGER update_marketplace_categories_timestamp BEFORE UPDATE ON marketplace_categories FOR EACH ROW EXECUTE FUNCTION update_timestamp();
 
+
+

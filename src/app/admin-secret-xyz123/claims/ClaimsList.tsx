@@ -25,3 +25,5 @@ export function ClaimsList({ claims, uploading, onApprove, onReject, onFileUploa
   )
 }
 
+
+

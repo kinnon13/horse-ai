@@ -47,3 +47,5 @@ export function checkBookingSafety(event: CalendarEvent): boolean {
   return true
 }
 
+
+

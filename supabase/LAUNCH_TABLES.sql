@@ -136,3 +136,5 @@ CREATE TRIGGER update_provider_availability_timestamp
   FOR EACH ROW
   EXECUTE FUNCTION update_timestamp();
 
+
+

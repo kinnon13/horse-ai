@@ -1,5 +1,5 @@
 import React from 'react'
-import { CalendarEvent } from './CalendarTypes'
+import { CalendarEvent } from '@/hooks/CalendarTypes'
 import { EVENT_TYPE_COLORS, formatEventDate, formatEventTime } from './CalendarConstants'
 
 interface CalendarEventCardProps {
@@ -13,19 +13,19 @@ export function CalendarEventCard({ event, onEdit, onDelete }: CalendarEventCard
     <div className="bg-white rounded-lg shadow p-4 border-l-4 border-blue-500">
       <div className="flex justify-between items-start">
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-gray-900">{event.title}</h3>
+          <h3 className="text-lg font-semibold text-gray-900">{event.event_title}</h3>
           <div className="mt-1 flex items-center space-x-4 text-sm text-gray-600">
-            <span>{formatEventDate(event.start_date)}</span>
-            <span>{formatEventTime(event.start_date)}</span>
-            {event.end_date && (
-              <span>to {formatEventTime(event.end_date)}</span>
+            <span>{formatEventDate(event.event_date)}</span>
+            <span>{formatEventTime(event.event_date)}</span>
+            {event.event_date && (
+              <span>to {formatEventTime(event.event_date)}</span>
             )}
           </div>
-          {event.location && (
-            <p className="mt-1 text-sm text-gray-600">📍 {event.location}</p>
+          {event.location_city && (
+            <p className="mt-1 text-sm text-gray-600">📍 {event.location_city}{event.location_state && `, ${event.location_state}`}</p>
           )}
-          {event.description && (
-            <p className="mt-2 text-sm text-gray-700">{event.description}</p>
+          {event.notes && (
+            <p className="mt-2 text-sm text-gray-700">{event.notes}</p>
           )}
         </div>
         

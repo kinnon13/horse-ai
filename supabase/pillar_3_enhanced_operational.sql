@@ -612,3 +612,5 @@ CREATE TABLE IF NOT EXISTS ai_ethical_audits (
 CREATE TRIGGER trig_ai_ethical_audits_updated_at BEFORE UPDATE ON ai_ethical_audits FOR EACH ROW EXECUTE PROCEDURE update_timestamp();
 CREATE INDEX idx_ai_ethical_audits_audit_id ON ai_ethical_audits(audit_id);
 
+
+

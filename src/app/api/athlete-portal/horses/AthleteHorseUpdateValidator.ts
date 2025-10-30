@@ -1,33 +1,35 @@
-import { AthleteHorse } from './AthleteHorseTypes'
-
-const VALID_SEXES = ['mare', 'stallion', 'gelding', 'filly', 'colt']
-const VALID_PARTNERSHIP_TYPES = ['owned', 'leased', 'training']
+import { AthleteHorse } from './AthleteHorseService'
 
 export function validateAthleteHorseUpdate(data: any): Partial<AthleteHorse> {
   const updateData: Partial<AthleteHorse> = {}
 
-  if (data.horse_name) updateData.horse_name = data.horse_name.trim()
-  if (data.breed) updateData.breed = data.breed.trim()
-  if (data.year_born) {
-    if (typeof data.year_born !== 'number' || data.year_born < 1900 || data.year_born > new Date().getFullYear()) {
-      throw new Error('Invalid year_born')
+  if (data.horse_name !== undefined) {
+    if (typeof data.horse_name !== 'string') {
+      throw new Error('Horse name must be a string')
     }
-    updateData.year_born = data.year_born
+    updateData.horse_name = data.horse_name
   }
-  if (data.sex) {
-    if (!VALID_SEXES.includes(data.sex)) throw new Error('Invalid sex')
-    updateData.sex = data.sex
+
+  if (data.horse_type !== undefined) {
+    if (typeof data.horse_type !== 'string') {
+      throw new Error('Horse type must be a string')
+    }
+    updateData.horse_type = data.horse_type
   }
-  if (data.color) updateData.color = data.color.trim()
-  if (data.partnership_type) {
-    if (!VALID_PARTNERSHIP_TYPES.includes(data.partnership_type)) throw new Error('Invalid partnership_type')
-    updateData.partnership_type = data.partnership_type
+
+  if (data.breed !== undefined) {
+    if (typeof data.breed !== 'string') {
+      throw new Error('Breed must be a string')
+    }
+    updateData.breed = data.breed
   }
-  if (data.registration_number) updateData.registration_number = data.registration_number.trim()
-  if (data.sire) updateData.sire = data.sire.trim()
-  if (data.dam) updateData.dam = data.dam.trim()
-  if (data.notes) updateData.notes = data.notes.trim()
+
+  if (data.value !== undefined) {
+    if (typeof data.value !== 'number' || data.value < 0) {
+      throw new Error('Value must be a positive number')
+    }
+    updateData.value = data.value
+  }
 
   return updateData
 }
-

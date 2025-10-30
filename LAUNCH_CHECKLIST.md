@@ -30,3 +30,5 @@ echo "   - You run the company from your phone"
 echo ""
 echo "🔥 YOU'RE LIVE!"
 
+
+

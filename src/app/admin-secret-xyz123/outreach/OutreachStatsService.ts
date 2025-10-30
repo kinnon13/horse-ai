@@ -1,4 +1,4 @@
-import { OutreachStats } from './OutreachTypes'
+import { OutreachStats } from './OutreachData'
 import { fetchOutreachMessages } from './OutreachMessageService'
 
 export async function fetchOutreachStats(): Promise<OutreachStats> {
@@ -11,6 +11,10 @@ export async function fetchOutreachStats(): Promise<OutreachStats> {
   const responseRate = totalMessages > 0 ? (repliedMessages / totalMessages) * 100 : 0
 
   return {
+    total: totalMessages,
+    sent: sentMessages,
+    pending: pendingMessages,
+    failed: failedMessages,
     totalMessages,
     pendingMessages,
     sentMessages,
@@ -19,4 +23,6 @@ export async function fetchOutreachStats(): Promise<OutreachStats> {
     responseRate: Math.round(responseRate * 10) / 10
   }
 }
+
+
 

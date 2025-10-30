@@ -26,9 +26,11 @@ export function HaulSupportFormModal({
       <HaulSupportForm
         onSubmit={editingPoint ? (data) => onUpdatePoint(editingPoint.id, data) : onCreatePoint}
         onCancel={onClose}
-        initialData={editingPoint}
+        initialData={editingPoint || undefined}
       />
     </div>
   )
 }
+
+
 

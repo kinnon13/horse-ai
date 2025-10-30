@@ -25,3 +25,5 @@ export function AthleteHorseCardDetails({ horse }: AthleteHorseCardDetailsProps)
   )
 }
 
+
+

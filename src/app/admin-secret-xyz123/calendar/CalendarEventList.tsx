@@ -1,5 +1,5 @@
 import React from 'react'
-import { CalendarEvent } from './CalendarTypes'
+import { CalendarEvent } from '@/hooks/CalendarTypes'
 import { CalendarEventCard } from './CalendarEventCard'
 
 interface CalendarEventListProps {

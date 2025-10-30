@@ -19,3 +19,5 @@ export function AthleteHorseManagerEmpty({ onAddHorse }: AthleteHorseManagerEmpt
   )
 }
 
+
+

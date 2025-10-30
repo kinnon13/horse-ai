@@ -21,3 +21,5 @@ export function AthleteHorseList({ horses, onEditHorse, onDeleteHorse }: Athlete
   )
 }
 
+
+
