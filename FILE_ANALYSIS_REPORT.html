@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horse AI File Analysis Report - Elon Grade Standards</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1e1e1e; color: #d4d4d4; }
+        .header { background: #007acc; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+        .header h1 { margin: 0; color: white; }
+        .summary { background: #252526; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+        .category { margin: 20px 0; }
+        .category h2 { color: #4ec9b0; border-bottom: 2px solid #4ec9b0; padding-bottom: 5px; }
+        .file { padding: 8px; margin: 5px 0; background: #2d2d30; border-left: 4px solid #007acc; }
+        .file.over { border-left-color: #f48771; }
+        .file span.lines { float: right; color: #ce9178; font-weight: bold; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat { background: #252526; padding: 15px; border-radius: 5px; text-align: center; }
+        .stat-value { font-size: 32px; font-weight: bold; color: #4ec9b0; }
+        .stat-label { color: #858585; }
+        .danger { color: #f48771 !important; }
+        .warning { color: #dcdcaa !important; }
+        .safe { color: #4ec9b0 !important; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Horse AI File Analysis Report</h1>
+        <p>Elon-Grade Standards: &le;50 lines per logic file</p>
+        <p>Generated: <span id="timestamp"></span></p>
+    </div>
+
+    <div class="summary">
+        <h2>📈 Executive Summary</h2>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">648</div>
+                <div class="stat-label">Total TS/TSX Files</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" style="color: #4ec9b0;">487</div>
+                <div class="stat-label">Compliant (&le;50 lines)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" style="color: #f48771;">161</div>
+                <div class="stat-label">Violations (>50 lines)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" style="color: #f48771;">25%</div>
+                <div class="stat-label">Violation Rate</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary">
+        <h2>🎯 Distribution by Line Count</h2>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value safe">487</div>
+                <div class="stat-label">&le;50 lines</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value warning">56</div>
+                <div class="stat-label">51-70 lines</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value warning">58</div>
+                <div class="stat-label">71-100 lines</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value danger">33</div>
+                <div class="stat-label">101-200 lines</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value danger">14</div>
+                <div class="stat-label">>200 lines (CRITICAL)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>🚨 CRITICAL: Files >200 Lines (14 files)</h2>
+        <div class="file over">
+            <strong>src/app/onboarding/page.tsx</strong>
+            <span class="lines">555 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/chat/page.tsx</strong>
+            <span class="lines">405 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/health/page.tsx</strong>
+            <span class="lines">374 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/social/page.tsx</strong>
+            <span class="lines">345 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/upload/page.tsx</strong>
+            <span class="lines">345 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/enhanced-reports.ts</strong>
+            <span class="lines">312 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/admin-secret-xyz123/page.tsx</strong>
+            <span class="lines">307 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/analytics.ts</strong>
+            <span class="lines">291 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/crm-integrations.ts</strong>
+            <span class="lines">286 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/pricing/page.tsx</strong>
+            <span class="lines">253 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/export-generator.ts</strong>
+            <span class="lines">248 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/marketplace/page.tsx</strong>
+            <span class="lines">242 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/auth/signup/page.tsx</strong>
+            <span class="lines">232 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/scraping-agents.ts</strong>
+            <span class="lines">210 lines</span>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>⚠️ WARNING: Files 101-200 Lines (33 files)</h2>
+        <p style="color: #858585;">Top 10 shown below. Check full-report.json for complete list.</p>
+        <div class="file over">
+            <strong>src/lib/anonymous-mode.ts</strong>
+            <span class="lines">190 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/revenue-engine.ts</strong>
+            <span class="lines">189 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/legal/privacy/page.tsx</strong>
+            <span class="lines">186 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/dashboard/page.tsx</strong>
+            <span class="lines">183 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/compliance-engine.ts</strong>
+            <span class="lines">182 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/data-retention.ts</strong>
+            <span class="lines">182 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/ai-data-maximizer.ts</strong>
+            <span class="lines">181 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/ai-mission-engine.ts</strong>
+            <span class="lines">180 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/lib/analytics/NicheInsightsService.ts</strong>
+            <span class="lines">178 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/hooks/useProviders.ts</strong>
+            <span class="lines">168 lines</span>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>⚠️ CAUTION: Files 71-100 Lines (58 files)</h2>
+        <p style="color: #858585;">Sample shown. Check full-report.json for complete list.</p>
+        <div class="file over">
+            <strong>src/app/provider-portal/page.tsx</strong>
+            <span class="lines">100 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/components/HorseDatabaseSearch/SearchForm.tsx</strong>
+            <span class="lines">98 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/hooks/useServiceRequests.ts</strong>
+            <span class="lines">96 lines</span>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>✅ MINOR: Files 51-70 Lines (56 files)</h2>
+        <p style="color: #858585;">Sample shown. Check full-report.json for complete list.</p>
+        <div class="file over">
+            <strong>src/app/api/haul-support/nearby/route.ts</strong>
+            <span class="lines">69 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/api/stripe/webhook/route.ts</strong>
+            <span class="lines">68 lines</span>
+        </div>
+        <div class="file over">
+            <strong>src/app/business/list/page.tsx</strong>
+            <span class="lines">68 lines</span>
+        </div>
+    </div>
+
+    <div class="summary">
+        <h2>🎯 Action Required</h2>
+        <h3>Priority 1: Decompose 14 Critical Files (>200 lines)</h3>
+        <ul>
+            <li>Start with <code>src/app/onboarding/page.tsx</code> (555 lines)</li>
+            <li>Split each into: orchestrator, types, constants, schema, view, hook, state, repo, logic</li>
+            <li>Target: Each orchestrator ≤50 lines</li>
+        </ul>
+
+        <h3>Priority 2: Refactor 33 Warning Files (101-200 lines)</h3>
+        <ul>
+            <li>Extract types, constants, schemas to sibling files</li>
+            <li>Move presentational JSX to view components</li>
+            <li>Split complex hooks into state/repo/logic modules</li>
+        </ul>
+
+        <h3>Priority 3: Clean up 58 Caution Files (71-100 lines)</h3>
+        <ul>
+            <li>Extract large constants/arrays</li>
+            <li>Move render helpers to separate view files</li>
+            <li>Optionally split complex handlers</li>
+        </ul>
+
+        <h3>Priority 4: Polish 56 Minor Files (51-70 lines)</h3>
+        <ul>
+            <li>Minor extractions (constants, types, helpers)</li>
+            <li>Compact whitespace if safe</li>
+        </ul>
+    </div>
+</body>
+<script>document.getElementById('timestamp').textContent = new Date().toISOString();</script>
+</html>
+
+

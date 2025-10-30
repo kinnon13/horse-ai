@@ -1,0 +1,96 @@
+{
+  "name": "CEO_MORNING_REPORT",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "value": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger",
+      "name": "Daily 7AM Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://your-app.com/api/ceo-report",
+        "options": {}
+      },
+      "id": "fetch-report",
+      "name": "Fetch CEO Report",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "to": "your-email@example.com",
+        "subject": "🚀 HorseGPT CEO Report - {{ $json.date }}",
+        "message": "{{ $json.formattedReport }}",
+        "options": {}
+      },
+      "id": "send-email",
+      "name": "Send Email Report",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "to": "your-phone-number",
+        "message": "🚀 HorseGPT CEO Report - {{ $json.date }}\n\n{{ $json.formattedReport }}"
+      },
+      "id": "send-sms",
+      "name": "Send SMS Report",
+      "type": "n8n-nodes-base.twilioSms",
+      "typeVersion": 1.1,
+      "position": [680, 480]
+    }
+  ],
+  "connections": {
+    "cron-trigger": {
+      "main": [
+        [
+          {
+            "node": "fetch-report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fetch-report": {
+      "main": [
+        [
+          {
+            "node": "send-email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "send-sms",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}
+

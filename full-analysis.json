@@ -1,0 +1,3262 @@
+{
+  "summary": {
+    "total": 648,
+    "under50": 487,
+    "fifty1to70": 56,
+    "seventy1to100": 58,
+    "hundred1to200": 33,
+    "over200": 14
+  },
+  "breakdown": {
+    "under50": [
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormSelectData.ts",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/app/api/cron/notifications/route.ts",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/app/api/reports/enhanced/route.ts",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/app/api/service-requests/claim/ServiceRequestClaimService.ts",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/CompetitionHorseCareInfo.tsx",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderInfoCard.tsx",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/edit/CertificationsSection.tsx",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportDataExtractors.ts",
+        "lines": 50,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachPageContent.tsx",
+        "lines": 49,
+        "over": false
+      },
+      {
+        "f": "src/app/api/lead-generation/route.ts",
+        "lines": 49,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/AthleteSetupTypes.ts",
+        "lines": 49,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/BusinessSuccess.tsx",
+        "lines": 49,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarPageContent.tsx",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/useCalendarHandlers.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/useClaimsHandlers.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessageOperations.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/api/alerts/route.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/api/cron/notifications/NotificationService.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/api/notifications/send/route.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/api/web-search/route.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/AthleteSetupConstants.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/useCompetitionHorseForm.ts",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/BusinessFormContactInfo.tsx",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageStats.tsx",
+        "lines": 48,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimActions.tsx",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimCard.tsx",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/useProvidersHandlers.ts",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/users/UsersData.ts",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/api/stripe/create-checkout/route.ts",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/CompetitionHorseFormModal.tsx",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/BusinessForm.tsx",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/useBusinessInfoActions.ts",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/setup/StallionSetupTypes.ts",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useWebSearchOperations.ts",
+        "lines": 47,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventForm.tsx",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventList.tsx",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportPointsList.tsx",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormSelects.tsx",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/api/calendar/route.ts",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/page.tsx",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/dataLoader.ts",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/setup/StallionSetupConstants.ts",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/components/AuthProvider.tsx",
+        "lines": 46,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/useHaulSupportHandlers.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachTemplates.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/users/UsersListItem.tsx",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/api/concierge/one-time/ConciergeRequestService.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/api/crm/sync/route.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/api/referrals/generate/route.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/LocationFields.tsx",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoLocationFields.tsx",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerSection.tsx",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/hooks/CalendarTypes.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useWebSearch.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/lib/utils.ts",
+        "lines": 45,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersList.tsx",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/discount-codes/DiscountCodeService.ts",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/api/horse-database/search/HorseSearchService.ts",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/api/provider-claims/route.ts",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/api/subscribe/plus/route.ts",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthletePerformanceAnalyticsStats.tsx",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/useAthleteData.ts",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/business/BusinessConstants.ts",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformancePrimaryStats.tsx",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileStats.tsx",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryToneGenerator.ts",
+        "lines": 44,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessageService.ts",
+        "lines": 43,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/BioFields.tsx",
+        "lines": 43,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/StudInfoFields.tsx",
+        "lines": 43,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/edit/ProviderProfileForm.tsx",
+        "lines": 43,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingResponseTemplates.ts",
+        "lines": 43,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarStats.tsx",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessageButtons.tsx",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessagesList.tsx",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/app/api/aftercare/feedback/route.ts",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/app/api/producer-portal/horses/ProducerHorseValidator.ts",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventTrackerSection.tsx",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/useProducerData.ts",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryUpdate.ts",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useUserMemory.ts",
+        "lines": 42,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportStatsCards.tsx",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachStatsCards.tsx",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersStatsCards.tsx",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsList.tsx",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/api/producer-portal/horses/ProducerHorseUpdateValidator.ts",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/useRidingExperienceActions.ts",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/useBreedingOperationActions.ts",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/page.tsx",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestDataExtractors.ts",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/lib/analytics/types.ts",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/services/comms/UniversalMessageRouter.ts",
+        "lines": 41,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportValidator.ts",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersListItemActions.tsx",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/app/api/concierge/one-time/route.ts",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseManagerSection.tsx",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/dataOperations.ts",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/page.tsx",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/page.tsx",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportMessageBuilder.ts",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/lib/analytics/SearchAnalyticsService.ts",
+        "lines": 40,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersPageContent.tsx",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseManagerTypes.ts",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthletePerformanceAnalyticsRecentEvents.tsx",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileSection.tsx",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/ProducerSetupTypes.ts",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ServiceRequestsList.tsx",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileSection.tsx",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportDataFetcher.ts",
+        "lines": 39,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessageContent.tsx",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsStatsCards.tsx",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/api/chat/route.ts",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/api/horse-database/search/HorseSearchTypes.ts",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/api/user-memory/location/route.ts",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/BusinessFormActions.tsx",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/ProducerSetupConstants.ts",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileContact.tsx",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerSystemPromptBuilder.ts",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportFlow.ts",
+        "lines": 38,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachInitialData.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventCardHeader.tsx",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/CompetitionHorseFormTypes.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/ExperienceLevelFields.tsx",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageHeader.tsx",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileCardHeader.tsx",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/useHorseData.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/useHorsePerformanceCalculations.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationTypes.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/useStallionData.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestFlow.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryQuery.ts",
+        "lines": 37,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormRequiredInputs.tsx",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsPageContent.tsx",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseCardHeader.tsx",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsStep.tsx",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceStep.tsx",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/BusinessFormAdditionalInfo.tsx",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationStep.tsx",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/useProviderLoginActions.ts",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingParser.ts",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useCalendarCRUDActions.ts",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/services/dispatch/ProviderDispatchService.ts",
+        "lines": 36,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimsPageContent.tsx",
+        "lines": 35,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/quick-actions/AdminQuickActionsTest.ts",
+        "lines": 35,
+        "over": false
+      },
+      {
+        "f": "src/app/api/calendar/CalendarService.ts",
+        "lines": 35,
+        "over": false
+      },
+      {
+        "f": "src/app/api/import/route.ts",
+        "lines": 35,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/dataLoader.ts",
+        "lines": 35,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/edit/ServiceAreasSection.tsx",
+        "lines": 35,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/edit/ServicesSection.tsx",
+        "lines": 35,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsService.ts",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/app/api/apply-funnel-patch/route.ts",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/app/api/subscribe/basic/route.ts",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoStep.tsx",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoStep.tsx",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestDispatcher.ts",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestResponseGenerator.ts",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/hooks/CalendarGuards.ts",
+        "lines": 34,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormOptionalInputs.tsx",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsFilter.tsx",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/app/api/producer-portal/horses/ProducerHorseAuth.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/app/api/scrub/paginated/route.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/dataOperations.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/edit/ProviderProfileTypes.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/dataOperations.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/components/ui/Button.tsx",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerParser.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportResponseGenerator.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useCalendarBookingActions.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useUserHorsesOperations.ts",
+        "lines": 33,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarHeader.tsx",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachComposeForm.tsx",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachEditForm.tsx",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachHeader.tsx",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/api/provider-claims/ProviderClaimService.ts",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthletePerformanceAnalyticsTopHorse.tsx",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformanceTopHorse.tsx",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerCardHeader.tsx",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportMessageGenerator.ts",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/hooks/CalendarAvailabilityService.ts",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/hooks/CalendarBookingService.ts",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryTypes.ts",
+        "lines": 32,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventDateFields.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarUtils.ts",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportPageHeader.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachData.ts",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/api/import/ImportService.ts",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthletePerformanceAnalyticsSection.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/ContactFields.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorseOwnershipFields.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/LegalNameFields.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/TravelRadiusFields.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformanceSecondaryStats.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileCardDetails.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/layout.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoBasicFields.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoContactFields.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/AdditionalServicesList.tsx",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestCreator.ts",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useHorseClaimsTypes.ts",
+        "lines": 31,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventAdditionalFields.tsx",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportFormModal.tsx",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportService.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachHandlers.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessageCard.tsx",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/quick-actions/AdminQuickActionsCore.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/quick-actions/route.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/api/concierge/one-time/ConciergeStripeService.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/api/service-requests/claim/route.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventCardDetails.tsx",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsInterfaces.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PrimaryDisciplineFields.tsx",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceInterfaces.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/useAthletePerformanceAnalyticsData.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/MareServicesFields.tsx",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/ProviderPortalTypes.ts",
+        "lines": 30,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachTypes.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsStatsService.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/api/calendar/CalendarTypes.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/api/concierge/one-time/ConciergeOneTimeService.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/api/producer-portal/horses/ProducerHorseTypes.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/api/provider-claims/ProviderClaimValidator.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoTypes.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/useBusinessFormHandlers.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageCardDetails.tsx",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileCardMedia.tsx",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileCardPerformance.tsx",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/onboarding/OnboardingTypes.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerTypes.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerFlow.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportParser.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportResponseTemplates.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestParser.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/services/telemetry/CEOReportService.ts",
+        "lines": 29,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportConstants.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormFields.tsx",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormInputs.tsx",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessageActions.tsx",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsListItemActions.tsx",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/useRequestsHandlers.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/discount-codes/DiscountCodeOperations.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/api/athlete-portal/horses/AthleteHorseUpdateValidator.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/api/concierge/one-time/ConciergeUserService.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/api/horse-portal/horses/HorseProfileValidator.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/api/stallion-portal/stallions/StallionProfileValidator.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseCardMedia.tsx",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderLoginContent.tsx",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/ServiceRequestCardUtils.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileInterfaces.ts",
+        "lines": 28,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarConstants.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportOperations.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachTemplateHandler.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsListItemContent.tsx",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/api/alerts/AlertsService.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/api/athlete-portal/horses/AthleteHorseValidator.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageTypes.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoTypes.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderLoginTypes.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/ServiceRequestCardDetails.tsx",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/components/HorseDatabaseSearch/types.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerGrokClient.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerOpenAIClient.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingDataExtractors.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingFlow.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/lib/analytics/SearchAnalyticsTrends.ts",
+        "lines": 27,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimVerificationDoc.tsx",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/users/UsersList.tsx",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/useHorsePartnershipsStep.ts",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/useRidingExperienceStep.ts",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/BusinessListTypes.ts",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageCardHeader.tsx",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformanceSection.tsx",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/useBreedingOperationStep.ts",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerCardDetails.tsx",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingResponseGenerator.ts",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/hooks/types.ts",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useUserHorsesRepo.ts",
+        "lines": 26,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportActionTypes.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormTextInputs.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachUpdateHandler.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersListItem.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersTypes.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/users/UsersPageContent.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/api/horse-portal/horses/HorseProfileUpdateValidator.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/api/lead-generation/LeadGenerationService.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/api/stallion-portal/stallions/StallionProfileUpdateValidator.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventCard.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventList.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseCard.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformanceBreedBreakdown.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/onboarding/OnboardingConstants.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoForm.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/edit/FormActions.tsx",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileTypes.ts",
+        "lines": 25,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventTypeField.tsx",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimsList.tsx",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachComposeHandler.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersListItemHeader.tsx",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/api/calendar/CalendarOperations.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventTrackerTypes.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseCardDetails.tsx",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/usePersonalInfoStep.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageTree.tsx",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileCard.tsx",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/useBusinessInfoStep.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/useProviderLogin.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerResponseGenerator.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingDetector.ts",
+        "lines": 24,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachEditFormActions.tsx",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormActions.tsx",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachFormTextarea.tsx",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/users/UsersStatsCards.tsx",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/quick-actions/AdminQuickActionsStats.ts",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventTrackerHeader.tsx",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseManagerHeader.tsx",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileSectionHeader.tsx",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/dataLoader.ts",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/dataLoader.ts",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryIntroMessageGenerator.ts",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/services/availability/ProviderBookingLock.ts",
+        "lines": 23,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachDeleteHandler.ts",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachResendHandler.ts",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsTypes.ts",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/app/api/cron/notifications/NotificationSender.ts",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventCardResults.tsx",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageSection.tsx",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderClaimsService.ts",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/components/CRMUpload/types.ts",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryBreedingMessageGenerator.ts",
+        "lines": 22,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachConstants.ts",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachMessageStatus.tsx",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachTemplateService.ts",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/useRequestsState.ts",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformanceStatsGrid.tsx",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileList.tsx",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/useProviderLoginState.ts",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/ServiceRequestCardActions.tsx",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/edit/InsuranceSection.tsx",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerList.tsx",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useCalendarFetchActions.ts",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useCalendarState.ts",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/services/ops/FunnelGuardService.ts",
+        "lines": 21,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventTitleField.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarTypes.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimsPageHeader.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachEditHandler.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachStateManager.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachStatsCalculator.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseList.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthletePerformanceAnalyticsLoading.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoService.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformanceSectionLoading.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileSectionLoading.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderLoginNotFound.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerCard.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileServices.tsx",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerAuditLogger.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportAuditLogger.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingAuditLogger.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingRepository.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestAuditLogger.ts",
+        "lines": 20,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachStatsService.ts",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsListItemHeader.tsx",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/app/api/horse-database/search/route.ts",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsService.ts",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoValidation.ts",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ServiceRequestsService.ts",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerEmpty.tsx",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerAPIClients.ts",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/services/availability/ProviderAvailabilityStore.ts",
+        "lines": 19,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventBasicFields.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/RequestsListItem.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/api/ceo-report/route.ts",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventTrackerEmpty.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseCardDisciplines.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseManagerEmpty.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceService.ts",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingForOthersFields.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileSectionEmpty.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationService.ts",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/ServiceRequestCardTypes.ts",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerHeader.tsx",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerDetector.ts",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/flows/serviceRequest/ServiceRequestDetector.ts",
+        "lines": 18,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimHorseInfo.tsx",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsActions.tsx",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceActions.tsx",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceValidation.ts",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationActions.tsx",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationValidation.ts",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoActions.tsx",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/ServiceRequestCardHeader.tsx",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useCalendarActions.ts",
+        "lines": 17,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/ProvidersListItemContent.tsx",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/users/UsersTypes.ts",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/api/athlete-portal/horses/AthleteHorseTypes.ts",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/api/lead-generation/LeadGenerationStorageService.ts",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/api/service-requests/claim/ServiceRequestClaimValidator.ts",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/api/stallion-portal/stallions/StallionProfileTypes.ts",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoValidation.ts",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderLoginService.ts",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileActions.tsx",
+        "lines": 16,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimClaimantInfo.tsx",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/api/horse-portal/horses/HorseProfileTypes.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/api/lead-generation/LeadGenerationUserService.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/api/service-requests/claim/ServiceRequestClaimTypes.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsSaveHandler.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceSaveHandler.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationSaveHandler.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileContent.tsx",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerTierChecker.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportDetector.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryState.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/hooks/useCalendar.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/services/comms/LiabilitySanitizerRules.ts",
+        "lines": 15,
+        "over": false
+      },
+      {
+        "f": "src/app/api/horse-database/search/HorseSearchValidator.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsValidation.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceFieldUpdates.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/useHorsePartnershipsState.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/usePersonalInfoState.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/useRidingExperienceState.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/business/BusinessTypes.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorseLineageCard.tsx",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationFieldUpdates.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/useBreedingOperationState.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/useBusinessInfoState.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ServiceRequestsHandler.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-portal/ServiceRequestCard.tsx",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/flows/haulSupport/HaulSupportSafetyCalculator.ts",
+        "lines": 14,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarErrorState.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/api/cron/notifications/NotificationTypes.ts",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseCardEarnings.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/CompetitionHorseFormConstants.ts",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsForm.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoActions.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoForm.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceForm.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/business/list/BusinessFormHeader.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/useHorseLineageData.ts",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationForm.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionBreedingManagerLoading.tsx",
+        "lines": 13,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimsErrorState.tsx",
+        "lines": 12,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthletePerformanceAnalyticsHeader.tsx",
+        "lines": 12,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/HorsePerformanceSectionHeader.tsx",
+        "lines": 12,
+        "over": false
+      },
+      {
+        "f": "src/app/horse-portal/LineageStatsCard.tsx",
+        "lines": 12,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/BreedingMethodsList.tsx",
+        "lines": 12,
+        "over": false
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingDataSaver.ts",
+        "lines": 12,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarLoadingState.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/page.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/page.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/page.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/page.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/page.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/providers/useProvidersState.ts",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/requests/page.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/users/page.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/api/ceo/dailyReport.ts",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventCardNotes.tsx",
+        "lines": 11,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimsLoadingState.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportPageLoading.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsHeader.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsValidationHandler.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoHeader.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/PersonalInfoValidationHandler.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceConstants.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceHeader.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceValidationHandler.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationHeader.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingOperationValidationHandler.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoHeader.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/producer-portal/setup/BusinessInfoService.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderDataHandler.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/stallion-portal/StallionProfileHeader.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/components/ConditionalNavbar.tsx",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/flows/generalAnswer/GeneralAnswerLLMClient.ts",
+        "lines": 10,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/claims/ClaimsEmptyState.tsx",
+        "lines": 9,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteEventTrackerLoading.tsx",
+        "lines": 8,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteHorseManagerLoading.tsx",
+        "lines": 8,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/discount-codes/DiscountCodeTypes.ts",
+        "lines": 7,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderLoginLoading.tsx",
+        "lines": 7,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderLoginUnauthorized.tsx",
+        "lines": 7,
+        "over": false
+      },
+      {
+        "f": "src/app/api/system/funnelCheck.ts",
+        "lines": 6,
+        "over": false
+      },
+      {
+        "f": "src/app/provider-login/ProviderLoginHeader.tsx",
+        "lines": 5,
+        "over": false
+      },
+      {
+        "f": "src/hooks/MemoryPersonalityTone.ts",
+        "lines": 5,
+        "over": false
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/outreach/OutreachService.ts",
+        "lines": 3,
+        "over": false
+      },
+      {
+        "f": "src/app/api/admin/quick-actions/AdminQuickActionsService.ts",
+        "lines": 3,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsConstants.ts",
+        "lines": 2,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/HorsePartnershipsTypes.ts",
+        "lines": 2,
+        "over": false
+      },
+      {
+        "f": "src/app/athlete-portal/setup/RidingExperienceTypes.ts",
+        "lines": 2,
+        "over": false
+      }
+    ],
+    "fifty1to70": [
+      {
+        "f": "src/app/api/haul-support/nearby/route.ts",
+        "lines": 69,
+        "over": true
+      },
+      {
+        "f": "src/app/api/lead-generation/LeadGenerationFinderService.ts",
+        "lines": 68,
+        "over": true
+      },
+      {
+        "f": "src/app/api/stripe/webhook/route.ts",
+        "lines": 68,
+        "over": true
+      },
+      {
+        "f": "src/app/api/user-memory/route.ts",
+        "lines": 68,
+        "over": true
+      },
+      {
+        "f": "src/app/business/list/page.tsx",
+        "lines": 68,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/ProducerHorsesSection.tsx",
+        "lines": 68,
+        "over": true
+      },
+      {
+        "f": "src/app/api/athlete-portal/route.ts",
+        "lines": 67,
+        "over": true
+      },
+      {
+        "f": "src/app/api/horse-portal/route.ts",
+        "lines": 67,
+        "over": true
+      },
+      {
+        "f": "src/app/api/producer-portal/route.ts",
+        "lines": 67,
+        "over": true
+      },
+      {
+        "f": "src/app/api/stallion-portal/route.ts",
+        "lines": 67,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useServiceRequests/types.ts",
+        "lines": 67,
+        "over": true
+      },
+      {
+        "f": "src/lib/firebase.ts",
+        "lines": 66,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportCheckboxes.tsx",
+        "lines": 65,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportPointCard.tsx",
+        "lines": 65,
+        "over": true
+      },
+      {
+        "f": "src/app/stallion-portal/types.ts",
+        "lines": 65,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportForm.tsx",
+        "lines": 64,
+        "over": true
+      },
+      {
+        "f": "src/app/business/BusinessSearch.tsx",
+        "lines": 63,
+        "over": true
+      },
+      {
+        "f": "src/components/ui/Card.tsx",
+        "lines": 63,
+        "over": true
+      },
+      {
+        "f": "src/app/api/service-requests/route.ts",
+        "lines": 62,
+        "over": true
+      },
+      {
+        "f": "src/app/api/funnel-analysis/route.ts",
+        "lines": 61,
+        "over": true
+      },
+      {
+        "f": "src/components/CRMUpload/FileUpload.tsx",
+        "lines": 61,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useHorseClaims.ts",
+        "lines": 61,
+        "over": true
+      },
+      {
+        "f": "src/app/api/service-requests/checkout/route.ts",
+        "lines": 60,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportActions.ts",
+        "lines": 59,
+        "over": true
+      },
+      {
+        "f": "src/app/api/providers/route.ts",
+        "lines": 59,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportPageContent.tsx",
+        "lines": 58,
+        "over": true
+      },
+      {
+        "f": "src/app/api/claim/route.ts",
+        "lines": 58,
+        "over": true
+      },
+      {
+        "f": "src/app/api/feedback/route.ts",
+        "lines": 58,
+        "over": true
+      },
+      {
+        "f": "src/app/api/haul-support/feedback/route.ts",
+        "lines": 58,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/setup/BreedingPoliciesFields.tsx",
+        "lines": 57,
+        "over": true
+      },
+      {
+        "f": "src/app/api/analytics/route.ts",
+        "lines": 56,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/setup/useHorsePartnershipsActions.ts",
+        "lines": 56,
+        "over": true
+      },
+      {
+        "f": "src/hooks/ServiceRequestService.ts",
+        "lines": 56,
+        "over": true
+      },
+      {
+        "f": "src/app/api/outreach/claim/route.ts",
+        "lines": 55,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/setup/usePersonalInfoActions.ts",
+        "lines": 55,
+        "over": true
+      },
+      {
+        "f": "src/app/business/list/BusinessFormBasicInfo.tsx",
+        "lines": 55,
+        "over": true
+      },
+      {
+        "f": "src/app/api/producer-portal/horses/ProducerHorseService.ts",
+        "lines": 54,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/setup/AthleteSetupCompletionStep.tsx",
+        "lines": 54,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/setup/ProducerSetupCompletionStep.tsx",
+        "lines": 54,
+        "over": true
+      },
+      {
+        "f": "src/app/stallion-portal/setup/StallionSetupCompletionStep.tsx",
+        "lines": 54,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/calendar/CalendarEventCard.tsx",
+        "lines": 53,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/page.tsx",
+        "lines": 53,
+        "over": true
+      },
+      {
+        "f": "src/app/api/admin/discount-codes/route.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/app/api/calendar/reminders/route.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/app/api/claim/upload-doc/route.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/app/api/contract-choices/route.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/app/horse-portal/useHorseHandlers.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/types.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/app/stallion-portal/useStallionHandlers.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/flows/onboarding/OnboardingDataOperations.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useUserHorses.ts",
+        "lines": 52,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportTypes.ts",
+        "lines": 51,
+        "over": true
+      },
+      {
+        "f": "src/app/api/athlete-portal/horses/AthleteHorseService.ts",
+        "lines": 51,
+        "over": true
+      },
+      {
+        "f": "src/app/api/horse-portal/horses/HorseProfileService.ts",
+        "lines": 51,
+        "over": true
+      },
+      {
+        "f": "src/app/api/scrub/route.ts",
+        "lines": 51,
+        "over": true
+      },
+      {
+        "f": "src/app/api/stallion-portal/stallions/StallionProfileService.ts",
+        "lines": 51,
+        "over": true
+      }
+    ],
+    "seventy1to100": [
+      {
+        "f": "src/app/provider-portal/ProviderInfoCard.tsx",
+        "lines": 100,
+        "over": true
+      },
+      {
+        "f": "src/app/provider-portal/edit/BusinessInfoSection.tsx",
+        "lines": 100,
+        "over": true
+      },
+      {
+        "f": "src/app/provider-portal/page.tsx",
+        "lines": 100,
+        "over": true
+      },
+      {
+        "f": "src/components/HorseDatabaseSearch/SearchForm.tsx",
+        "lines": 98,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useServiceRequests.ts",
+        "lines": 96,
+        "over": true
+      },
+      {
+        "f": "src/app/api/opt-out/route.ts",
+        "lines": 95,
+        "over": true
+      },
+      {
+        "f": "src/app/api/upload/route.ts",
+        "lines": 95,
+        "over": true
+      },
+      {
+        "f": "src/app/api/cron/reminders/route.ts",
+        "lines": 93,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/ProducerStatsSection.tsx",
+        "lines": 93,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useHorseDatabase.ts",
+        "lines": 93,
+        "over": true
+      },
+      {
+        "f": "src/app/api/subscription/ios/verify/route.ts",
+        "lines": 92,
+        "over": true
+      },
+      {
+        "f": "src/app/legal/terms/page.tsx",
+        "lines": 92,
+        "over": true
+      },
+      {
+        "f": "src/app/api/outreach/claim/OutreachClaimService.ts",
+        "lines": 91,
+        "over": true
+      },
+      {
+        "f": "src/lib/upsell-engine.ts",
+        "lines": 91,
+        "over": true
+      },
+      {
+        "f": "src/app/api/haul-support/feedback/HaulSupportFeedbackService.ts",
+        "lines": 90,
+        "over": true
+      },
+      {
+        "f": "src/app/horse-portal/HorseProfileTypes.ts",
+        "lines": 90,
+        "over": true
+      },
+      {
+        "f": "src/app/business/BusinessCard.tsx",
+        "lines": 89,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useAlerts.ts",
+        "lines": 89,
+        "over": true
+      },
+      {
+        "f": "src/app/api/producer-portal/horses/route.ts",
+        "lines": 88,
+        "over": true
+      },
+      {
+        "f": "src/app/api/referrals/claim/route.ts",
+        "lines": 88,
+        "over": true
+      },
+      {
+        "f": "src/app/api/user-memory/location/UserMemoryLocationService.ts",
+        "lines": 88,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/types.ts",
+        "lines": 88,
+        "over": true
+      },
+      {
+        "f": "src/app/api/calendar/reminders/CalendarRemindersService.ts",
+        "lines": 87,
+        "over": true
+      },
+      {
+        "f": "src/components/CRMUpload/FieldMapping.tsx",
+        "lines": 86,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/ProducerProfileSection.tsx",
+        "lines": 84,
+        "over": true
+      },
+      {
+        "f": "src/lib/grok.ts",
+        "lines": 84,
+        "over": true
+      },
+      {
+        "f": "src/app/api/subscription/google/verify/route.ts",
+        "lines": 83,
+        "over": true
+      },
+      {
+        "f": "src/app/api/providers/ProvidersService.ts",
+        "lines": 81,
+        "over": true
+      },
+      {
+        "f": "src/app/provider-portal/edit/page.tsx",
+        "lines": 81,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/CompetitionHorseBasicInfo.tsx",
+        "lines": 80,
+        "over": true
+      },
+      {
+        "f": "src/app/business/page.tsx",
+        "lines": 80,
+        "over": true
+      },
+      {
+        "f": "src/components/CRMUpload/UploadResults.tsx",
+        "lines": 80,
+        "over": true
+      },
+      {
+        "f": "src/app/api/aftercare/feedback/AftercareFeedbackService.ts",
+        "lines": 79,
+        "over": true
+      },
+      {
+        "f": "src/app/api/feedback/FeedbackService.ts",
+        "lines": 79,
+        "over": true
+      },
+      {
+        "f": "src/lib/stripe.ts",
+        "lines": 79,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/haul-support/HaulSupportBasicFields.tsx",
+        "lines": 78,
+        "over": true
+      },
+      {
+        "f": "src/app/api/claim/upload-doc/ClaimUploadService.ts",
+        "lines": 78,
+        "over": true
+      },
+      {
+        "f": "src/app/api/service-requests/ServiceRequestsService.ts",
+        "lines": 78,
+        "over": true
+      },
+      {
+        "f": "src/app/api/user-memory/UserMemoryService.ts",
+        "lines": 78,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/setup/page.tsx",
+        "lines": 78,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/useAthleteHandlers.ts",
+        "lines": 78,
+        "over": true
+      },
+      {
+        "f": "src/app/provider-login/ServiceRequestCard.tsx",
+        "lines": 78,
+        "over": true
+      },
+      {
+        "f": "src/app/api/claim/ClaimService.ts",
+        "lines": 77,
+        "over": true
+      },
+      {
+        "f": "src/app/horse-portal/types.ts",
+        "lines": 77,
+        "over": true
+      },
+      {
+        "f": "src/app/api/athlete-portal/AthletePortalService.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/api/athlete-portal/horses/route.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/api/horse-portal/HorsePortalService.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/api/horse-portal/horses/route.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/api/producer-portal/ProducerPortalService.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/api/stallion-portal/StallionPortalService.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/api/stallion-portal/stallions/route.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/api/writing-assistance/route.ts",
+        "lines": 76,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/setup/page.tsx",
+        "lines": 75,
+        "over": true
+      },
+      {
+        "f": "src/app/stallion-portal/setup/page.tsx",
+        "lines": 75,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/CompetitionHorsePerformanceInfo.tsx",
+        "lines": 74,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/ProducerEventsSection.tsx",
+        "lines": 73,
+        "over": true
+      },
+      {
+        "f": "src/app/producer-portal/dataOperations.ts",
+        "lines": 73,
+        "over": true
+      },
+      {
+        "f": "src/app/api/writing-assistance/WritingAssistanceService.ts",
+        "lines": 71,
+        "over": true
+      }
+    ],
+    "hundred1to200": [
+      {
+        "f": "src/lib/anonymous-mode.ts",
+        "lines": 190,
+        "over": true
+      },
+      {
+        "f": "src/lib/revenue-engine.ts",
+        "lines": 189,
+        "over": true
+      },
+      {
+        "f": "src/app/legal/privacy/page.tsx",
+        "lines": 186,
+        "over": true
+      },
+      {
+        "f": "src/app/dashboard/page.tsx",
+        "lines": 183,
+        "over": true
+      },
+      {
+        "f": "src/lib/compliance-engine.ts",
+        "lines": 182,
+        "over": true
+      },
+      {
+        "f": "src/lib/data-retention.ts",
+        "lines": 182,
+        "over": true
+      },
+      {
+        "f": "src/lib/ai-data-maximizer.ts",
+        "lines": 181,
+        "over": true
+      },
+      {
+        "f": "src/lib/ai-mission-engine.ts",
+        "lines": 180,
+        "over": true
+      },
+      {
+        "f": "src/lib/analytics/NicheInsightsService.ts",
+        "lines": 178,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useProviders.ts",
+        "lines": 168,
+        "over": true
+      },
+      {
+        "f": "src/lib/search-trends.ts",
+        "lines": 159,
+        "over": true
+      },
+      {
+        "f": "src/app/auth/signin/page.tsx",
+        "lines": 158,
+        "over": true
+      },
+      {
+        "f": "src/app/stallion-portal/StallionPerformanceTrackerSection.tsx",
+        "lines": 156,
+        "over": true
+      },
+      {
+        "f": "src/lib/supabase.ts",
+        "lines": 154,
+        "over": true
+      },
+      {
+        "f": "src/app/stallion-portal/setup/BusinessDetailsStep.tsx",
+        "lines": 142,
+        "over": true
+      },
+      {
+        "f": "src/app/api/gdpr-export/route.ts",
+        "lines": 140,
+        "over": true
+      },
+      {
+        "f": "src/app/stallion-portal/setup/StationInfoStep.tsx",
+        "lines": 140,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useServiceRequests/ServiceRequestService.ts",
+        "lines": 140,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useFavorites.ts",
+        "lines": 136,
+        "over": true
+      },
+      {
+        "f": "src/app/api/cron/agents/route.ts",
+        "lines": 133,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useSavedHorses.ts",
+        "lines": 132,
+        "over": true
+      },
+      {
+        "f": "src/app/api/export/route.ts",
+        "lines": 131,
+        "over": true
+      },
+      {
+        "f": "src/components/Navbar.tsx",
+        "lines": 131,
+        "over": true
+      },
+      {
+        "f": "src/components/HorseDatabaseSearch/SearchResults.tsx",
+        "lines": 130,
+        "over": true
+      },
+      {
+        "f": "src/lib/csv-parser.ts",
+        "lines": 130,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useLeadGeneration.ts",
+        "lines": 126,
+        "over": true
+      },
+      {
+        "f": "src/app/page.tsx",
+        "lines": 124,
+        "over": true
+      },
+      {
+        "f": "src/lib/lead-scoring.ts",
+        "lines": 122,
+        "over": true
+      },
+      {
+        "f": "src/lib/ab-testing.ts",
+        "lines": 115,
+        "over": true
+      },
+      {
+        "f": "src/lib/pagination.ts",
+        "lines": 115,
+        "over": true
+      },
+      {
+        "f": "src/app/support/page.tsx",
+        "lines": 111,
+        "over": true
+      },
+      {
+        "f": "src/hooks/useWritingAssistance.ts",
+        "lines": 107,
+        "over": true
+      },
+      {
+        "f": "src/app/athlete-portal/AthleteProfileSection.tsx",
+        "lines": 101,
+        "over": true
+      }
+    ],
+    "over200": [
+      {
+        "f": "src/app/onboarding/page.tsx",
+        "lines": 555,
+        "over": true
+      },
+      {
+        "f": "src/app/chat/page.tsx",
+        "lines": 405,
+        "over": true
+      },
+      {
+        "f": "src/app/health/page.tsx",
+        "lines": 374,
+        "over": true
+      },
+      {
+        "f": "src/app/social/page.tsx",
+        "lines": 345,
+        "over": true
+      },
+      {
+        "f": "src/app/upload/page.tsx",
+        "lines": 345,
+        "over": true
+      },
+      {
+        "f": "src/lib/enhanced-reports.ts",
+        "lines": 312,
+        "over": true
+      },
+      {
+        "f": "src/app/admin-secret-xyz123/page.tsx",
+        "lines": 307,
+        "over": true
+      },
+      {
+        "f": "src/lib/analytics.ts",
+        "lines": 291,
+        "over": true
+      },
+      {
+        "f": "src/lib/crm-integrations.ts",
+        "lines": 286,
+        "over": true
+      },
+      {
+        "f": "src/app/pricing/page.tsx",
+        "lines": 253,
+        "over": true
+      },
+      {
+        "f": "src/lib/export-generator.ts",
+        "lines": 248,
+        "over": true
+      },
+      {
+        "f": "src/app/marketplace/page.tsx",
+        "lines": 242,
+        "over": true
+      },
+      {
+        "f": "src/app/auth/signup/page.tsx",
+        "lines": 232,
+        "over": true
+      },
+      {
+        "f": "src/lib/scraping-agents.ts",
+        "lines": 210,
+        "over": true
+      }
+    ]
+  }
+}

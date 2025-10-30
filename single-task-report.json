@@ -1,0 +1,373 @@
+{
+  "total": 648,
+  "offenders": [
+    {
+      "file": "src/app/api/athlete-portal/horses/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/chat/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/contract-choices/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/cron/agents/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/cron/reminders/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/export/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/funnel-analysis/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/gdpr-export/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/haul-support/nearby/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/horse-portal/horses/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/notifications/send/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/opt-out/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/producer-portal/horses/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/provider-claims/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/referrals/claim/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/referrals/generate/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/scrub/paginated/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/scrub/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/service-requests/checkout/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/stallion-portal/stallions/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/stripe/create-checkout/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/stripe/webhook/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/subscription/google/verify/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/subscription/ios/verify/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/upload/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/api/web-search/route.ts",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/auth/signin/page.tsx",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/auth/signup/page.tsx",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/business/BusinessSearch.tsx",
+      "role": "other",
+      "ok": false,
+      "violations": [
+        "UI + large constants — move constants out"
+      ]
+    },
+    {
+      "file": "src/app/business/list/page.tsx",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/chat/page.tsx",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/pricing/page.tsx",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/provider-portal/edit/page.tsx",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/app/provider-portal/page.tsx",
+      "role": "orchestrator",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/components/AuthProvider.tsx",
+      "role": "other",
+      "ok": false,
+      "violations": [
+        "mixed concerns in file: UI + IO — split into view/repo"
+      ]
+    },
+    {
+      "file": "src/hooks/useAlerts.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useFavorites.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useHorseClaims.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useHorseDatabase.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useLeadGeneration.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useProviders.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useSavedHorses.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useUserHorsesOperations.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useUserHorsesRepo.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useWebSearchOperations.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    },
+    {
+      "file": "src/hooks/useWritingAssistance.ts",
+      "role": "hook",
+      "ok": false,
+      "violations": [
+        "orchestrator/hook does network/db I/O — move to *.repo.ts"
+      ]
+    }
+  ]
+}

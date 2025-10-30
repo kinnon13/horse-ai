@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running 50-line rule enforcement..."
+
+npm run check:lines
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ COMMIT BLOCKED: Code violates Elon-grade 50-line rule"
+  echo "💡 Fix violations before committing. Run 'npm run check:lines' for details."
+  exit 1
+fi
+
+echo "✅ Code quality check passed. Proceeding with commit."

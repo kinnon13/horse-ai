@@ -1,0 +1,38 @@
+# HorseGPT Production Environment Variables
+# Copy this to your .env.local file
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+
+# Stripe Configuration
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
+
+# Stripe Price IDs (Create these in your Stripe dashboard)
+STRIPE_PLUS_PRICE_ID=price_your_plus_price_id_here
+STRIPE_BASIC_PRICE_ID=price_your_basic_price_id_here
+STRIPE_PROVIDER_PROTECT_PRICE_ID=price_your_provider_price_id_here
+
+# AI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+GROK_API_KEY=your_grok_api_key_here
+
+# SMS/Email Configuration (Optional - for notifications)
+TWILIO_ACCOUNT_SID=your_twilio_sid_here
+TWILIO_AUTH_TOKEN=your_twilio_token_here
+TWILIO_PHONE_NUMBER=your_twilio_phone_here
+SENDGRID_API_KEY=your_sendgrid_key_here
+
+# App Configuration
+NEXT_PUBLIC_APP_URL=http://localhost:3003
+NEXTAUTH_SECRET=your_nextauth_secret_here
+NEXTAUTH_URL=http://localhost:3003
+
+# Database Configuration
+DATABASE_URL=your_database_url_here
+
+
+

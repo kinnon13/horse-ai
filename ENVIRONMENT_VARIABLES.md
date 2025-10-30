@@ -1,0 +1,20 @@
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+# Stripe Configuration
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+STRIPE_PLUS_TRIAL_PRICE_ID=price_your_plus_trial_price_id
+
+# LLM API Configuration
+GROK_API_KEY=your_grok_api_key
+# OR
+OPENAI_API_KEY=your_openai_api_key
+
+# App Configuration
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+
+

@@ -1,0 +1,122 @@
+{
+  "name": "HorseGPT - Your AI Road Manager",
+  "short_name": "HorseGPT",
+  "description": "AI-powered road manager for horse people. Get route-safe fuel stops, overnight stalls, emergency vet escalation, and priority help when hauling.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007c78",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["lifestyle", "utilities", "travel"],
+  "icons": [
+    {
+      "src": "/horsegpt-logo-transparent.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/horsegpt-logo-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/chat-screen.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Chat interface showing AI assistance"
+    },
+    {
+      "src": "/screenshots/haul-support.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Haul support map showing nearby services"
+    },
+    {
+      "src": "/screenshots/provider-portal.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Provider portal for service management"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Chat",
+      "short_name": "Chat",
+      "description": "Start chatting with HorseGPT",
+      "url": "/chat",
+      "icons": [
+        {
+          "src": "/horsegpt-logo-transparent.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Haul Support",
+      "short_name": "Haul Support",
+      "description": "Find nearby haul support services",
+      "url": "/haul-support",
+      "icons": [
+        {
+          "src": "/horsegpt-logo-transparent.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Provider Login",
+      "short_name": "Provider",
+      "description": "Access provider portal",
+      "url": "/provider-login",
+      "icons": [
+        {
+          "src": "/horsegpt-logo-transparent.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://horsegpt.com/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "new-client",
+  "file_handlers": [
+    {
+      "action": "/upload",
+      "accept": {
+        "text/csv": [".csv"],
+        "application/vnd.ms-excel": [".xls"],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"]
+      }
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+horsegpt",
+      "url": "/chat?q=%s"
+    }
+  ]
+}
+
+

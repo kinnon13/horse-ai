@@ -1,0 +1,3 @@
+export const OWNERSHIP_TYPES = ['OWNER', 'RIDER', 'TRAINER', 'BREEDER', 'STUD_MANAGER', 'HAULER', 'VET_AUTH'] as const
+export const ROLE_TYPES = ['OWNER', 'RIDER', 'TRAINER', 'BREEDER', 'STUD_MANAGER', 'HAULER', 'VET_AUTH'] as const
+
