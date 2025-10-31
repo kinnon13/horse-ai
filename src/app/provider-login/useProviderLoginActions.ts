@@ -1,13 +1,13 @@
-import { ProviderLoginPageActions } from './ProviderLoginTypes'
+import type { ProviderLoginPageActions, ProviderType, ServiceRequestType } from './ProviderLoginTypes'
 import { claimServiceRequest } from './ProviderClaimsService'
 import { fetchProviderDataWithState } from './ProviderDataHandler'
 import { fetchServiceRequestsWithState } from './ServiceRequestsHandler'
 
 export function useProviderLoginActions(
   user: any,
-  provider: Provider | null,
-  setProvider: (provider: Provider | null) => void,
-  setServiceRequests: (requests: ServiceRequest[]) => void,
+  provider: ProviderType | null,
+  setProvider: (provider: ProviderType | null) => void,
+  setServiceRequests: (requests: ServiceRequestType[]) => void,
   setLoadingRequests: (loading: boolean) => void
 ): ProviderLoginPageActions {
   const fetchProviderData = async () => {

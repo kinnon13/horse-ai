@@ -39,3 +39,4 @@ export function AthleteHorseCardHeader({ horse, onEditHorse, onDeleteHorse }: At
 
 
 
+

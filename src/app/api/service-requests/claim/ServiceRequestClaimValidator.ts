@@ -19,5 +19,12 @@ export function validateProviderClaim(claim: any) {
   if (!claim.request_id) {
     throw new Error('Request ID is required')
   }
-  return true
+  return {
+    provider_id: claim.provider_id,
+    service_request_id: claim.request_id,
+    request_id: claim.request_id,
+    status: 'pending' as const,
+    price_quoted: claim.quoted_price || 0,
+    notes: claim.message || ''
+  }
 }

@@ -1,0 +1,135 @@
+{
+  "name": "COWBOY_CHANNEL_VIDEO_MONITOR",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "value": "*/15 * * * *"
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger",
+      "name": "Check Every 15 Minutes",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=YOUR_CHANNEL_ID",
+        "options": {}
+      },
+      "id": "fetch-rss",
+      "name": "Fetch YouTube RSS Feed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "parse-xml",
+              "name": "videoUrl",
+              "value": "={{ $json.feed.entry[0].link['@attributes'].href }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "extract-video-url",
+      "name": "Extract Video URL",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.APP_URL }}/api/video/process",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"videoUrl\": \"={{ $json.videoUrl }}\",\n  \"intervalSeconds\": 5,\n  \"maxFrames\": 10\n}",
+        "options": {}
+      },
+      "id": "extract-frames",
+      "name": "Extract Video Frames",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.APP_URL }}/api/n8n/webhook/video",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"frames\": \"={{ $json.frames }}\",\n  \"source\": \"youtube\",\n  \"videoUrl\": \"={{ $('Extract Video URL').item.json.videoUrl }}\",\n  \"channel\": \"Cowboy Channel\"\n}",
+        "options": {}
+      },
+      "id": "analyze-video",
+      "name": "Analyze Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1120, 300]
+    }
+  ],
+  "connections": {
+    "Check Every 15 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Fetch YouTube RSS Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch YouTube RSS Feed": {
+      "main": [
+        [
+          {
+            "node": "Extract Video URL",
+            "type": "main ingress",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Video URL": {
+      "main": [
+        [
+          {
+            "node": "Extract Video Frames",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Video Frames": {
+      "main": [
+        [
+          {
+            "node": "Analyze Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-10-30T16:30:00.000Z",
+  "versionId": "1"
+}

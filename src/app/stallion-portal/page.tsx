@@ -32,11 +32,11 @@ export default function StallionPortal() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
-            <StallionProfileSection station={station} loading={loadingProfile} onEdit={() => {}} />
+            <StallionProfileSection />
             <StallionBreedingManagerSection stallions={stallions} loading={loadingProfile} onAddStallion={handlers.handleAddStallion} onEditStallion={handlers.handleEditStallion} onDeleteStallion={handlers.handleDeleteStallion} />
           </div>
           <div className="space-y-8">
-            <StallionPerformanceTrackerSection stallions={stallions} loading={loadingProfile} />
+            <StallionPerformanceTrackerSection />
           </div>
         </div>
       </div>

@@ -302,3 +302,4 @@ CREATE POLICY "Athletes can view their analytics" ON athlete_analytics FOR SELEC
 
 
 
+

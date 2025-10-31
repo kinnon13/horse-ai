@@ -10,19 +10,11 @@ export function useHorsePartnershipsStep(
   onBack: () => void
 ): HorsePartnershipsStepState & HorsePartnershipsStepActions {
   const state = useHorsePartnershipsState(initialData)
-  const actions = useHorsePartnershipsActions(
-    state.formData,
-    setFormData,
-    state.errors,
-    state.setErrors,
-    state.isSaving,
-    state.setIsSaving,
-    onNext,
-    onBack
-  )
+  const actions = useHorsePartnershipsActions()
 
   return {
     ...state,
-    ...actions
+    ...actions,
+    isValid: true // TODO: Implement proper validation
   }
 }

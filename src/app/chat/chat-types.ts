@@ -10,3 +10,4 @@ export interface ChatActions {
   sendMessage: (content: string) => void
   clearMessages: () => void
 }
+

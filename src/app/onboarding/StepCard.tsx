@@ -19,3 +19,4 @@ export function StepCard({ currentStepData, completedSteps }: Pick<OnboardingVM,
 
 
 
+

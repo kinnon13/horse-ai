@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { OutreachData, ComposeData, OutreachMessage } from './OutreachData'
 import { OutreachUtils } from './OutreachUtils'
 
@@ -9,6 +9,8 @@ export class OutreachStateManager {
     const [editingMessage, setEditingMessage] = useState<any>(null)
     const [composeData, setComposeData] = useState(OutreachUtils.getInitialComposeData())
 
+    const outreachStats = useMemo(() => OutreachUtils.calculateStats(outreachMessages), [outreachMessages])
+
     return {
       outreachMessages,
       setOutreachMessages,
@@ -17,7 +19,8 @@ export class OutreachStateManager {
       editingMessage,
       setEditingMessage,
       composeData,
-      setComposeData
+      setComposeData,
+      outreachStats
     }
   }
 }

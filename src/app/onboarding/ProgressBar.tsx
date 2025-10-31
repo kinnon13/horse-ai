@@ -18,3 +18,4 @@ export function ProgressBar({ progress, currentStepData }: Pick<OnboardingVM, 'p
 
 
 
+

@@ -27,7 +27,7 @@ export function addBreedingInsightsTable(doc: jsPDF, data: ExportData): number {
     })
   }
   
-  return doc.lastAutoTable?.finalY || 200
+  return (doc as any).lastAutoTable?.finalY || 200
 }
 
 export function addPDFFooter(doc: jsPDF): void {
@@ -38,4 +38,5 @@ export function addPDFFooter(doc: jsPDF): void {
     doc.text(`Horse.AI Report - Page ${i} of ${pageCount}`, 20, doc.internal.pageSize.height - 10)
   }
 }
+
 

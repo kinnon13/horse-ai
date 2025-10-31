@@ -1,14 +1,24 @@
 import { supabaseAdmin } from '@/lib/supabase'
-import { sendSafeEmail, sendSafeSMS } from '@/services/comms/UniversalMessageRouter'
+import { UniversalMessageRouter } from '@/services/comms/UniversalMessageRouter'
 
 export async function sendEmailNotification(userEmail: string, message: string): Promise<any> {
-  const safe = await sendSafeEmail(userEmail, 'HorseGPT Notification', message)
-  return { success: true, channel: 'email', sanitized: safe }
+  await UniversalMessageRouter.sendMessage({
+    to: userEmail,
+    subject: 'HorseGPT Notification',
+    body: message,
+    type: 'email'
+  })
+  return { success: true, channel: 'email' }
 }
 
 export async function sendSMSNotification(userPhone: string, message: string): Promise<any> {
-  const safe = await sendSafeSMS(userPhone, message)
-  return { success: true, channel: 'sms', sanitized: safe }
+  await UniversalMessageRouter.sendMessage({
+    to: userPhone,
+    subject: 'HorseGPT Notification',
+    body: message,
+    type: 'sms'
+  })
+  return { success: true, channel: 'sms' }
 }
 
 export async function sendInAppNotification(userId: string, message: string): Promise<any> {

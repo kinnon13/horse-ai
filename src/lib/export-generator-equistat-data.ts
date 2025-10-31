@@ -22,3 +22,4 @@ export async function fetchEquiStatData(userId: string, horseName: string) {
   return { horse, scrapedData }
 }
 
+

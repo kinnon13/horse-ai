@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { useHorseClaims } from '@/hooks/useHorseClaims'
 import { useAuth } from '@/components/AuthProvider'
@@ -38,6 +40,7 @@ export function ClaimsPageContent() {
     </div>
   )
 }
+
 
 
 

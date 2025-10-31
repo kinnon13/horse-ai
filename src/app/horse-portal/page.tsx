@@ -4,11 +4,11 @@ import React from 'react'
 import HorseProfileSection from './HorseProfileSection'
 import HorseLineageSection from './HorseLineageSection'
 import HorsePerformanceSection from './HorsePerformanceSection'
-import { useHorseData } from './useHorseData'
+import { useHorsePortalData } from './useHorsePortalData'
 import { useHorseHandlers } from './useHorseHandlers'
 
 export default function HorsePortal() {
-  const { owner, horses, loadingProfile, setHorses } = useHorseData()
+  const { owner, horses, loadingProfile, setHorses } = useHorsePortalData()
   const handlers = useHorseHandlers(owner, setHorses)
 
   if (loadingProfile) {

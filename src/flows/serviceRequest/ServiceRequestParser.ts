@@ -1,19 +1,9 @@
-/**
- * SERVICE REQUEST PARSER
- * 
- * PURPOSE:
- * - Parses service request messages to extract structured data
- * - Handles various ways users might request services
- * 
- * SAFETY:
- * - Only extracts data that users explicitly provide
- * - Validates location data before processing
- */
-
-import { ServiceRequestDataExtractors } from './ServiceRequestDataExtractors'
+// ServiceRequestParser.ts (40 lines) - Single responsibility: Main service request parser
+import { ParserLogic } from './ParserLogic'
 
 export interface ServiceRequestIntent {
   type: 'service_request'
+  requestId: string
   serviceType: string
   location: {
     city: string
@@ -25,33 +15,22 @@ export interface ServiceRequestIntent {
 }
 
 export class ServiceRequestParser {
-  /**
-   * PURPOSE:
-   * - Parses service request messages to extract structured data
-   * - Handles various ways users might request services
-   * 
-   * SAFETY:
-   * - Only extracts data that users explicitly provide
-   * - Validates location data before processing
-   */
   static parseServiceRequest(message: string): ServiceRequestIntent {
-    const lowerMessage = message.toLowerCase()
+    const intent = ParserLogic.parseServiceRequest(message)
     
-    const serviceType = ServiceRequestDataExtractors.extractServiceType(lowerMessage)
-    const location = ServiceRequestDataExtractors.extractLocation(message)
-    const urgency = ServiceRequestDataExtractors.extractUrgency(lowerMessage)
-    const horseName = ServiceRequestDataExtractors.extractHorseName(message)
+    if (!ParserLogic.validateServiceRequest(intent)) {
+      throw new Error('Invalid service request: missing required fields')
+    }
     
-    return {
-      type: 'service_request',
-      serviceType,
-      location,
-      urgency,
-      details: message,
-      horseName
+    return ParserLogic.sanitizeServiceRequest(intent)
+  }
+
+  static isValidServiceRequest(message: string): boolean {
+    try {
+      const intent = ParserLogic.parseServiceRequest(message)
+      return ParserLogic.validateServiceRequest(intent)
+    } catch {
+      return false
     }
   }
 }
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function ServiceRequestIntent(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestParser.ServiceRequestIntent"); }

@@ -1,15 +1,16 @@
-import { getKPIs } from "../../services/telemetry/CEOReportService";
-import { sendSafeEmail } from "../../services/comms/UniversalMessageRouter";
+import { CEOReportService } from "@/services/telemetry/CEOReportService";
+import { UniversalMessageRouter } from "@/services/comms/UniversalMessageRouter";
 
 export default async function handler(req: any, res: any) {
-  const report = await getKPIs();
+  const report = await CEOReportService.getKPIs();
 
   // Email it to you every morning
-  await sendSafeEmail(
-    "you@whatever.com",
-    "HORSEGPT DAILY PULSE",
-    report.txt
-  );
+  await UniversalMessageRouter.sendSafeEmail({
+    to: "you@whatever.com",
+    subject: "HORSEGPT DAILY PULSE",
+    body: JSON.stringify(report),
+    type: "email"
+  });
 
   return res.json({ ok: true, report });
 }

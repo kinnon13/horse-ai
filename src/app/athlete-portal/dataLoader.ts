@@ -1,5 +1,8 @@
 import { supabase } from '@/lib/supabase'
-import { AthleteProfile, CompetitionHorse, CompetitionEvent, ServiceRequest } from './types'
+import { AthleteProfile } from './AthleteTypes'
+import { CompetitionHorse } from './AthleteHorseTypes'
+import { CompetitionEvent } from './AthleteEventTypes'
+import { ServiceRequest } from '@/hooks/types'
 
 export async function loadAthleteData(userId: string) {
   try {

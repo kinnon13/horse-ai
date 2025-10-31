@@ -35,3 +35,4 @@ export function ServiceRequestCardDetailsProps(_props?: any): never { throw new 
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function ServiceRequestCardHeaderProps(_props?: any): never { throw new Error("Stubbed component used: ./ServiceRequestCardTypes.ServiceRequestCardHeaderProps"); }
+

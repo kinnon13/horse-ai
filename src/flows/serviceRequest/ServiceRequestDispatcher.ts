@@ -1,71 +1,34 @@
-/**
- * SERVICE REQUEST DISPATCHER
- * 
- * PURPOSE:
- * - Dispatches service request to verified providers
- * - Records which providers were contacted
- * - Creates audit trail of dispatch decisions
- * 
- * SAFETY:
- * - Only dispatches to verified providers
- * - We log every dispatch decision
- * - We never expose private contact info
- */
-
+// ServiceRequestDispatcher.ts (40 lines) - Single responsibility: Main dispatch orchestration
 import { supabase } from '@/lib/supabase'
 import { ServiceRequestIntent } from './ServiceRequestParser'
+import { ServiceRequestRouter } from './ServiceRequestRouter'
+import { DispatchLogger } from './ServiceRequestDispatchLogger'
 
 export class ServiceRequestDispatcher {
-  /**
-   * PURPOSE:
-   * - Dispatches service request to verified providers
-   * - Records which providers were contacted
-   * - Creates audit trail of dispatch decisions
-   * 
-   * SAFETY:
-   * - Only dispatches to verified providers
-   * - We log every dispatch decision
-   * - We never expose private contact info
-   */
-  static async dispatchToProviders(
-    serviceRequestId: string,
-    intent: ServiceRequestIntent
-  ): Promise<{ providerCount: number }> {
+  static async dispatchRequest(intent: ServiceRequestIntent) {
+    const providers = await ServiceRequestRouter.findProviders(intent)
+    const dispatchResult = await ServiceRequestRouter.sendToProviders(providers, intent)
+    await DispatchLogger.logDispatch(intent, providers, dispatchResult)
+    return dispatchResult
+  }
+
+  static async dispatchToProviders(serviceRequestId: string, intent: ServiceRequestIntent) {
+    const providers = await ServiceRequestRouter.findProviders(intent)
+    const dispatchResult = await ServiceRequestRouter.sendToProviders(providers, intent)
     
-    // Get verified providers in the area
-    const { data: providers, error } = await supabase
-      .from('providers')
-      .select('id, name, service_type, phone, email, verified')
-      .eq('service_type', intent.serviceType)
-      .eq('location_city', intent.location.city)
-      .eq('location_state', intent.location.state)
-      .eq('verified', true)
-      .eq('taking_clients', true)
+    await this.updateServiceRequestStatus(serviceRequestId, 'dispatched')
+    await DispatchLogger.logDispatch(intent, providers, dispatchResult)
     
-    if (error) {
-      console.error('Error fetching providers:', error)
-      throw new Error('Failed to fetch providers')
+    return {
+      providerCount: providers.length,
+      dispatchResult
     }
-    
-    if (!providers || providers.length === 0) {
-      return { providerCount: 0 }
-    }
-    
-    // Create dispatch records for each provider
-    const dispatchPromises = providers.map(provider => 
-      supabase.from('provider_dispatches').insert({
-        service_request_id: serviceRequestId,
-        provider_id: provider.id,
-        dispatched_at: new Date().toISOString(),
-        status: 'sent'
-      })
-    )
-    
-    await Promise.all(dispatchPromises)
-    
-    return { providerCount: providers.length }
+  }
+
+  private static async updateServiceRequestStatus(serviceRequestId: string, status: string) {
+    await supabase
+      .from('service_requests')
+      .update({ status, updated_at: new Date().toISOString() })
+      .eq('id', serviceRequestId)
   }
 }
-
-
-

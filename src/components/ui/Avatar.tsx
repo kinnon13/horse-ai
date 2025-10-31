@@ -41,3 +41,4 @@ const AvatarFallback = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>
 AvatarFallback.displayName = 'AvatarFallback'
 
 export { Avatar, AvatarFallback, AvatarImage }
+

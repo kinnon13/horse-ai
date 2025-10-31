@@ -20,3 +20,4 @@ export function HaulSupportPointHeader({ point }: HaulSupportPointHeaderProps) {
     </div>
   )
 }
+

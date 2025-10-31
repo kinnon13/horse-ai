@@ -1,33 +1,36 @@
-// Competition Horse Form Types - Single responsibility
-export interface CompetitionHorse {
-  id: string
-  athlete_id: string
-  horse_name: string
-  registered_name: string
-  registration_number: string
+// CompetitionHorseFormTypes.ts (30 lines) - Single responsibility: Type definitions
+import { CompetitionHorse } from './AthleteHorseTypes'
+
+export interface CompetitionHorseFormModalProps {
+  horse?: CompetitionHorse
+  onSave: (horse: CompetitionHorse) => void
+  onClose: () => void
+}
+
+export interface CompetitionHorseFormData {
+  name: string
   breed: string
+  age: string
+  gender: string
   color: string
-  sex: string
-  birth_year: number
-  sire: string
-  dam: string
+  height: string
+  weight: string
+  registration_number: string
   owner_name: string
   owner_phone: string
   owner_email: string
-  location_city: string
-  location_state: string
-  value: number
+  trainer_name: string
+  trainer_phone: string
+  trainer_email: string
   notes: string
-  created_at: string
-  updated_at: string
-  performance_summary: string
-  recent_results: string
-  breeding_potential: string
-  health_status: string
-  training_level: string
-  competition_level: string
-  last_competition: string
-  next_competition: string
-  achievements: string
-  bloodline_notes: string
+}
+
+export interface CompetitionHorseFormState {
+  formData: CompetitionHorseFormData
+  errors: Record<string, string>
+  isSubmitting: boolean
+  setFormData: (data: Partial<CompetitionHorseFormData>) => void
+  setError: (field: string, error: string) => void
+  clearErrors: () => void
+  validateForm: () => boolean
 }

@@ -18,3 +18,4 @@ export interface Business {
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function Business(_props?: any): never { throw new Error("Stubbed component used: ./BusinessTypes.Business"); }
+

@@ -12,10 +12,7 @@ export function HorseProfileCardHeader({ horse, onEditHorse, onDeleteHorse }: Ho
   return (
     <div className="flex items-center justify-between mb-3">
       <div>
-        <h3 className="font-semibold text-lg">{horse.horse_name}</h3>
-        {horse.registered_name && (
-          <p className="text-sm text-gray-600">{horse.registered_name}</p>
-        )}
+        <h3 className="font-semibold text-lg">{horse.name}</h3>
       </div>
       <div className="flex items-center gap-2">
         <Button 
@@ -37,6 +34,7 @@ export function HorseProfileCardHeader({ horse, onEditHorse, onDeleteHorse }: Ho
     </div>
   )
 }
+
 
 
 

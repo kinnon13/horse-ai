@@ -1,50 +1,47 @@
+import { supabase } from '@/lib/supabase'
 import { Provider, ProviderFilters } from './types'
+import { mapProviderFromDb, mapProviderToDb } from './operationsHelpers'
 
-export const fetchProviders = async (filters: ProviderFilters) => {
-  const searchParams = new URLSearchParams()
-  if (filters.service_type) searchParams.set('service_type', filters.service_type)
-  if (filters.city) searchParams.set('city', filters.city)
-  if (filters.state) searchParams.set('state', filters.state)
-  if (filters.verified !== undefined) searchParams.set('verified', filters.verified.toString())
-  if (filters.limit) searchParams.set('limit', filters.limit.toString())
-
-  const response = await fetch(`/api/providers?${searchParams.toString()}`)
-  
-  if (!response.ok) {
-    throw new Error('Failed to fetch providers')
-  }
-
-  const data = await response.json()
-  return data.providers || []
+export const fetchProviders = async (filters: ProviderFilters): Promise<Provider[]> => {
+  let query = supabase.from('providers').select('*')
+  if (filters.service_type) query = query.eq('service_type', filters.service_type)
+  if (filters.city) query = query.eq('city', filters.city)
+  if (filters.state) query = query.eq('state', filters.state)
+  if (filters.verified !== undefined) query = query.eq('verified', filters.verified)
+  if (filters.limit) query = query.limit(filters.limit)
+  const { data, error } = await query.order('created_at', { ascending: false })
+  if (error) throw error
+  return (data || []).map(mapProviderFromDb)
 }
 
-export const createProvider = async (providerData: Omit<Provider, 'id' | 'created_at' | 'updated_at'>) => {
-  const response = await fetch('/api/providers', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(providerData),
-  })
-
-  if (!response.ok) {
-    throw new Error('Failed to create provider')
-  }
-
-  const data = await response.json()
-  return data.provider
+export const createProvider = async (
+  providerData: Omit<Provider, 'id' | 'created_at' | 'updated_at'>
+): Promise<Provider> => {
+  const { data, error } = await supabase
+    .from('providers')
+    .insert(mapProviderToDb(providerData))
+    .select()
+    .single()
+  if (error) throw error
+  return mapProviderFromDb(data)
 }
 
-export const updateProvider = async (id: string, updateData: Partial<Provider>) => {
-  const response = await fetch('/api/providers', {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id, ...updateData }),
-  })
-
-  if (!response.ok) {
-    throw new Error('Failed to update provider')
-  }
-
-  const data = await response.json()
-  return data.provider
+export const updateProvider = async (
+  id: string,
+  updateData: Partial<Provider>
+): Promise<Provider> => {
+  const { data, error } = await supabase
+    .from('providers')
+    .update(mapProviderToDb(updateData as Provider))
+    .eq('id', id)
+    .select()
+    .single()
+  if (error) throw error
+  return mapProviderFromDb(data)
 }
 
+export const deleteProvider = async (id: string): Promise<boolean> => {
+  const { error } = await supabase.from('providers').delete().eq('id', id)
+  if (error) throw error
+  return true
+}

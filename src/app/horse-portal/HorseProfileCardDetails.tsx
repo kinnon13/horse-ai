@@ -1,5 +1,5 @@
 import { HorseProfile } from './HorseProfileTypes'
-import { Award, FileText, Calendar, TrendingUp } from 'lucide-react'
+import { Award, FileText, Calendar } from 'lucide-react'
 
 interface HorseProfileCardDetailsProps {
   horse: HorseProfile
@@ -23,15 +23,10 @@ export function HorseProfileCardDetails({ horse }: HorseProfileCardDetailsProps)
         </div>
       )}
       
-      {horse.height_hands && (
-        <div className="flex items-center gap-2">
-          <TrendingUp className="h-4 w-4 text-blue-500" />
-          <span className="text-sm">{horse.height_hands} hands</span>
-        </div>
-      )}
     </div>
   )
 }
+
 
 
 

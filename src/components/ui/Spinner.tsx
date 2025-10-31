@@ -16,3 +16,4 @@ const Spinner = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 Spinner.displayName = 'Spinner'
 
 export { Spinner }
+

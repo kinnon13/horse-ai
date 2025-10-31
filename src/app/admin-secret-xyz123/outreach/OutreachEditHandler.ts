@@ -16,7 +16,10 @@ export class OutreachEditHandler {
   static createHandler(props: OutreachEditHandlerProps) {
     return (message: any) => {
       props.setEditingMessage(message)
-      props.setComposeData(OutreachUtils.getEditData(message))
+      const editData = OutreachUtils.getEditData(message)
+      if (editData) {
+        props.setComposeData(editData as ComposeData)
+      }
     }
   }
 }

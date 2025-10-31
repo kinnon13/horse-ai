@@ -1,6 +1,6 @@
 import { AthleteSetupData } from './AthleteSetupTypes'
 
-export async function saveHorsePartnershipsData(formData: AthleteSetupData): Promise<void> {
+export async function saveHorsePartnershipsDataService(formData: AthleteSetupData): Promise<void> {
   try {
     // TODO: Call API to save horse partnerships data
     console.log('Saving horse partnerships:', formData)
@@ -26,5 +26,4 @@ export async function saveHorsePartnershipsData(formData: AthleteSetupData): Pro
 
 
 
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export const saveHorsePartnershipsData = (()=>{ throw new Error("Stubbed value used: ./HorsePartnershipsService.saveHorsePartnershipsData"); })();
+

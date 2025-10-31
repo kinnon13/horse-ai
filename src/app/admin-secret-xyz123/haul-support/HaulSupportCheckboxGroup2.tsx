@@ -41,3 +41,4 @@ export function HaulSupportCheckboxGroup2({ formData, setFormData }: HaulSupport
     </>
   )
 }
+

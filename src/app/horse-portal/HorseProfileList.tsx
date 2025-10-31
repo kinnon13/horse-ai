@@ -24,3 +24,4 @@ export function HorseProfileList({ horses, onEditHorse, onDeleteHorse }: HorsePr
 
 
 
+

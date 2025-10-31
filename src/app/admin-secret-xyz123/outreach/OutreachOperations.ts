@@ -1,4 +1,5 @@
-import { OutreachMessage, ComposeData } from './OutreachDataTypes'
+import { OutreachMessage } from './OutreachDataTypes'
+import { ComposeData } from './ComposeDataTypes'
 
 export class OutreachDataOperations {
   static async getInitialMessages(): Promise<OutreachMessage[]> {

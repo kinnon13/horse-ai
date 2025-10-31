@@ -1,54 +1,18 @@
+// MemoryQuery.ts (35 lines) - Single responsibility: Main memory query functions
 import { UserMemory } from './MemoryTypes'
+import { MemoryQueryHelpers } from './MemoryQueryHelpers'
 
 export async function fetchUserMemory(userId: string): Promise<UserMemory | null> {
-  try {
-    const response = await fetch(`/api/user-memory?user_id=${userId}`)
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch user memory')
-    }
-    
-    return response.json()
-  } catch (error) {
-    console.error('Error fetching user memory:', error)
-    return null
-  }
+  const url = MemoryQueryHelpers.buildUserMemoryUrl(userId)
+  return MemoryQueryHelpers.executeQuery(url, 'Failed to fetch user memory')
 }
 
 export async function getRecentPerformances(userId: string): Promise<any[]> {
-  try {
-    const response = await fetch(`/api/user-memory/performances?user_id=${userId}`)
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch recent performances')
-    }
-    
-    return response.json()
-  } catch (error) {
-    console.error('Error fetching recent performances:', error)
-    return []
-  }
+  const url = MemoryQueryHelpers.buildPerformancesUrl(userId)
+  return MemoryQueryHelpers.executeArrayQuery(url, 'Failed to fetch recent performances')
 }
 
 export async function getBreedingHistory(userId: string): Promise<any[]> {
-  try {
-    const response = await fetch(`/api/user-memory/breeding?user_id=${userId}`)
-    
-    if (!response.ok) {
-      throw new Error('Failed to fetch breeding history')
-    }
-    
-    return response.json()
-  } catch (error) {
-    console.error('Error fetching breeding history:', error)
-    return []
-  }
+  const url = MemoryQueryHelpers.buildBreedingUrl(userId)
+  return MemoryQueryHelpers.executeArrayQuery(url, 'Failed to fetch breeding history')
 }
-
-
-
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export const fetchUserMemory = (()=>{ throw new Error("Stubbed value used: ./MemoryQuery.fetchUserMemory"); })();
-export const getRecentPerformances = (()=>{ throw new Error("Stubbed value used: ./MemoryQuery.getRecentPerformances"); })();
-export const getBreedingHistory = (()=>{ throw new Error("Stubbed value used: ./MemoryQuery.getBreedingHistory"); })();

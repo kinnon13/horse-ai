@@ -1,0 +1,248 @@
+{
+  "name": "Admin User Approval",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "user-approval",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Approval Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "admin-approval"
+    },
+    {
+      "parameters": {
+        "jsCode": "const approval = $input.first().json.body;\n\nif (approval.action !== 'approve' && approval.action !== 'reject') {\n  throw new Error('Invalid approval action');\n}\n\nif (!approval.user_id) {\n  throw new Error('user_id is required');\n}\n\nreturn [{ json: approval }];"
+      },
+      "id": "validate-input",
+      "name": "Validate Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "updateKey": "id",
+        "options": {
+          "condition": {
+            "leftValue": "={{ $json.body.user_id }}",
+            "rightValue": "id"
+          }
+        }
+      },
+      "id": "approve-user",
+      "name": "Approve User",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "postgres": {
+          "id": "supabase-connection",
+          "name": "Supabase Database"
+        }
+      },
+      "notes": "Only executes if action is 'approve'"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body.action }}",
+              "operation": "equals",
+              "value2": "approve"
+            }
+          ]
+        }
+      },
+      "id": "check-approval",
+      "name": "Check Action",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.sendgrid.com/v3/mail/send",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "personalizations",
+              "value": "[{\"to\":[{\"email\":\"{{ $json.body.email }}\"}],\"subject\":\"Welcome to HorseAI - Your Account is Approved!\"}]"
+            },
+            {
+              "name": "from",
+              "value": "{\"email\":\"admin@horseai.com\",\"name\":\"HorseAI Team\"}"
+            },
+            {
+              "name": "content",
+              "value": "[{\"type\":\"text/html\",\"value\":\"<h1>Welcome to HorseAI!</h1><p>Your account has been approved. You can now access all features.</p><p><a href='https://horseai.com/login'>Login Now</a></p>\"}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-approval-email",
+      "name": "Send Approval Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [850, 100],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "sendgrid-credentials",
+          "name": "SendGrid API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.sendgrid.com/v3/mail/send",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "personalizations",
+              "value": "[{\"to\":[{\"email\":\"{{ $json.body.email }}\"}],\"subject\":\"HorseAI Account Update\"}]"
+            },
+            {
+              "name": "from",
+              "value": "{\"email\":\"admin@horseai.com\",\"name\":\"HorseAI Team\"}"
+            },
+            {
+              "name": "content",
+              "value": "[{\"type\":\"text/html\",\"value\":\"<h1>Account Update</h1><p>Your account request needs additional information. Please contact support.</p>\"}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-rejection-email",
+      "name": "Send Rejection Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [850, 400],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "sendgrid-credentials",
+          "name": "SendGrid API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'User approval processed' }) }}",
+        "options": {}
+      },
+      "id": "return-response",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Approval Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Check Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Action": {
+      "main": [
+        [
+          {
+            "node": "Approve User",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Approval Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Rejection Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approve User": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Approval Email": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Rejection Email": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z",
+      "id": "admin-tag",
+      "name": "Admin"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}

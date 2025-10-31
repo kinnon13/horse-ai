@@ -45,6 +45,3 @@ export function CalendarStats({ events }: CalendarStatsProps) {
     </div>
   )
 }
-
-
-

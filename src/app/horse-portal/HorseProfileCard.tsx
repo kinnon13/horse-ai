@@ -30,3 +30,4 @@ export function HorseProfileCard({ horse, onEditHorse, onDeleteHorse }: HorsePro
 
 
 
+

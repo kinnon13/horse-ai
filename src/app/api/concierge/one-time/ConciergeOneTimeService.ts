@@ -17,7 +17,7 @@ export class ConciergeOneTimeService {
     const user = await this.userService.getUser(userId)
     const customerId = await this.userService.ensureStripeCustomer(user)
     const session = await this.stripeService.createStripeSession(customerId, serviceType, location, amount, userId, urgency)
-    const conciergeRequest = await this.requestService.saveConciergeRequest(userId, serviceType, location, urgency, amount, session.id)
+    const conciergeRequest = await ConciergeRequestService.saveConciergeRequest(userId, serviceType, location, urgency, amount, session.id)
 
     return {
       sessionId: session.id,
@@ -27,10 +27,10 @@ export class ConciergeOneTimeService {
   }
 
   async getConciergeRequests(userId: string) {
-    return await this.requestService.getConciergeRequests(userId)
+    return await ConciergeRequestService.getRequest(userId)
   }
 
   async updateConciergeRequest(requestId: string, updates: any) {
-    return await this.requestService.updateConciergeRequest(requestId, updates)
+    return await ConciergeRequestService.updateRequest(requestId, updates)
   }
 }

@@ -1,0 +1,106 @@
+{
+  "name": "Video Ingestion & Analysis",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "video-ingest",
+        "httpMethod": "POST",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "video-ingest"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://horsegpt.com/api/video/process",
+        "sendBody": true,
+        "options": {
+          "bodyContentType": "json",
+          "body": "={{ JSON.stringify({ videoUrl: $json.body.videoUrl || $json.body.url, intervalSeconds: $json.body.intervalSeconds || 5, maxFrames: $json.body.maxFrames || 10, extractAudioToo: $json.body.extractAudioToo || true }) }}"
+        }
+      },
+      "id": "process-video",
+      "name": "Process Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://horsegpt.com/api/video/analyze",
+        "sendBody": true,
+        "options": {
+          "bodyContentType": "json",
+          "body": "={{ JSON.stringify({ frames: $json.frames, source: $('webhook-trigger').item.json.body.videoUrl || $('webhook-trigger').item.json.body.url, metadata: { videoUrl: $('webhook-trigger').item.json.body.videoUrl || $('webhook-trigger').item.json.body.url } }) }}"
+        }
+      },
+      "id": "analyze-video",
+      "name": "Analyze Video Frames",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [690, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, processed: $('process-video').item.json, analyzed: $json }) }}"
+      },
+      "id": "respond",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [910, 300]
+    }
+  ],
+  "connections": {
+    "webhook-trigger": {
+      "main": [
+        [
+          {
+            "node": "process-video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "process-video": {
+      "main": [
+        [
+          {
+            "node": "analyze-video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "analyze-video": {
+      "main": [
+        [
+          {
+            "node": "respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}

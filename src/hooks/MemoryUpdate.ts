@@ -1,56 +1,11 @@
-import { UserMemory, UserPreferences, TravelPattern } from './MemoryTypes'
+// MemoryUpdate.ts (50 lines)
+import { updateUserMemory, updateUserPreferences, updateTravelPattern, updateLocation } from './MemoryUpdateHelpers'
 
-export async function updateUserMemory(
-  userId: string, 
-  updates: Partial<UserMemory>
-): Promise<void> {
-  try {
-    const response = await fetch('/api/user-memory', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user_id: userId, ...updates })
-    })
-    
-    if (!response.ok) {
-      throw new Error('Failed to update user memory')
-    }
-  } catch (error) {
-    console.error('Error updating user memory:', error)
-    throw error
-  }
-}
-
-export async function updateUserPreferences(
-  userId: string, 
-  preferences: UserPreferences
-): Promise<void> {
-  await updateUserMemory(userId, { preferences })
-}
-
-export async function updateTravelPattern(
-  userId: string, 
-  travelPattern: TravelPattern
-): Promise<void> {
-  await updateUserMemory(userId, { travel_pattern: travelPattern })
-}
-
-export async function updateLocation(
-  userId: string, 
-  city: string, 
-  state: string
-): Promise<void> {
-  await updateUserMemory(userId, {
-    last_known_city: city,
-    last_known_state: state,
-    last_seen_at: new Date().toISOString()
-  })
-}
-
-
-
+// Re-export all functions from helpers
+export { updateUserMemory, updateUserPreferences, updateTravelPattern, updateLocation }
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export const updateUserMemory = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateUserMemory"); })();
-export const updateUserPreferences = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateUserPreferences"); })();
-export const updateTravelPattern = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateTravelPattern"); })();
-export const updateLocation = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateLocation"); })();
+export const updateUserMemoryStub = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateUserMemory"); })();
+export const updateUserPreferencesStub = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateUserPreferences"); })();
+export const updateTravelPatternStub = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateTravelPattern"); })();
+export const updateLocationStub = (()=>{ throw new Error("Stubbed value used: ./MemoryUpdate.updateLocation"); })();

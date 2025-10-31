@@ -1,16 +1,16 @@
-import { HorseWithLineage } from './HorseLineageTypes'
+import { HorseProfile } from './HorseProfileTypes'
 
 interface HorseLineageCardHeaderProps {
-  horse: HorseWithLineage
+  horse: HorseProfile
 }
 
 export function HorseLineageCardHeader({ horse }: HorseLineageCardHeaderProps) {
   return (
     <div className="flex items-center justify-between mb-3">
       <div>
-        <h4 className="font-semibold text-lg">{horse.horse_name}</h4>
-        {horse.registered_name && (
-          <p className="text-sm text-gray-600">{horse.registered_name}</p>
+        <h4 className="font-semibold text-lg">{horse.name}</h4>
+        {horse.registration_number && (
+          <p className="text-sm text-gray-600">{horse.registration_number}</p>
         )}
       </div>
       <div className="flex items-center gap-2">
@@ -26,6 +26,7 @@ export function HorseLineageCardHeader({ horse }: HorseLineageCardHeaderProps) {
     </div>
   )
 }
+
 
 
 

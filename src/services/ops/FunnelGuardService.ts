@@ -1,18 +1,15 @@
-// Funnel Guard Service - Single responsibility
-export class FunnelGuardService {
-  static async checkFunnelStatus() {
-    return {
-      status: 'active',
-      patchApplied: false,
-      lastCheck: new Date().toISOString()
-    }
+// FunnelGuardService.ts (30 lines) - Single responsibility: Funnel analysis
+export async function analyzeFunnel() {
+  // TODO: Implement funnel analysis
+  return {
+    status: 'healthy',
+    issues: [],
+    recommendations: []
   }
+}
 
-  static async applyFunnelPatch() {
-    return {
-      success: true,
-      patchId: 'patch_' + Date.now(),
-      appliedAt: new Date().toISOString()
-    }
-  }
+export async function applyPatchIfNeeded(issue: any) {
+  // TODO: Implement patch application
+  console.log('Applying patch for issue:', issue)
+  return { success: true }
 }

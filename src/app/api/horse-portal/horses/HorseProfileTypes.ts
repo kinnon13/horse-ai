@@ -19,3 +19,4 @@ export interface HorseProfile {
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function HorseProfile(_props?: any): never { throw new Error("Stubbed component used: ./HorseProfileTypes.HorseProfile"); }
+

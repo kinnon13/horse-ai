@@ -35,3 +35,4 @@ export function HaulSupportCoordinatesFields({ formData, setFormData }: HaulSupp
     </>
   )
 }
+

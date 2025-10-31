@@ -23,7 +23,6 @@ export async function POST(req: Request) {
       max_uses = 100 
     } = body
 
-    // Generate unique code
     const code = `HORSE${Math.random().toString(36).substring(2, 8).toUpperCase()}`
 
     const { data: referralCode, error } = await supabaseAdmin
@@ -40,18 +39,13 @@ export async function POST(req: Request) {
       })
       .select('*')
       .single()
-
     if (error) {
       console.error('Error creating referral code:', error)
       return NextResponse.json({ error: 'Failed to create referral code' }, { status: 500 })
     }
-
     return NextResponse.json({ referralCode }, { status: 200 })
   } catch (err) {
     console.error('POST /api/referrals/generate error', err)
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
   }
 }
-
-
-

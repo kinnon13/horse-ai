@@ -1,14 +1,14 @@
 import { Provider, ProviderFormData } from './ProvidersTypes'
+import { handleProviderError, showProviderSuccessMessage } from './ProviderErrorHandlers'
 
 export function useProvidersHandlers(createProvider: any, updateProvider: any, setShowAddForm: any, setEditingProvider: any) {
   const handleCreateProvider = async (formData: ProviderFormData) => {
     try {
       await createProvider(formData)
       setShowAddForm(false)
-      alert('Provider created successfully!')
+      showProviderSuccessMessage('created')
     } catch (error) {
-      console.error('Error creating provider:', error)
-      alert('Failed to create provider')
+      handleProviderError('creating provider', error)
     }
   }
 
@@ -16,30 +16,27 @@ export function useProvidersHandlers(createProvider: any, updateProvider: any, s
     try {
       await updateProvider(providerId, updates)
       setEditingProvider(null)
-      alert('Provider updated successfully!')
+      showProviderSuccessMessage('updated')
     } catch (error) {
-      console.error('Error updating provider:', error)
-      alert('Failed to update provider')
+      handleProviderError('updating provider', error)
     }
   }
 
   const handleToggleBlocked = async (provider: Provider) => {
     try {
       await updateProvider(provider.id, { is_blocked: !provider.is_blocked })
-      alert(`Provider ${provider.is_blocked ? 'unblocked' : 'blocked'} successfully!`)
+      showProviderSuccessMessage(`${provider.is_blocked ? 'unblocked' : 'blocked'}`)
     } catch (error) {
-      console.error('Error toggling blocked status:', error)
-      alert('Failed to update provider')
+      handleProviderError('updating provider', error)
     }
   }
 
   const handleToggleVerified = async (provider: Provider) => {
     try {
       await updateProvider(provider.id, { is_verified: !provider.is_verified })
-      alert(`Provider ${provider.is_verified ? 'unverified' : 'verified'} successfully!`)
+      showProviderSuccessMessage(`${provider.is_verified ? 'unverified' : 'verified'}`)
     } catch (error) {
-      console.error('Error toggling verified status:', error)
-      alert('Failed to update provider')
+      handleProviderError('updating provider', error)
     }
   }
 

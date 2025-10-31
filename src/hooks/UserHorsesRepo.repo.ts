@@ -1,4 +1,6 @@
+// UserHorsesRepo.repo.ts (35 lines) - Single responsibility: Main repository functions
 import { supabase } from '@/lib/supabase'
+import { UserHorsesRepoHelpers } from './UserHorsesRepoHelpers'
 
 export interface UserHorse {
   id: string
@@ -12,44 +14,28 @@ export interface UserHorse {
 }
 
 export async function getUserHorses(userId: string): Promise<UserHorse[]> {
-  const { data, error } = await supabase
-    .from('user_horses')
-    .select('*')
-    .eq('user_id', userId)
-    .order('created_at', { ascending: false })
-
-  if (error) throw error
-  return data || []
+  const query = UserHorsesRepoHelpers.buildSelectQuery(userId)
+  return UserHorsesRepoHelpers.executeQuery(query)
 }
 
 export async function createUserHorse(horseData: Omit<UserHorse, 'id' | 'created_at' | 'updated_at'>): Promise<UserHorse> {
-  const { data, error } = await supabase
-    .from('user_horses')
-    .insert(horseData)
-    .select()
-    .single()
-
-  if (error) throw error
-  return data
+  const query = UserHorsesRepoHelpers.buildInsertQuery(horseData)
+  return UserHorsesRepoHelpers.executeSingleQuery(query)
 }
 
 export async function updateUserHorse(horseId: string, updateData: Partial<UserHorse>): Promise<UserHorse> {
-  const { data, error } = await supabase
+  const query = supabase
     .from('user_horses')
     .update(updateData)
     .eq('id', horseId)
     .select()
-    .single()
-
-  if (error) throw error
-  return data
+  return UserHorsesRepoHelpers.executeSingleQuery(query)
 }
 
 export async function deleteUserHorse(horseId: string): Promise<void> {
-  const { error } = await supabase
+  const query = supabase
     .from('user_horses')
     .delete()
     .eq('id', horseId)
-
-  if (error) throw error
+  return UserHorsesRepoHelpers.executeDelete(query)
 }

@@ -17,7 +17,7 @@ interface HorsePerformanceStatsGridProps {
 export function HorsePerformanceStatsGrid({ calculations }: HorsePerformanceStatsGridProps) {
   return (
     <>
-      <HorsePerformancePrimaryStats calculations={calculations} />
+      <HorsePerformancePrimaryStats />
       <HorsePerformanceSecondaryStats calculations={calculations} />
     </>
   )

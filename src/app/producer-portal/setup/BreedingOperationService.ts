@@ -25,5 +25,4 @@ export async function saveBreedingOperationData(formData: ProducerSetupData): Pr
 
 
 
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export const saveBreedingOperationData = (()=>{ throw new Error("Stubbed value used: ./BreedingOperationService.saveBreedingOperationData"); })();
+

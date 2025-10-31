@@ -6,14 +6,14 @@ import { RidingExperienceForm } from './RidingExperienceForm'
 import { RidingExperienceActions } from './RidingExperienceActions'
 import { useRidingExperienceStep } from './useRidingExperienceStep'
 
-export function RidingExperienceStep({ formData, setFormData, onNext, onBack }: RidingExperienceStepProps) {
+export function RidingExperienceStep({ formData, updateField, onNext, onBack }: RidingExperienceStepProps) {
   const {
     isValid,
     isSaving,
-    updateField,
+    updateField: hookUpdateField,
     goNext,
     goBack
-  } = useRidingExperienceStep(formData, setFormData, onNext, onBack)
+  } = useRidingExperienceStep(formData, undefined, onNext, onBack)
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
@@ -24,7 +24,7 @@ export function RidingExperienceStep({ formData, setFormData, onNext, onBack }: 
       <CardContent>
         <RidingExperienceForm
           formData={formData}
-          updateField={updateField}
+          updateField={updateField || hookUpdateField}
         />
         <RidingExperienceActions
           onNext={goNext}

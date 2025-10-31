@@ -1,4 +1,5 @@
 import { AthleteSetupData } from './AthleteSetupTypes'
+import { CONTACT_PREFERENCES, ALLOWED_COUNTRIES } from './PersonalInfoConstants'
 
 export interface PersonalInfoStepProps {
   formData: AthleteSetupData
@@ -31,23 +32,5 @@ export interface PersonalInfoStepActions {
   saveData: () => Promise<void>
 }
 
-export const CONTACT_PREFERENCES = ['TEXT', 'CALL', 'EMAIL'] as const
-export const ALLOWED_COUNTRIES = ['USA', 'Canada', 'Mexico'] as const
+export { CONTACT_PREFERENCES, ALLOWED_COUNTRIES } from './PersonalInfoConstants'
 
-
-
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function PersonalInfoFormProps(_props?: any): never { throw new Error("Stubbed component used: ./PersonalInfoTypes.PersonalInfoFormProps"); }
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function PersonalInfoActionsProps(_props?: any): never { throw new Error("Stubbed component used: ./PersonalInfoTypes.PersonalInfoActionsProps"); }
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function PersonalInfoStepProps(_props?: any): never { throw new Error("Stubbed component used: ./PersonalInfoTypes.PersonalInfoStepProps"); }
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function PersonalInfoStepState(_props?: any): never { throw new Error("Stubbed component used: ./PersonalInfoTypes.PersonalInfoStepState"); }
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function PersonalInfoStepActions(_props?: any): never { throw new Error("Stubbed component used: ./PersonalInfoTypes.PersonalInfoStepActions"); }

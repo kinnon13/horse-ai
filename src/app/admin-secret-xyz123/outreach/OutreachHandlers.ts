@@ -21,6 +21,7 @@ interface OutreachHandlersProps {
 export class OutreachHandlers {
   static createHandlers(props: OutreachHandlersProps) {
     return {
+      handleComposeMessage: () => props.setShowComposeForm(true),
       handleComposeSubmit: OutreachComposeHandler.createHandler(props),
       handleTemplateChange: OutreachTemplateHandler.createHandler(props),
       handleDeleteMessage: OutreachDeleteHandler.createHandler(props),

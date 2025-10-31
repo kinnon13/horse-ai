@@ -1,6 +1,8 @@
+// PreferencesStep.tsx (45 lines) - Single responsibility: Main preferences step
 import React, { useState } from 'react'
-import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
+import { PreferencesOptions } from './PreferencesOptions'
+import { PreferencesStepNavigation } from './PreferencesStepNavigation'
 
 interface PreferencesStepProps {
   onNext: () => void
@@ -30,65 +32,13 @@ export default function PreferencesStep({ onNext, onBack }: PreferencesStepProps
             Customize your HorseGPT experience
           </p>
           
-          <div className="space-y-3">
-            <label className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-              <input
-                type="checkbox"
-                checked={preferences.notifications}
-                onChange={(e) => setPreferences(prev => ({
-                  ...prev,
-                  notifications: e.target.checked
-                }))}
-                className="w-4 h-4"
-              />
-              <div>
-                <div className="font-medium">Push Notifications</div>
-                <div className="text-sm text-gray-500">Get alerts about your horses</div>
-              </div>
-            </label>
-            
-            <label className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-              <input
-                type="checkbox"
-                checked={preferences.marketUpdates}
-                onChange={(e) => setPreferences(prev => ({
-                  ...prev,
-                  marketUpdates: e.target.checked
-                }))}
-                className="w-4 h-4"
-              />
-              <div>
-                <div className="font-medium">Market Updates</div>
-                <div className="text-sm text-gray-500">Receive market trend reports</div>
-              </div>
-            </label>
-            
-            <label className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-              <input
-                type="checkbox"
-                checked={preferences.priceAlerts}
-                onChange={(e) => setPreferences(prev => ({
-                  ...prev,
-                  priceAlerts: e.target.checked
-                }))}
-                className="w-4 h-4"
-              />
-              <div>
-                <div className="font-medium">Price Alerts</div>
-                <div className="text-sm text-gray-500">Get notified of price changes</div>
-              </div>
-            </label>
-          </div>
+          <PreferencesOptions 
+            preferences={preferences} 
+            setPreferences={setPreferences} 
+          />
         </div>
         
-        <div className="flex justify-between">
-          <Button variant="outline" onClick={onBack}>
-            Back
-          </Button>
-          <Button onClick={onNext}>
-            Continue
-          </Button>
-        </div>
+        <PreferencesStepNavigation onBack={onBack} onNext={onNext} />
       </CardContent>
     </Card>
   )

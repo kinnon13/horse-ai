@@ -1,0 +1,30 @@
+// ONBOARDING PARSER SERVICE - Parses onboarding messages to extract structured data
+import { OnboardingDataExtractors } from './OnboardingDataExtractors'
+import { OnboardingIntent, OnboardingParseResult } from './OnboardingParser.types'
+
+export class OnboardingParserService {
+  // Parses onboarding messages to extract structured data - only extracts explicit data
+  static parseOnboardingMessage(message: string): OnboardingIntent {
+    const lowerMessage = message.toLowerCase()
+    const horseCount = OnboardingDataExtractors.extractHorseCount(lowerMessage)
+    const roles = OnboardingDataExtractors.extractRoles(lowerMessage)
+    const sponsorCode = OnboardingDataExtractors.extractSponsorCode(message)
+    const step = this.determineStep(horseCount, roles, sponsorCode)
+    return {
+      type: 'onboarding',
+      step,
+      data: { horseCount, roles, sponsorCode }
+    }
+  }
+
+  private static determineStep(
+    horseCount: number | undefined,
+    roles: string[],
+    sponsorCode: string | undefined
+  ): OnboardingIntent['step'] {
+    if (sponsorCode) return 'preferences'
+    if (roles.length > 0) return 'roles'
+    if (horseCount !== undefined) return 'horse_count'
+    return 'greeting'
+  }
+}

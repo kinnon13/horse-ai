@@ -19,3 +19,4 @@ export const BUSINESS_SEARCH_TITLE = 'Business Directory'
 export const BUSINESS_SEARCH_DESCRIPTION = 'Find horse-related businesses in your area'
 export const FILTER_LABEL = 'Filter by service type'
 export const ADD_BUSINESS_BUTTON_TEXT = 'List Your Business'
+

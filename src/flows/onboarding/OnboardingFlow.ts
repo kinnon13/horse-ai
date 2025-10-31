@@ -1,21 +1,8 @@
-/**
- * ONBOARDING FLOW COORDINATOR
- * 
- * PURPOSE:
- * - Coordinates the onboarding flow process
- * - Handles the main onboarding logic
- * - Orchestrates all onboarding components
- * 
- * SAFETY:
- * - Every user input is timestamped with source_user_id
- * - We explicitly ask permission before storing any personal info
- * - We never assume consent - we ask "do you want me to reach out for you?"
- */
-
+// OnboardingFlow.ts (40 lines) - Single responsibility: Main onboarding flow coordinator
 import { OnboardingDetector } from './OnboardingDetector'
 import { OnboardingParser, OnboardingIntent } from './OnboardingParser'
 import { OnboardingResponseGenerator, OnboardingResponse } from './OnboardingResponseGenerator'
-import { OnboardingRepository } from './OnboardingRepository'
+import { OnboardingProcessor } from './OnboardingProcessor'
 
 export class OnboardingFlow {
   /**
@@ -36,11 +23,6 @@ export class OnboardingFlow {
    * - Processes onboarding messages and determines next steps
    * - Saves user preferences with timestamps
    * - Creates audit trail of onboarding decisions
-   * 
-   * SAFETY:
-   * - Every user input is timestamped with source_user_id
-   * - We explicitly ask permission before storing personal info
-   * - We never overwrite previous answers - we version them
    */
   static async processOnboarding(
     message: string, 
@@ -48,29 +30,13 @@ export class OnboardingFlow {
     horseContext?: string
   ): Promise<OnboardingResponse> {
     
-    // Log this onboarding interaction
-    await OnboardingRepository.logOnboardingStep(userId, 'message_received', { message })
+    // Process the onboarding data
+    await OnboardingProcessor.processOnboardingData(message, userId, horseContext)
     
     // Parse the message for onboarding data
     const intent = OnboardingParser.parseOnboardingMessage(message)
-    
-    // Save the data with timestamps
-    if (intent.data.horseCount) {
-      await OnboardingRepository.saveHorseCount(userId, intent.data.horseCount)
-    }
-    
-    if (intent.data.roles && intent.data.roles.length > 0) {
-      await OnboardingRepository.saveUserRoles(userId, intent.data.roles)
-    }
-    
-    if (intent.data.sponsorCode) {
-      await OnboardingRepository.saveSponsorCode(userId, intent.data.sponsorCode)
-    }
     
     // Generate response based on current step
     return OnboardingResponseGenerator.generateOnboardingResponse(intent)
   }
 }
-
-
-

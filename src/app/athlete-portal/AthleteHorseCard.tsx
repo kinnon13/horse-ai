@@ -32,3 +32,4 @@ export function AthleteHorseCard({ horse, onEditHorse, onDeleteHorse }: AthleteH
 
 
 
+

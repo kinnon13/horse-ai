@@ -4,17 +4,8 @@ import { HorsePartnershipsStepProps } from './HorsePartnershipsTypes'
 import { HorsePartnershipsHeader } from './HorsePartnershipsHeader'
 import { HorsePartnershipsForm } from './HorsePartnershipsForm'
 import { HorsePartnershipsActions } from './HorsePartnershipsActions'
-import { useHorsePartnershipsStep } from './useHorsePartnershipsStep'
 
-export function HorsePartnershipsStep({ formData, setFormData, onNext, onBack }: HorsePartnershipsStepProps) {
-  const {
-    isValid,
-    isSaving,
-    updateField,
-    goNext,
-    goBack
-  } = useHorsePartnershipsStep(formData, setFormData, onNext, onBack)
-
+export function HorsePartnershipsStep({ formData, updateField, goNext, goBack, isValid }: HorsePartnershipsStepProps) {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
@@ -30,7 +21,7 @@ export function HorsePartnershipsStep({ formData, setFormData, onNext, onBack }:
           onNext={goNext}
           onBack={goBack}
           isValid={isValid}
-          isSaving={isSaving}
+          isSaving={false}
         />
       </CardContent>
     </Card>

@@ -1,4 +1,4 @@
-import { CalendarState } from './CalendarTypes'
+import { CalendarState, CalendarEvent } from './CalendarTypes'
 import { createCalendarBooking, updateCalendarBooking, deleteCalendarBooking } from './CalendarBookingService'
 
 export function useCalendarCRUDActions(state: CalendarState) {
@@ -42,6 +42,7 @@ export function useCalendarCRUDActions(state: CalendarState) {
 
   return { createEvent, updateEvent, deleteEvent }
 }
+
 
 
 

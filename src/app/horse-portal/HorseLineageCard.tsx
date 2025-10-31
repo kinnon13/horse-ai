@@ -1,9 +1,9 @@
-import { HorseWithLineage } from './HorseLineageTypes'
+import { HorseProfile } from './HorseProfileTypes'
 import { HorseLineageCardHeader } from './HorseLineageCardHeader'
 import { HorseLineageCardDetails } from './HorseLineageCardDetails'
 
 interface HorseLineageCardProps {
-  horse: HorseWithLineage
+  horse: HorseProfile
 }
 
 export function HorseLineageCard({ horse }: HorseLineageCardProps) {

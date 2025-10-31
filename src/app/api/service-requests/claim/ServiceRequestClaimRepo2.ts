@@ -35,3 +35,4 @@ export class ServiceRequestClaimRepo2 {
     if (error) throw new Error(`Failed to create notification: ${error.message}`)
   }
 }
+

@@ -46,3 +46,4 @@ export async function updateHaulSupportRequest(id: string, updates: Partial<Haul
   // TODO: Implement actual request update
   console.log(`Haul support request ${id} updated:`, updates)
 }
+

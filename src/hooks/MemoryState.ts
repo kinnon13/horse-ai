@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MemoryState } from './MemoryTypes'
+import { MemoryState, UserMemory } from './MemoryTypes'
 
 export function useMemoryState(): MemoryState {
   const [userMemory, setUserMemory] = useState<UserMemory | null>(null)
@@ -15,6 +15,7 @@ export function useMemoryState(): MemoryState {
     setError
   }
 }
+
 
 
 

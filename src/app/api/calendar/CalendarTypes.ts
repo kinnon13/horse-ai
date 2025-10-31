@@ -37,3 +37,4 @@ export function CalendarEvent(_props?: any): never { throw new Error("Stubbed co
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function CalendarFilters(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarFilters"); }
+

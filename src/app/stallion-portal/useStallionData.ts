@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import { useAuth } from '@/components/AuthProvider'
 import { useRouter } from 'next/navigation'
 import { loadStationData } from './dataLoader'
-import { StallionStationProfile, StallionProfile } from './types'
+import { StallionProfile } from './StallionProfileTypes'
 
 export function useStallionData() {
   const { user, loading } = useAuth()
   const router = useRouter()
-  const [station, setStation] = useState<StallionStationProfile | null>(null)
+  const [station, setStation] = useState<StallionProfile | null>(null)
   const [stallions, setStallions] = useState<StallionProfile[]>([])
   const [loadingProfile, setLoadingProfile] = useState(true)
 
@@ -39,6 +39,7 @@ export function useStallionData() {
     setStallions
   }
 }
+
 
 
 

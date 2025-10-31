@@ -1,0 +1,168 @@
+{
+  "name": "CRM Lead Capture",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-capture",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "lead-capture"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO crm_leads (name, email, phone, service_type, location, source, created_at) VALUES ($1, $2, $3, $4, $5, $6, NOW()) RETURNING id",
+        "options": {
+          "queryParameters": {
+            "parameters": [
+              "={{ $json.body.name }}",
+              "={{ $json.body.email }}",
+              "={{ $json.body.phone }}",
+              "={{ $json.body.service_type }}",
+              "={{ $json.body.location }}",
+              "={{ $json.body.source }}"
+            ]
+          }
+        }
+      },
+      "id": "save-to-postgres",
+      "name": "Save to Supabase",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "credentials": {
+        "postgres": {
+          "id": "supabase-connection",
+          "name": "Supabase Database"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.horseai.com/api/workflows/provider-notification",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "lead_id",
+              "value": "={{ $json.id }}"
+            },
+            {
+              "name": "service_type",
+              "value": "={{ $json.body.service_type }}"
+            },
+            {
+              "name": "location",
+              "value": "={{ $json.body.location }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "notify-providers",
+      "name": "Notify Providers",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "api-credentials",
+          "name": "HorseAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.sendgrid.com/v3/mail/send",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "personalizations",
+              "value": "[{\"to\":[{\"email\":\"{{ $json.body.email }}\"}],\"subject\":\"Welcome to HorseAI!\"}]"
+            },
+            {
+              "name": "from",
+              "value": "{\"email\":\"noreply@horseai.com\"}"
+            },
+            {
+              "name": "content",
+              "value": "[{\"type\":\"text/html\",\"value\":\"<h1>Thank you for your interest!</h1><p>We've received your request and will connect you with providers soon.</p>\"}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-email",
+      "name": "Send Welcome Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "sendgrid-credentials",
+          "name": "SendGrid API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Save to Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Supabase": {
+      "main": [
+        [
+          {
+            "node": "Notify Providers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify Providers": {
+      "main": [
+        [
+          {
+            "node": "Send Welcome Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z",
+      "id": "crm-tag",
+      "name": "CRM"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}

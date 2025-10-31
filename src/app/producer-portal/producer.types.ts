@@ -1,0 +1,8 @@
+export type { ProducerProfile, BreedingOperation, BreedingPolicy } from './ProducerTypes'
+export type { StallionProfile, MareProfile, PerformanceData } from './ProducerHorseTypes'
+export type { HealthRecord, BreedingHistory } from './ProducerHealthTypes'
+export type { ProducerProgram, ProducerProgramHealth } from './ProducerProgramTypes'
+export type { ProducerProgramBreeding } from './ProducerProgramCore'
+export type { ProducerClient, ProducerClientRelationship } from './ProducerClientTypes'
+export type { ProducerHorse, ProducerBreeding } from './ProducerHorseTypes'
+export type { ProducerDataExport, ProducerAnalytics } from './ProducerDataAnalytics'

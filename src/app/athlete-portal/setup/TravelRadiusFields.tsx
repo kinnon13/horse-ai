@@ -1,6 +1,6 @@
 import { RidingExperienceFormProps } from './RidingExperienceTypes'
 
-export function TravelRadiusFields({ formData, updateField }: RidingExperienceFormProps) {
+export function TravelRadiusFields({ formData, updateField }: { formData: any, updateField: (field: string, value: any) => void }) {
   return (
     <div className="space-y-4">
       <div>
@@ -31,6 +31,7 @@ export function TravelRadiusFields({ formData, updateField }: RidingExperienceFo
     </div>
   )
 }
+
 
 
 

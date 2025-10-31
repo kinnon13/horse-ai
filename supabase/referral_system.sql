@@ -64,3 +64,4 @@ ADD COLUMN IF NOT EXISTS referral_reward_applied_at TIMESTAMPTZ;
 
 
 
+

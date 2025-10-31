@@ -9,7 +9,7 @@ export function Navigation({ currentStepData, canGoNext, onPrevious, onNext, onS
         <ArrowLeft className="w-4 h-4 mr-2" />Previous
       </Button>
       <div className="flex space-x-2">
-        {currentStepData?.stepDots?.map((dot, index) => (
+        {currentStepData?.stepDots?.map((dot: string, index: number) => (
           <button key={index} onClick={() => onStepSelect(index)} className={`w-3 h-3 rounded-full transition-colors ${dot}`} />
         ))}
       </div>
@@ -19,6 +19,7 @@ export function Navigation({ currentStepData, canGoNext, onPrevious, onNext, onS
     </div>
   )
 }
+
 
 
 

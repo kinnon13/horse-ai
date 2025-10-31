@@ -19,7 +19,6 @@ export interface CalendarEvent {
     yob: string | null
   }
 }
-
 export interface CalendarFilters {
   user_id?: string
   event_type?: string
@@ -28,15 +27,18 @@ export interface CalendarFilters {
   end_date?: string
   limit?: number
 }
-
 export interface CalendarState {
   events: CalendarEvent[]
   loading: boolean
   error: string | null
   selectedSlot: string | null
   pendingRequest: boolean
+  setEvents: (events: CalendarEvent[]) => void
+  setLoading: (loading: boolean) => void
+  setError: (error: string | null) => void
+  setSelectedSlot: (slot: string | null) => void
+  setPendingRequest: (pending: boolean) => void
 }
-
 export interface CalendarActions {
   fetchEvents: () => Promise<void>
   createEvent: (event: Omit<CalendarEvent, 'id' | 'created_at'>) => Promise<void>
@@ -44,16 +46,5 @@ export interface CalendarActions {
   deleteEvent: (id: string) => Promise<void>
   selectSlot: (slot: string | null) => void
   requestBooking: (slot: string, eventData: any) => Promise<void>
-  cancelBooking: (id: string) => Promise<void>
+  cancelBooking: (id: string, updateEvent: (id: string, updates: any) => Promise<void>) => Promise<void>
 }
-
-
-
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function CalendarEvent(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarEvent"); }
-export function CalendarFilters(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarFilters"); }
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function CalendarState(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarState"); }
-export function CalendarActions(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarActions"); }

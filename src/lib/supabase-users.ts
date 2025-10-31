@@ -25,3 +25,4 @@ export interface UserTable {
     updated_at?: string
   }
 }
+

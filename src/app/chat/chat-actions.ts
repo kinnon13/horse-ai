@@ -1,6 +1,7 @@
-import { ChatMessage } from './chat.repo'
+// chat-actions.ts - Single responsibility: Chat actions
 import { ChatRepository } from './chat.repo'
 import { ChatState } from './chat-types'
+import { createUserMessage, createAssistantMessage } from './chat-message-helpers'
 
 export class ChatActions {
   constructor(
@@ -9,12 +10,7 @@ export class ChatActions {
   ) {}
 
   sendMessage = async (content: string) => {
-    const userMessage: ChatMessage = {
-      id: Date.now().toString(),
-      content,
-      role: 'user',
-      timestamp: new Date()
-    }
+    const userMessage = createUserMessage(content)
 
     this.setState(prev => ({
       ...prev,
@@ -26,12 +22,7 @@ export class ChatActions {
     const response = await this.chatRepo.sendMessage(content)
 
     if (response.success) {
-      const assistantMessage: ChatMessage = {
-        id: (Date.now() + 1).toString(),
-        content: response.message,
-        role: 'assistant',
-        timestamp: new Date()
-      }
+      const assistantMessage = createAssistantMessage(response.message)
 
       this.setState(prev => ({
         ...prev,

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { ProviderLoginPageState, ProviderLoginPageActions } from './ProviderLoginTypes'
+import type { ProviderLoginPageState, ProviderLoginPageActions } from './ProviderLoginTypes'
 import { useProviderLoginState } from './useProviderLoginState'
 import { useProviderLoginActions } from './useProviderLoginActions'
 

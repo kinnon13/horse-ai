@@ -1,6 +1,9 @@
+// useAthleteHandlers.ts (40 lines) - Single responsibility: Main athlete handlers hook
 import { useState } from 'react'
-import { CompetitionHorse, CompetitionEvent } from './types'
-import { saveHorse, updateHorse, deleteHorse, deleteEvent } from './dataOperations'
+import { CompetitionHorse } from './Types'
+import { CompetitionEvent } from './AthleteEventTypes'
+import { AthleteHorseHandlers } from './AthleteHorseHandlers'
+import { AthleteEventHandlers } from './AthleteEventHandlers'
 
 export function useAthleteHandlers(athlete: any, setHorses: any, setEvents: any) {
   const [showHorseForm, setShowHorseForm] = useState(false)
@@ -9,68 +12,13 @@ export function useAthleteHandlers(athlete: any, setHorses: any, setEvents: any)
   const [editingHorse, setEditingHorse] = useState<CompetitionHorse | null>(null)
   const [editingEvent, setEditingEvent] = useState<CompetitionEvent | null>(null)
 
-  const handleHorseSubmit = async (formData: any) => {
-    if (!athlete) return
-    
-    try {
-      if (editingHorse) {
-        await updateHorse({ ...editingHorse, ...formData })
-        setHorses((prev: CompetitionHorse[]) => 
-          prev.map(h => h.id === editingHorse.id ? { ...h, ...formData } : h)
-        )
-      } else {
-        const data = await saveHorse(formData, athlete.id)
-        setHorses((prev: CompetitionHorse[]) => [...prev, data])
-      }
-      
-      setShowHorseForm(false)
-      setEditingHorse(null)
-    } catch (error) {
-      console.error('Error saving horse:', error)
-    }
-  }
-
-  const handleDeleteHorse = async (horseId: string) => {
-    if (!confirm('Are you sure you want to delete this horse?')) return
-    
-    try {
-      await deleteHorse(horseId)
-      setHorses((prev: CompetitionHorse[]) => prev.filter(h => h.id !== horseId))
-    } catch (error) {
-      console.error('Error deleting horse:', error)
-    }
-  }
-
-  const handleEditHorse = (horse: CompetitionHorse) => {
-    setEditingHorse(horse)
-    setShowHorseForm(true)
-  }
-
-  const handleAddHorse = () => {
-    setEditingHorse(null)
-    setShowHorseForm(true)
-  }
-
-  const handleAddEvent = () => {
-    setEditingEvent(null)
-    setShowEventForm(true)
-  }
-
-  const handleEditEvent = (event: CompetitionEvent) => {
-    setEditingEvent(event)
-    setShowEventForm(true)
-  }
-
-  const handleDeleteEvent = async (eventId: string) => {
-    if (!confirm('Are you sure you want to delete this event?')) return
-    
-    try {
-      await deleteEvent(eventId)
-      setEvents((prev: CompetitionEvent[]) => prev.filter(e => e.id !== eventId))
-    } catch (error) {
-      console.error('Error deleting event:', error)
-    }
-  }
+  const horseHandlers = new AthleteHorseHandlers(
+    athlete, setHorses, setShowHorseForm, setEditingHorse
+  )
+  
+  const eventHandlers = new AthleteEventHandlers(
+    setEvents, setShowEventForm, setEditingEvent
+  )
 
   return {
     showHorseForm,
@@ -78,15 +26,14 @@ export function useAthleteHandlers(athlete: any, setHorses: any, setEvents: any)
     showServiceRequestForm,
     editingHorse,
     editingEvent,
-    handleHorseSubmit,
-    handleDeleteHorse,
-    handleEditHorse,
-    handleAddHorse,
-    handleAddEvent,
-    handleEditEvent,
-    handleDeleteEvent,
+    handleHorseSubmit: (formData: any) => horseHandlers.handleHorseSubmit(formData, editingHorse),
+    handleDeleteHorse: horseHandlers.handleDeleteHorse,
+    handleEditHorse: horseHandlers.handleEditHorse,
+    handleAddHorse: () => setShowHorseForm(true),
+    handleAddEvent: eventHandlers.handleAddEvent,
+    handleEditEvent: eventHandlers.handleEditEvent,
+    handleDeleteEvent: eventHandlers.handleDeleteEvent,
     setShowHorseForm,
     setEditingHorse
   }
 }
-

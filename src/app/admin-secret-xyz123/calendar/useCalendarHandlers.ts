@@ -1,5 +1,5 @@
-import { CalendarEvent, CalendarFormData } from './CalendarTypes'
-import CalendarUtils from './CalendarUtils'
+// useCalendarHandlers.ts (25 lines) - Single responsibility: Handler factory
+import { CalendarEventHandlers } from './CalendarEventHandlers'
 
 export function useCalendarHandlers(
   user: any,
@@ -9,49 +9,18 @@ export function useCalendarHandlers(
   setShowAddForm: (show: boolean) => void,
   setEditingEvent: (event: any) => void
 ) {
-  const handleCreateEvent = async (formData: CalendarFormData) => {
-    if (!user) return
-    
-    try {
-      const validatedData = CalendarUtils.validateEventForm(formData)
-      await createEvent(validatedData)
-      setShowAddForm(false)
-      alert('Event created successfully!')
-    } catch (error) {
-      console.error('Error creating event:', error)
-      alert('Failed to create event')
-    }
-  }
+  const handlers = new CalendarEventHandlers(
+    user,
+    createEvent,
+    updateEvent,
+    deleteEvent,
+    setShowAddForm,
+    setEditingEvent
+  )
 
-  const handleUpdateEvent = async (eventId: string, updates: CalendarFormData) => {
-    if (!user) return
-    
-    try {
-      const validatedData = CalendarUtils.validateEventForm(updates)
-      await updateEvent(eventId, validatedData)
-      setEditingEvent(null)
-      alert('Event updated successfully!')
-    } catch (error) {
-      console.error('Error updating event:', error)
-      alert('Failed to update event')
-    }
+  return {
+    handleCreateEvent: handlers.handleCreateEvent,
+    handleUpdateEvent: handlers.handleUpdateEvent,
+    handleDeleteEvent: handlers.handleDeleteEvent
   }
-
-  const handleDeleteEvent = async (eventId: string) => {
-    if (!user) return
-    
-    const confirmed = confirm('Are you sure you want to delete this event?')
-    if (!confirmed) return
-    
-    try {
-      await deleteEvent(eventId)
-      alert('Event deleted successfully!')
-    } catch (error) {
-      console.error('Error deleting event:', error)
-      alert('Failed to delete event')
-    }
-  }
-
-  return { handleCreateEvent, handleUpdateEvent, handleDeleteEvent }
 }
-

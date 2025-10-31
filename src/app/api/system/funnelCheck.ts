@@ -1,4 +1,4 @@
-import { analyzeFunnel, applyPatchIfNeeded } from "../../services/ops/FunnelGuardService";
+import { analyzeFunnel, applyPatchIfNeeded } from "@/services/ops/FunnelGuardService";
 
 export default async function handler(req: any, res: any) {
   const status = await analyzeFunnel();

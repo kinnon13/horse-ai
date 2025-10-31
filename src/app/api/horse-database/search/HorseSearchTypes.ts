@@ -44,3 +44,4 @@ export interface HorseData {
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function HorseSearchParams(_props?: any): never { throw new Error("Stubbed component used: ./HorseSearchTypes.HorseSearchParams"); }
 export function HorseData(_props?: any): never { throw new Error("Stubbed component used: ./HorseSearchTypes.HorseData"); }
+

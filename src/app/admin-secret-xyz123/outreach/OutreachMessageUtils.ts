@@ -1,4 +1,5 @@
-import { OutreachMessage, ComposeData } from './OutreachDataTypes'
+import { OutreachMessage } from './OutreachDataTypes'
+import { ComposeData } from './ComposeDataTypes'
 
 export class OutreachMessageUtils {
   static getInitialMessages(): OutreachMessage[] {
@@ -21,6 +22,7 @@ export class OutreachMessageUtils {
       id: Date.now().toString(),
       title: data.title,
       content: data.content,
+      recipients: data.recipients,
       status: 'draft',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()

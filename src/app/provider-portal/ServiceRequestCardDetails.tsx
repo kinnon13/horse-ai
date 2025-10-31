@@ -21,8 +21,8 @@ export function ServiceRequestCardDetails({ request }: ServiceRequestCardDetails
         {request.preferred_date && (
           <p><strong>Preferred Date:</strong> {formatServiceRequestDate(request.preferred_date)}</p>
         )}
-        {request.budget && (
-          <p><strong>Budget:</strong> ${request.budget}</p>
+        {request.budget_range && (
+          <p><strong>Budget Range:</strong> {request.budget_range}</p>
         )}
       </div>
     </div>

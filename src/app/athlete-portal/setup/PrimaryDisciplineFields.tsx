@@ -1,11 +1,11 @@
 import { RidingExperienceFormProps, RIDING_DISCIPLINES } from './RidingExperienceTypes'
 
-export function PrimaryDisciplineFields({ formData, updateField }: RidingExperienceFormProps) {
+export function PrimaryDisciplineFields({ formData, updateField }: { formData: any, updateField: (field: string, value: any) => void }) {
   const handleDisciplineChange = (discipline: string, checked: boolean) => {
     if (checked) {
       updateField('primary_disciplines', [...formData.primary_disciplines, discipline])
     } else {
-      updateField('primary_disciplines', formData.primary_disciplines.filter(d => d !== discipline))
+      updateField('primary_disciplines', formData.primary_disciplines.filter((d: string) => d !== discipline))
     }
   }
 
@@ -30,6 +30,7 @@ export function PrimaryDisciplineFields({ formData, updateField }: RidingExperie
     </div>
   )
 }
+
 
 
 

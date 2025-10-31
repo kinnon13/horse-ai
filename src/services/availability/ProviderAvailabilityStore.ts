@@ -18,6 +18,3 @@ export async function confirmSlot(jobId: string): Promise<void> {
   if (error) throw error
 }
 
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export const holdSlot = (()=>{ throw new Error("Stubbed value used: ./ProviderAvailabilityStore.holdSlot"); })();
-export const confirmSlot = (()=>{ throw new Error("Stubbed value used: ./ProviderAvailabilityStore.confirmSlot"); })();

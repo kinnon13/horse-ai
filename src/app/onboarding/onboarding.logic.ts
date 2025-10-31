@@ -1,4 +1,5 @@
-import type { OnboardingVM, OnboardingStep } from './Onboarding.types'
+import type { OnboardingVM } from './useOnboarding'
+import type { OnboardingStep } from './Onboarding.types'
 
 export function buildOnboardingVM({
   loading,
@@ -41,6 +42,7 @@ export function buildOnboardingVM({
     canGoNext: completedSteps.includes(currentStepData.step.id)
   }
 }
+
 
 
 

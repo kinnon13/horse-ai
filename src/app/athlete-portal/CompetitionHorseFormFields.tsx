@@ -1,0 +1,3 @@
+// CompetitionHorseFormFields.tsx (10 lines) - Re-exports from split files
+export { FormFields as CompetitionHorseFormFields } from './FormFields'
+export { FormFieldsHelpers } from './FormFieldsHelpers'

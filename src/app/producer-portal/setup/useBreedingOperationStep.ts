@@ -23,6 +23,7 @@ export function useBreedingOperationStep(
 
   return {
     ...state,
-    ...actions
+    ...actions,
+    isValid: actions.validateForm()
   }
 }

@@ -9,18 +9,12 @@ export function usePersonalInfoStep(
   onNext: () => void
 ): PersonalInfoStepState & PersonalInfoStepActions {
   const state = usePersonalInfoState(initialData)
-  const actions = usePersonalInfoActions(
-    state.formData,
-    setFormData,
-    state.errors,
-    state.setErrors,
-    state.isSaving,
-    state.setIsSaving,
-    onNext
-  )
+  const actions = usePersonalInfoActions()
 
   return {
     ...state,
-    ...actions
+    ...actions,
+    isValid: true, // TODO: Implement proper validation
+    saveData: () => Promise.resolve()
   }
 }

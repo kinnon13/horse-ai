@@ -21,8 +21,8 @@ export class OutreachTemplateHandler {
         props.setComposeData((prev: ComposeData) => ({
           ...prev,
           template: templateId,
-          subject: template.subject,
-          content: template.content
+          subject: '',
+          content: template
         }))
       }
     }

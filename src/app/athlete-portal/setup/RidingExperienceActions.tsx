@@ -1,6 +1,12 @@
 import { ArrowRight, ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { RidingExperienceActionsProps } from './RidingExperienceTypes'
+
+interface RidingExperienceActionsProps {
+  onNext: () => void
+  onBack: () => void
+  isValid: boolean
+  isSaving: boolean
+}
 
 export function RidingExperienceActions({ onNext, onBack, isValid, isSaving }: RidingExperienceActionsProps) {
   return (
@@ -16,6 +22,3 @@ export function RidingExperienceActions({ onNext, onBack, isValid, isSaving }: R
     </div>
   )
 }
-
-
-

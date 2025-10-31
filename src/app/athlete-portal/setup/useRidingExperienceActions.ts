@@ -18,8 +18,8 @@ export function useRidingExperienceActions(
     return validateRidingExperience(formData, setErrors)
   }
 
-  const updateField = (field: keyof AthleteSetupData, value: any) => {
-    updateRidingExperienceField(formData, setFormData, field, value, errors, setErrors)
+  const updateField = (field: string, value: any) => {
+    updateRidingExperienceField(formData, setFormData, field as keyof AthleteSetupData, value, errors, setErrors)
   }
 
   const saveData = async (): Promise<void> => {
@@ -40,8 +40,6 @@ export function useRidingExperienceActions(
   return {
     updateField,
     goNext,
-    goBack,
-    validateForm,
-    saveData
+    goBack
   }
 }

@@ -1,8 +1,8 @@
-import { ServiceRequest } from './ProviderLoginTypes'
+import type { ServiceRequestType } from './ProviderLoginTypes'
 import { fetchServiceRequests } from './ServiceRequestsService'
 
 export async function fetchServiceRequestsWithState(
-  setServiceRequests: (requests: ServiceRequest[]) => void,
+  setServiceRequests: (requests: ServiceRequestType[]) => void,
   setLoadingRequests: (loading: boolean) => void
 ): Promise<void> {
   setLoadingRequests(true)

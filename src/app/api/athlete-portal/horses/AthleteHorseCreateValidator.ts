@@ -25,3 +25,4 @@ export function validateAthleteHorseCreate(data: any): Omit<AthleteHorse, 'id' |
     value: data.value
   }
 }
+

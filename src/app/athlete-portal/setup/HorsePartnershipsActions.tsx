@@ -16,6 +16,3 @@ export function HorsePartnershipsActions({ onNext, onBack, isValid, isSaving }: 
     </div>
   )
 }
-
-
-

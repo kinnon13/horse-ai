@@ -8,7 +8,7 @@ import { HorseLineageTree } from './HorseLineageTree'
 
 export default function HorseLineageSection({ horses, loading }: HorseLineageSectionProps) {
   const stats = useHorseLineageData(horses)
-  const horsesWithLineage = horses.filter(horse => horse.sire_name || horse.dam_name)
+  const horsesWithLineage = horses.filter(horse => horse.sire || horse.dam)
 
   if (loading) {
     return <HorseLineageHeader loading={true} />

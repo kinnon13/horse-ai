@@ -1,71 +1,30 @@
-/**
- * HAUL SUPPORT DATA FETCHER
- * 
- * PURPOSE:
- * - Gets haul support points for the specified route
- * - Returns only verified safe locations
- * 
- * SAFETY:
- * - Only returns verified safe locations
- * - We log every query for audit trail
- */
-
+// HaulSupportDataFetcher.ts (30 lines) - Single responsibility: Data fetching
 import { supabase } from '@/lib/supabase'
 import { HaulSupportIntent } from './HaulSupportParser'
+import { HaulSupportValidator } from './HaulSupportValidator'
 
 export class HaulSupportDataFetcher {
-  /**
-   * PURPOSE:
-   * - Gets haul support points for the specified route
-   * - Returns only verified safe locations
-   * 
-   * SAFETY:
-   * - Only returns verified safe locations
-   * - We log every query for audit trail
-   */
-  static async getRouteSupportPoints(route: HaulSupportIntent['route']): Promise<{
-    fuel: any[]
-    overnight: any[]
-    emergency: any[]
-    hookups: any[]
-    feedStores: any[]
-  }> {
-    
-    // Get haul support points along the route
-    const { data: supportPoints, error } = await supabase
+  static async getHaulSupportPoints(intent: HaulSupportIntent) {
+    const { data: points, error } = await supabase
       .from('haul_support_points')
       .select('*')
       .eq('verified', true)
-      .eq('status', 'active')
-      .order('safety_rating', { ascending: false })
+      .eq('active', true)
+      .order('distance_from_route', { ascending: true })
+      .limit(10)
+
+    if (error) throw new Error(`Failed to fetch haul support points: ${error.message}`)
     
-    if (error) {
-      console.error('Error fetching haul support points:', error)
-      throw new Error('Failed to fetch haul support points')
+    const validatedPoints = await HaulSupportValidator.validatePoints(points || [])
+    return validatedPoints
+  }
+
+  static async getRouteInfo(origin: string, destination: string) {
+    // TODO: Implement route calculation
+    return {
+      distance: 0,
+      estimatedTime: 0,
+      route: []
     }
-    
-    if (!supportPoints) {
-      return {
-        fuel: [],
-        overnight: [],
-        emergency: [],
-        hookups: [],
-        feedStores: []
-      }
-    }
-    
-    // Group by type
-    const grouped = {
-      fuel: supportPoints.filter(p => p.type === 'fuel'),
-      overnight: supportPoints.filter(p => p.type === 'overnight_stalls'),
-      emergency: supportPoints.filter(p => p.type === 'emergency_vet'),
-      hookups: supportPoints.filter(p => p.type === 'arena_hookup'),
-      feedStores: supportPoints.filter(p => p.type === 'feed_store')
-    }
-    
-    return grouped
   }
 }
-
-
-

@@ -8,8 +8,8 @@ export function BioFields({ formData, updateField }: HorsePartnershipsFormProps)
           Bio
         </label>
         <textarea
-          value={formData.bio}
-          onChange={(e) => updateField('bio', e.target.value)}
+          value={formData.partnership_type}
+          onChange={(e) => updateField('partnership_type', e.target.value)}
           rows={4}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Tell us about your riding journey, achievements, and goals..."
@@ -21,8 +21,8 @@ export function BioFields({ formData, updateField }: HorsePartnershipsFormProps)
           Key Achievements
         </label>
         <textarea
-          value={formData.achievements}
-          onChange={(e) => updateField('achievements', e.target.value)}
+          value={formData.training_arrangements}
+          onChange={(e) => updateField('training_arrangements', e.target.value)}
           rows={3}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="List your major accomplishments, awards, and notable performances..."
@@ -34,8 +34,8 @@ export function BioFields({ formData, updateField }: HorsePartnershipsFormProps)
           Goals
         </label>
         <textarea
-          value={formData.goals}
-          onChange={(e) => updateField('goals', e.target.value)}
+          value={formData.competition_sharing}
+          onChange={(e) => updateField('competition_sharing', e.target.value)}
           rows={3}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="What are your riding goals for the next year? What do you want to achieve?"
@@ -44,6 +44,7 @@ export function BioFields({ formData, updateField }: HorsePartnershipsFormProps)
     </div>
   )
 }
+
 
 
 

@@ -26,4 +26,9 @@ export class CEOReportService {
     // TODO: Implement report sending
     console.log('CEO Report:', data)
   }
+
+  static async getKPIs(): Promise<CEOReportData> {
+    // TODO: Implement actual KPI fetching
+    return this.generateDailyReport()
+  }
 }

@@ -9,18 +9,14 @@ export function useBusinessInfoStep(
   onNext: () => void
 ): BusinessInfoStepState & BusinessInfoStepActions {
   const state = useBusinessInfoState(initialData)
-  const actions = useBusinessInfoActions(
-    state.formData,
-    setFormData,
-    state.errors,
-    state.setErrors,
-    state.isSaving,
-    state.setIsSaving,
-    onNext
-  )
+  const actions = useBusinessInfoActions()
 
   return {
     ...state,
-    ...actions
+    ...actions,
+    isValid: actions.validateForm(),
+    saveData: async () => {
+      console.log('Saving business info data')
+    }
   }
 }

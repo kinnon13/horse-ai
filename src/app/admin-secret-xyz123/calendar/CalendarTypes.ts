@@ -26,3 +26,4 @@ export interface CalendarFormData {
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function CalendarEvent(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarEvent"); }
 export function CalendarFormData(_props?: any): never { throw new Error("Stubbed component used: ./CalendarTypes.CalendarFormData"); }
+

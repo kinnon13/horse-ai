@@ -1,8 +1,13 @@
 import { cn } from '@/lib/utils'
 import { HTMLAttributes, forwardRef } from 'react'
 
-const Dialog = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
+interface DialogProps extends HTMLAttributes<HTMLDivElement> {
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+}
+
+const Dialog = forwardRef<HTMLDivElement, DialogProps>(
+  ({ className, open, onOpenChange, ...props }, ref) => (
     <div
       ref={ref}
       className={cn('fixed inset-0 z-50 flex items-center justify-center', className)}
@@ -24,3 +29,4 @@ const DialogTrigger = forwardRef<HTMLButtonElement, HTMLAttributes<HTMLButtonEle
 DialogTrigger.displayName = 'DialogTrigger'
 
 export { Dialog, DialogTrigger }
+

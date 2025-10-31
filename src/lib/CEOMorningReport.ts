@@ -46,3 +46,4 @@ export function formatCEOReport(report: CEOReport): string {
   // TODO: Implement actual CEO report formatting
   return `CEO Report for ${report.date.toLocaleDateString()}\nTotal Users: ${report.totalUsers}\nRevenue: $${report.revenue}`
 }
+

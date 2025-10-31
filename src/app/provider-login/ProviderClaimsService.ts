@@ -1,4 +1,4 @@
-import { Provider } from './ProviderLoginTypes'
+import type { ProviderType } from './ProviderLoginTypes'
 import { supabase } from '@/lib/supabase'
 
 export async function claimServiceRequest(providerId: string, requestId: string): Promise<void> {

@@ -31,3 +31,4 @@ export interface UserHorsesTable {
     updated_at?: string
   }
 }
+

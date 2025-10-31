@@ -1,62 +1,44 @@
-import { useState, useEffect } from 'react'
-import { HaulSupportPoint, HaulSupportStats } from './HaulSupportTypes'
+// HaulSupportPageContent.tsx (40 lines) - Single responsibility: Main page component
+import { useEffect } from 'react'
 import { HaulSupportStatsCards } from './HaulSupportStatsCards'
 import { HaulSupportPageHeader } from './HaulSupportPageHeader'
 import { HaulSupportPageLoading } from './HaulSupportPageLoading'
 import { HaulSupportFormModal } from './HaulSupportFormModal'
 import { HaulSupportPointsList } from './HaulSupportPointsList'
-import { useHaulSupportHandlers } from './useHaulSupportHandlers'
+import { useHaulSupportPageState } from './HaulSupportPageState'
+import { useHaulSupportPageHandlers } from './HaulSupportPageHandlers'
 
 export function HaulSupportPageContent() {
-  const [points, setPoints] = useState<HaulSupportPoint[]>([])
-  const [stats, setStats] = useState<HaulSupportStats>({
-    totalPoints: 0,
-    approvedPoints: 0,
-    pendingApproval: 0,
-    avgSafetyScore: 0,
-    totalFeedback: 0
-  })
-  const [loading, setLoading] = useState(true)
-  const [showAddForm, setShowAddForm] = useState(false)
-  const [editingPoint, setEditingPoint] = useState<HaulSupportPoint | null>(null)
-
-  const handlers = useHaulSupportHandlers({
-    points,
-    setPoints,
-    stats,
-    setStats,
-    setLoading,
-    setShowAddForm,
-    setEditingPoint
-  })
+  const state = useHaulSupportPageState()
+  const handlers = useHaulSupportPageHandlers(state)
 
   useEffect(() => {
     handlers.loadData()
   }, [])
 
-  if (loading) return <HaulSupportPageLoading />
+  if (state.loading) return <HaulSupportPageLoading />
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <HaulSupportPageHeader onAddPoint={() => setShowAddForm(true)} />
+      <HaulSupportPageHeader onAddPoint={() => state.setShowAddForm(true)} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <HaulSupportStatsCards stats={stats} />
+        <HaulSupportStatsCards stats={state.stats} />
 
         <HaulSupportFormModal
-          showAddForm={showAddForm}
-          editingPoint={editingPoint}
+          showAddForm={state.showAddForm}
+          editingPoint={state.editingPoint}
           onClose={() => {
-            setShowAddForm(false)
-            setEditingPoint(null)
+            state.setShowAddForm(false)
+            state.setEditingPoint(null)
           }}
           onCreatePoint={handlers.handleCreatePoint}
           onUpdatePoint={handlers.handleUpdatePoint}
         />
 
         <HaulSupportPointsList
-          points={points}
-          onEditPoint={setEditingPoint}
+          points={state.points}
+          onEditPoint={state.setEditingPoint}
           onDeletePoint={handlers.handleDeletePoint}
           onToggleApproval={handlers.handleToggleApproval}
         />

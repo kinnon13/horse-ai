@@ -20,4 +20,16 @@ export class UniversalMessageRouter {
     // TODO: Implement message scheduling
     console.log('Scheduling message:', data, 'delay:', delay)
   }
+
+  static async sendSafeEmail(data: MessageData): Promise<void> {
+    // TODO: Implement safe email sending
+    console.log('Sending safe email:', data)
+  }
 }
+
+// Named exports for easier importing
+export const sendSafeEmail = (to: string, subject: string, body: string) => 
+  UniversalMessageRouter.sendSafeEmail({ to, subject, body, type: 'email' })
+
+export const sendSafeSMS = (to: string, body: string) => 
+  UniversalMessageRouter.sendMessage({ to, subject: '', body, type: 'sms' })

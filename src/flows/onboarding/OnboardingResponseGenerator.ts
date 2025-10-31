@@ -1,3 +1,4 @@
+// OnboardingResponseGenerator.ts (50 lines)
 /**
  * ONBOARDING RESPONSE GENERATOR
  * 
@@ -12,45 +13,9 @@
  * - Gives users control over their information
  */
 
-import { OnboardingIntent } from './OnboardingParser'
-import { OnboardingResponseTemplates } from './OnboardingResponseTemplates'
+import { OnboardingResponseGenerator as OnboardingResponseGeneratorClass } from './OnboardingResponseGeneratorHelpers'
+import type { OnboardingResponse } from './OnboardingResponseGeneratorHelpers'
 
-export interface OnboardingResponse {
-  message: string
-  nextStep?: string
-  requiresInput?: boolean
-  inputType?: 'number' | 'text' | 'choice'
-  choices?: string[]
-  complete?: boolean
-}
-
-export class OnboardingResponseGenerator {
-  /**
-   * PURPOSE:
-   * - Generates appropriate onboarding responses
-   * - Guides users through the onboarding process
-   * - Asks for explicit permission before storing data
-   * 
-   * SAFETY:
-   * - Always asks permission before storing personal info
-   * - Explains what we'll do with the data
-   * - Gives users control over their information
-   */
-  static generateOnboardingResponse(intent: OnboardingIntent): OnboardingResponse {
-    switch (intent.step) {
-      case 'greeting':
-        return OnboardingResponseTemplates.getGreetingResponse()
-      case 'horse_count':
-        return OnboardingResponseTemplates.getHorseCountResponse(intent.data.horseCount!)
-      case 'roles':
-        return OnboardingResponseTemplates.getRolesResponse(intent.data.roles!)
-      case 'preferences':
-        return OnboardingResponseTemplates.getPreferencesResponse()
-      default:
-        return OnboardingResponseTemplates.getDefaultResponse()
-    }
-  }
-}
-
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export function OnboardingResponse(_props?: any): never { throw new Error("Stubbed component used: ./OnboardingResponseGenerator.OnboardingResponse"); }
+// Re-export the main class and interface
+export { OnboardingResponseGeneratorClass as OnboardingResponseGenerator }
+export type { OnboardingResponse }

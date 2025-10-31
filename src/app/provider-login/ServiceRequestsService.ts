@@ -1,7 +1,7 @@
-import { ServiceRequest } from './ProviderLoginTypes'
+import type { ServiceRequestType } from './ProviderLoginTypes'
 import { supabase } from '@/lib/supabase'
 
-export async function fetchServiceRequests(): Promise<ServiceRequest[]> {
+export async function fetchServiceRequests(): Promise<ServiceRequestType[]> {
   try {
     const { data, error } = await supabase
       .from('service_requests')

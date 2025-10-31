@@ -11,3 +11,4 @@ CREATE INDEX IF NOT EXISTS idx_users_is_minor ON public.users(is_minor);
 
 
 
+

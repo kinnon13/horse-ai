@@ -25,3 +25,4 @@ export function HaulSupportTypeField({ formData, setFormData }: HaulSupportTypeF
     </div>
   )
 }
+

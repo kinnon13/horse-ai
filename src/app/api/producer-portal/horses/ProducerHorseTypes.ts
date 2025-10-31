@@ -33,3 +33,4 @@ export interface ProducerHorse {
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function ProducerHorse(_props?: any): never { throw new Error("Stubbed component used: ./ProducerHorseTypes.ProducerHorse"); }
+

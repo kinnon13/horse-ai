@@ -1,0 +1,195 @@
+{
+  "name": "AI Recommendation Engine",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ai-recommendations",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Request Recommendations",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "ai-recommendations"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT user_id, preferences, purchase_history, browsing_history FROM user_profiles WHERE user_id = $1",
+        "options": {
+          "queryParameters": {
+            "parameters": [
+              "={{ $json.body.user_id }}"
+            ]
+          }
+        }
+      },
+      "id": "fetch-user-profile",
+      "name": "Fetch User Profile",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "credentials": {
+        "postgres": {
+          "id": "supabase-connection",
+          "name": "Supabase Database"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM horse_listings WHERE status = 'available' ORDER BY created_at DESC LIMIT 100",
+        "options": {}
+      },
+      "id": "fetch-available-horses",
+      "name": "Fetch Available Horses",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [450, 500],
+      "credentials": {
+        "postgres": {
+          "id": "supabase-connection",
+          "name": "Supabase Database"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const userProfile = $('Fetch User Profile').first().json;\nconst horses = $('Fetch Available Horses').all();\n\nconst preferences = JSON.parse(userProfile.preferences || '{}');\nconst purchaseHistory = JSON.parse(userProfile.purchase_history || '[]');\n\n// Scoring algorithm\nconst scoredHorses = horses.map(horse => {\n  let score = 0;\n  \n  // Match preferences\n  if (preferences.preferred_breed && horse.breed === preferences.preferred_breed) score += 30;\n  if (preferences.preferred_color && horse.color === preferences.preferred_color) score += 20;\n  if (preferences.max_price && horse.price <= preferences.max_price) score += 25;\n  \n  // Match purchase history\n  purchaseHistory.forEach(purchase => {\n    if (purchase.breed === horse.breed) score += 15;\n    if (purchase.color === horse.color) score += 10;\n  });\n  \n  return {\n    ...horse.json,\n    recommendation_score: score\n  };\n});\n\n// Sort by score and return top 10\nconst topRecommendations = scoredHorses\n  .sort((a, b) => b.recommendation_score - a.recommendation_score)\n  .slice(0, 10);\n\nreturn topRecommendations.map(horse => ({ json: horse }));"
+      },
+      "id": "calculate-recommendations",
+      "name": "Calculate Recommendations",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [650, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.horseai.com/api/recommendations/log",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "user_id",
+              "value": "={{ $json.body.user_id }}"
+            },
+            {
+              "name": "recommendations",
+              "value": "={{ $json }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "log-recommendations",
+      "name": "Log Recommendations",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [850, 400],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "api-credentials",
+          "name": "HorseAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ recommendations: $input.all(), count: $input.all().length }) }}",
+        "options": {}
+      },
+      "id": "return-response",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1050, 400]
+    }
+  ],
+  "connections": {
+    "Request Recommendations": {
+      "main": [
+        [
+          {
+            "node": "Fetch User Profile",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Available Horses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch User Profile": {
+      "main": [
+        [
+          {
+            "node": "Calculate Recommendations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Available Horses": {
+      "main": [
+        [
+          {
+            "node": "Calculate Recommendations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Recommendations": {
+      "main": [
+        [
+          {
+            "node": "Log Recommendations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Recommendations": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z",
+      "id": "ai-tag",
+      "name": "AI"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}

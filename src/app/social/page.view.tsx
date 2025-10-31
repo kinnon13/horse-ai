@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react'
+import { SocialPageLoading } from './SocialPageStates'
+import { SocialPageError } from './SocialPageStates'
 
 interface socialPageViewProps {
   loading: boolean
@@ -9,33 +11,8 @@ interface socialPageViewProps {
 }
 
 export default function socialPageView({ loading, error, setError }: socialPageViewProps) {
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading social...</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Error</h1>
-          <p className="text-gray-600 mb-4">{error}</p>
-          <button
-            onClick={() => setError(null)}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          >
-            Try Again
-          </button>
-        </div>
-      </div>
-    )
-  }
+  if (loading) return <SocialPageLoading loading={loading} />
+  if (error) return <SocialPageError error={error} setError={setError} />
 
   return (
     <div className="min-h-screen bg-gray-50">

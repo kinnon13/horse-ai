@@ -1,0 +1,138 @@
+{
+  "name": "Marketing Retention",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": ""
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, email, last_activity, tier FROM users WHERE last_activity < NOW() - INTERVAL '30 days' AND tier IN ('free', 'plus')",
+        "options": {}
+      },
+      "id": "find-inactive-users",
+      "name": "Find Inactive Users",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "credentials": {
+        "postgres": {
+          "id": "supabase-connection",
+          "name": "Supabase Database"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst personalizedMessages = items.map(item => {\n  const daysSinceActivity = Math.floor((new Date() - new Date(item.json.last_activity)) / (1000 * 60 * 60 * 24));\n  const discountCode = item.json.tier === 'free' ? 'WELCOME10' : 'RETURN15';\n  \n  return {\n    json: {\n      email: item.json.email,\n      user_id: item.json.id,\n      days_inactive: daysSinceActivity,\n      discount_code: discountCode,\n      message: `Hi! We miss you. It's been ${daysSinceActivity} days. Use code ${discountCode} to save!`\n    }\n  };\n});\n\nreturn personalizedMessages;"
+      },
+      "id": "personalize-messages",
+      "name": "Personalize Messages",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.sendgrid.com/v3/mail/send",
+        "sendBody": true,
+        "contentType": "json",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "personalizations",
+              "value": "[{\"to\":[{\"email\":\"{{ $json.email }}\"}],\"subject\":\"We Miss You! Special Offer Inside\",\"custom_args\":{\"user_id\":\"{{ $json.user_id }}\"}}]"
+            },
+            {
+              "name": "from",
+              "value": "{\"email\":\"noreply@horseai.com\",\"name\":\"HorseAI Team\"}"
+            },
+            {
+              "name": "content",
+              "value": "[{\"type\":\"text/html\",\"value\":\"<h1>{{ $json.message }}</h1><p>Use code: <strong>{{ $json.discount_code }}</strong></p><p>Your account has been inactive for {{ $json.days_inactive }} days. Come back and discover what's new!</p>\"}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-email",
+      "name": "Send Retention Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "sendgrid-credentials",
+          "name": "SendGrid API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily Schedule": {
+      "main": [
+        [
+          {
+            "node": "Find Inactive Users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find Inactive Users": {
+      "main": [
+        [
+          {
+            "node": "Personalize Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Personalize Messages": {
+      "main": [
+        [
+          {
+            "node": "Send Retention Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z",
+      "id": "marketing-tag",
+      "name": "Marketing"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "versionId": "1"
+}

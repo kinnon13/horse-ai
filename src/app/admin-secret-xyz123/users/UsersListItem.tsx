@@ -12,20 +12,20 @@ export function UsersListItem({ user, onViewDetails }: UsersListItemProps) {
       <div className="flex items-center justify-between">
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-900">
-            {user.name}
+            {user.email}
           </h3>
-          <p className="text-sm text-gray-600">{user.email}</p>
+          <p className="text-sm text-gray-600">Tier: {user.tier}</p>
           <p className="text-sm text-gray-500">
-            {user.role} • {user.location || 'No location'}
+            Horses: {user.horses_claimed} • Requests: {user.service_requests}
           </p>
         </div>
         <div className="flex items-center space-x-2">
           <span className={`px-2 py-1 text-xs rounded-full ${
-            user.is_active 
+            user.churn_risk === 'low'
               ? 'bg-green-100 text-green-800' 
               : 'bg-red-100 text-red-800'
           }`}>
-            {user.is_active ? 'Active' : 'Inactive'}
+            {user.churn_risk === 'low' ? 'Low Risk' : 'High Risk'}
           </span>
           <button
             onClick={() => onViewDetails(user)}

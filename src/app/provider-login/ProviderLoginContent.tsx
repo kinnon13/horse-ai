@@ -1,4 +1,4 @@
-import { ProviderLoginContentProps } from './ProviderLoginTypes'
+import type { ProviderLoginContentProps } from './ProviderLoginTypes'
 import { ProviderInfoCard } from './ProviderInfoCard'
 import { ServiceRequestsList } from './ServiceRequestsList'
 import { ProviderLoginHeader } from './ProviderLoginHeader'
@@ -29,6 +29,7 @@ export function ProviderLoginContent({
     </div>
   )
 }
+
 
 
 

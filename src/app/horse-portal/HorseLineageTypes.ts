@@ -43,3 +43,4 @@ export function LineageStatsCardProps(_props?: any): never { throw new Error("St
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function HorseLineageStats(_props?: any): never { throw new Error("Stubbed component used: ./HorseLineageTypes.HorseLineageStats"); }
+

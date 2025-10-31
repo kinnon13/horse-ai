@@ -1,8 +1,8 @@
-import { OutreachStats } from './OutreachData'
+import { OutreachStats, OutreachMessage } from './OutreachData'
 import { fetchOutreachMessages } from './OutreachMessageService'
 
 export async function fetchOutreachStats(): Promise<OutreachStats> {
-  const messages = await fetchOutreachMessages()
+  const messages: OutreachMessage[] = await fetchOutreachMessages()
   const totalMessages = messages.length
   const pendingMessages = messages.filter(m => m.status === 'pending').length
   const sentMessages = messages.filter(m => m.status === 'sent').length

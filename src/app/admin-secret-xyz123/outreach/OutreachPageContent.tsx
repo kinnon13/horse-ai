@@ -1,47 +1,39 @@
 'use client'
 
-import React, { useState } from 'react'
-import { useAuth } from '@/components/AuthProvider'
-import { OutreachStatsCards } from './OutreachStatsCards'
-import { OutreachComposeForm } from './OutreachComposeForm'
-import { OutreachEditForm } from './OutreachEditForm'
-import { OutreachMessagesList } from './OutreachMessagesList'
-import { OutreachData } from './OutreachData'
-import { OutreachUtils } from './OutreachUtils'
-import { OutreachHeader } from './OutreachHeader'
-import { OutreachHandlers } from './OutreachHandlers'
+import React from 'react'
 import { OutreachStateManager } from './OutreachStateManager'
+import { OutreachHandlers } from './OutreachHandlers'
+import { OutreachComposeForm } from './OutreachComposeForm'
+import { OutreachMessagesList } from './OutreachMessagesList'
+import { OutreachStatsCards } from './OutreachStatsCards'
 
-export function OutreachPageContent() {
-  const { user } = useAuth()
-  const stateManager = OutreachStateManager.createStateManager()
-  const handlers = OutreachHandlers.createHandlers(stateManager)
+interface OutreachPageContentProps {
+  stateManager: any
+  handlers: any
+}
 
-  const stats = OutreachUtils.calculateStats(stateManager.outreachMessages)
-
+export function OutreachPageContent({ stateManager, handlers }: OutreachPageContentProps) {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <OutreachHeader onCompose={() => stateManager.setShowComposeForm(true)} />
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-gray-900">Outreach Management</h1>
+        <button
+          onClick={() => stateManager.setShowComposeForm(true)}
+          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+        >
+          Compose Message
+        </button>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <OutreachStatsCards stats={stats} />
+      <OutreachStatsCards stats={stateManager.outreachStats} />
 
+      <div className="bg-white shadow rounded-lg">
         {stateManager.showComposeForm && (
           <OutreachComposeForm
             composeData={stateManager.composeData}
             setComposeData={stateManager.setComposeData}
             onSubmit={handlers.handleComposeSubmit}
             onCancel={() => stateManager.setShowComposeForm(false)}
-            onTemplateChange={handlers.handleTemplateChange}
-          />
-        )}
-
-        {stateManager.editingMessage && (
-          <OutreachEditForm
-            composeData={stateManager.composeData}
-            setComposeData={stateManager.setComposeData}
-            onSubmit={handlers.handleUpdateMessage}
-            onCancel={() => stateManager.setEditingMessage(null)}
             onTemplateChange={handlers.handleTemplateChange}
           />
         )}

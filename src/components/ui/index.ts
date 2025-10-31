@@ -7,7 +7,7 @@ export { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 export { Checkbox } from './Checkbox'
 export { RadioGroup, RadioGroupItem } from './RadioGroup'
 export { Switch } from './Switch'
-export { Tabs, TabsContent, TabsList, TabsTrigger } from './Tabs'
+export { Tabs, TabsContent, TabsList, TabsTrigger } from './Tabs.view'
 export { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './Dialog'
 export { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './DropdownMenu'
 export { Badge } from './Badge'
@@ -17,3 +17,4 @@ export { Skeleton } from './Skeleton'
 export { Alert, AlertDescription, AlertTitle } from './Alert'
 export { Progress } from './Progress'
 export { Spinner } from './Spinner'
+

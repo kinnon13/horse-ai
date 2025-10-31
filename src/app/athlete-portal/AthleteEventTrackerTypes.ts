@@ -7,15 +7,23 @@ export interface CompetitionEvent {
   event_date: string
   location: string
   discipline: string
-  class: string
-  placing: number
-  score: number
-  notes: string
+  class?: string
+  placement?: number
+  total_entries?: number
+  time?: number
+  score?: number
+  points_earned?: number
+  prize_money?: number
+  notes?: string
   created_at: string
   updated_at: string
-  prize_money: number
-  points_earned: number
-  qualification_status: string
-  next_event: string
-  preparation_notes: string
+}
+
+export interface AthleteEventTrackerSectionProps {
+  events: CompetitionEvent[]
+  horses: any[]
+  loading: boolean
+  onAddEvent: () => void
+  onEditEvent: (event: CompetitionEvent) => void
+  onDeleteEvent: (eventId: string) => void
 }

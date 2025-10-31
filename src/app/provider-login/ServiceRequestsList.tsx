@@ -2,12 +2,11 @@
 
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
-import { ServiceRequest, Provider } from './ProviderLoginTypes'
+import type { ServiceRequestType } from './ProviderLoginTypes'
 import { ServiceRequestCard } from './ServiceRequestCard'
 
 interface ServiceRequestsListProps {
-  serviceRequests: ServiceRequest[]
+  serviceRequests: ServiceRequestType[]
   onClaim: (requestId: string) => void
   onViewDetails: (requestId: string) => void
 }
@@ -42,6 +41,7 @@ export function ServiceRequestsList({ serviceRequests, onClaim, onViewDetails }:
     </div>
   )
 }
+
 
 
 

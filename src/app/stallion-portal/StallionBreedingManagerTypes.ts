@@ -42,3 +42,4 @@ export function StallionBreedingManagerHeaderProps(_props?: any): never { throw 
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function StallionBreedingManagerSectionProps(_props?: any): never { throw new Error("Stubbed component used: ./StallionBreedingManagerTypes.StallionBreedingManagerSectionProps"); }
+

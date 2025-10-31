@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CalendarState } from './CalendarTypes'
+import { CalendarState, CalendarEvent } from './CalendarTypes'
 
 export function useCalendarState(): CalendarState {
   const [events, setEvents] = useState<CalendarEvent[]>([])
@@ -21,6 +21,7 @@ export function useCalendarState(): CalendarState {
     setPendingRequest
   }
 }
+
 
 
 

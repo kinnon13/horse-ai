@@ -18,5 +18,4 @@ export async function saveBreedingOperationWithState(
 
 
 
-// --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
-export const saveBreedingOperationWithState = (()=>{ throw new Error("Stubbed value used: ./BreedingOperationSaveHandler.saveBreedingOperationWithState"); })();
+

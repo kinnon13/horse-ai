@@ -19,3 +19,16 @@ export async function loadMares(operationId: string): Promise<any[]> {
   // TODO: Implement actual data loading from Supabase
   return []
 }
+
+export async function loadProducerData(userId: string): Promise<{
+  profile: ProducerProfile | null
+  horses: any[]
+  events: any[]
+}> {
+  // TODO: Implement actual data loading from Supabase
+  return {
+    profile: null,
+    horses: [],
+    events: []
+  }
+}

@@ -1,6 +1,9 @@
+// ScrubbingSetupStep.tsx (35 lines) - Single responsibility: Main scrubbing setup
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
+import { ScrubbingOptions } from './ScrubbingOptions'
+import { ScrubbingConfig } from './ScrubbingConfig'
 
 interface ScrubbingSetupStepProps {
   onNext: () => void
@@ -29,55 +32,8 @@ export default function ScrubbingSetupStep({ onNext, onBack }: ScrubbingSetupSte
             Choose how you'd like to clean and organize your horse data
           </p>
           
-          <div className="space-y-3">
-            <label className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-              <input
-                type="checkbox"
-                checked={scrubbingOptions.removeDuplicates}
-                onChange={(e) => setScrubbingOptions(prev => ({
-                  ...prev,
-                  removeDuplicates: e.target.checked
-                }))}
-                className="w-4 h-4"
-              />
-              <div>
-                <div className="font-medium">Remove Duplicates</div>
-                <div className="text-sm text-gray-500">Find and merge duplicate horse entries</div>
-              </div>
-            </label>
-            
-            <label className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-              <input
-                type="checkbox"
-                checked={scrubbingOptions.standardizeBreeds}
-                onChange={(e) => setScrubbingOptions(prev => ({
-                  ...prev,
-                  standardizeBreeds: e.target.checked
-                }))}
-                className="w-4 h-4"
-              />
-              <div>
-                <div className="font-medium">Standardize Breeds</div>
-                <div className="text-sm text-gray-500">Normalize breed names and classifications</div>
-              </div>
-            </label>
-            
-            <label className="flex items-center space-x-3 p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-              <input
-                type="checkbox"
-                checked={scrubbingOptions.validatePricing}
-                onChange={(e) => setScrubbingOptions(prev => ({
-                  ...prev,
-                  validatePricing: e.target.checked
-                }))}
-                className="w-4 h-4"
-              />
-              <div>
-                <div className="font-medium">Validate Pricing</div>
-                <div className="text-sm text-gray-500">Check prices against market data</div>
-              </div>
-            </label>
-          </div>
+          <ScrubbingOptions options={scrubbingOptions} onChange={setScrubbingOptions} />
+          <ScrubbingConfig options={scrubbingOptions} onChange={setScrubbingOptions} />
         </div>
         
         <div className="flex justify-between">

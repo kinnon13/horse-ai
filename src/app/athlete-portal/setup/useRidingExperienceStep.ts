@@ -1,18 +1,18 @@
 import { AthleteSetupData } from './AthleteSetupTypes'
-import { RidingExperienceStepState, RidingExperienceStepActions } from './RidingExperienceTypes'
+import { RidingExperienceStepState, RidingExperienceStepActions, RidingExperienceFormData } from './RidingExperienceTypes'
 import { useRidingExperienceState } from './useRidingExperienceState'
 import { useRidingExperienceActions } from './useRidingExperienceActions'
 
 export function useRidingExperienceStep(
-  initialData: AthleteSetupData,
-  setFormData: (data: AthleteSetupData) => void,
+  initialData: RidingExperienceFormData | AthleteSetupData,
+  setFormData: ((data: AthleteSetupData) => void) | undefined,
   onNext: () => void,
   onBack: () => void
-): RidingExperienceStepState & RidingExperienceStepActions {
-  const state = useRidingExperienceState(initialData)
+): any {
+  const state = useRidingExperienceState(initialData as any)
   const actions = useRidingExperienceActions(
     state.formData,
-    setFormData,
+    setFormData as any,
     state.errors,
     state.setErrors,
     state.isSaving,
@@ -23,6 +23,7 @@ export function useRidingExperienceStep(
 
   return {
     ...state,
-    ...actions
+    ...actions,
+    isValid: true
   }
 }

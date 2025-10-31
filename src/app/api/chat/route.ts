@@ -1,43 +1,48 @@
+// route.ts - Chat API with smart routing (knowledge core first)
 import { NextRequest, NextResponse } from 'next/server'
+import { smartRoute } from '@/lib/smartRouter'
+import { handleRateLimit, handleLeadCapture } from './route-handlers'
+import { getABTestData } from './abTestingHelpers'
 
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const { message } = await request.json()
+    const { message, userId, topic } = await req.json()
     
-    const response = await fetch('https://api.x.ai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.GROK_API_KEY}`,
-      },
-      body: JSON.stringify({
-        messages: [
-          {
-            role: 'system',
-            content: 'You are HorseGPT, an expert AI assistant specialized in horses, barrel racing, horse breeding, and equine data analysis. You provide helpful, accurate information about horses, breeding, events, performance analytics, training, health, and all things equine. You are like ChatGPT but specifically for horses. Be concise but informative.'
-          },
-          {
-            role: 'user',
-            content: message
-          }
-        ],
-        model: 'grok-4-latest',
-        stream: false,
-        temperature: 0.7
-      })
-    })
+    if (!message) {
+      return NextResponse.json({ error: 'Message required' }, { status: 400 })
+    }
+    const conversationId = `conv_${Date.now()}_${userId || 'anonymous'}`
+    const messageCount = 0
+    const { greeting, upgradePrompt } = await getABTestData(userId || 'anonymous', conversationId, messageCount)
     
-    if (!response.ok) {
-      const errorText = await response.text()
-      console.error('Grok API error:', response.status, errorText)
-      throw new Error(`Grok API error: ${response.status}`)
+    const rateLimitResponse = await handleRateLimit(userId || 'anonymous')
+    if (rateLimitResponse instanceof NextResponse) {
+      return rateLimitResponse
     }
     
-    const data = await response.json()
-    return NextResponse.json({ message: data.choices[0].message.content })
+    await handleLeadCapture(message, userId || 'anonymous')
     
+    // Use smart router instead of direct AI call
+    const result = await smartRoute(message, userId, topic)
+    
+    // Add to response
+    const finalResponse = {
+      response: result.answer + (greeting ? '\n\n' + greeting : ''),
+      source: result.source,
+      provider: result.provider,
+      confidence: result.confidence,
+      sources: result.sources,
+      remaining: rateLimitResponse.remaining - 1,
+      limit: rateLimitResponse.limit,
+      upgradePrompt: upgradePrompt.show ? upgradePrompt.message : null
+    }
+    
+    return NextResponse.json(finalResponse)
   } catch (error) {
-    console.error('API Error:', error)
-    return NextResponse.json({ error: 'Failed to get AI response' }, { status: 500 })
+    console.error('Chat error:', error)
+    return NextResponse.json(
+      { error: 'Chat failed', details: error instanceof Error ? error.message : 'Unknown' },
+      { status: 500 }
+    )
   }
 }

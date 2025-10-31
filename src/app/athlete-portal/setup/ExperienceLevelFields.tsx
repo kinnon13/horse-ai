@@ -1,6 +1,6 @@
 import { RidingExperienceFormProps, SKILL_LEVELS, COMPETITION_LEVELS } from './RidingExperienceTypes'
 
-export function ExperienceLevelFields({ formData, updateField }: RidingExperienceFormProps) {
+export function ExperienceLevelFields({ formData, updateField }: { formData: any, updateField: (field: string, value: any) => void }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
@@ -36,6 +36,7 @@ export function ExperienceLevelFields({ formData, updateField }: RidingExperienc
     </div>
   )
 }
+
 
 
 

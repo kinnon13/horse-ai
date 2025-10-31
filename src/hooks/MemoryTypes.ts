@@ -32,10 +32,10 @@ export interface MemoryState {
   userMemory: UserMemory | null
   loading: boolean
   error: string | null
+  setUserMemory: (memory: UserMemory | null) => void
+  setLoading: (loading: boolean) => void
+  setError: (error: string | null) => void
 }
-
-
-
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function UserMemory(_props?: any): never { throw new Error("Stubbed component used: ./MemoryTypes.UserMemory"); }

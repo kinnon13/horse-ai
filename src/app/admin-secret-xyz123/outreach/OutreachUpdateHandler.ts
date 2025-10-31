@@ -18,7 +18,7 @@ export class OutreachUpdateHandler {
     return (e: React.FormEvent) => {
       e.preventDefault()
       props.setOutreachMessages(prev => prev.map(m => 
-        m.id === props.editingMessage.id ? OutreachUtils.updateMessage(m, props.composeData) : m
+        m.id === props.editingMessage.id ? { ...m, ...props.composeData } : m
       ))
       props.setEditingMessage(null)
       props.setComposeData(OutreachUtils.getInitialComposeData())

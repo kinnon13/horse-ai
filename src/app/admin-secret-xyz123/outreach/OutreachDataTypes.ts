@@ -28,6 +28,7 @@ export interface OutreachMessage {
   recipients: string[]
   status: 'draft' | 'sent' | 'failed' | 'pending' | 'replied'
   created_at: string
+  updated_at: string
   sent_at?: string
   template_id?: string
   subject?: string
@@ -37,15 +38,3 @@ export interface OutreachMessage {
   event_name?: string
 }
 
-export interface ComposeData {
-  title: string
-  content: string
-  recipients: string[]
-  template?: string
-  scheduled_at?: string
-  horse_name?: string
-  event_name?: string
-  target?: string
-  subject?: string
-  type?: string
-}

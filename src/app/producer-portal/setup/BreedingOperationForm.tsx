@@ -1,7 +1,7 @@
 import { BreedingOperationFormProps } from './BreedingOperationTypes'
 import { StudInfoFields } from './StudInfoFields'
 import { MareServicesFields } from './MareServicesFields'
-import { BreedingPoliciesFields } from './BreedingPoliciesFields'
+import BreedingPoliciesFields from './BreedingPoliciesFields'
 
 export function BreedingOperationForm({ formData, updateField }: BreedingOperationFormProps) {
   return (
@@ -12,6 +12,7 @@ export function BreedingOperationForm({ formData, updateField }: BreedingOperati
     </div>
   )
 }
+
 
 
 

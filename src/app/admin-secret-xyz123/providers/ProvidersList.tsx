@@ -47,6 +47,3 @@ export function ProvidersList({ providers, loading, onEdit, onToggleBlocked, onT
     </div>
   )
 }
-
-
-

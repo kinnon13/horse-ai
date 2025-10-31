@@ -41,3 +41,4 @@ export function HaulSupportPointActions({ point, onEdit, onDelete, onToggleAppro
     </div>
   )
 }
+

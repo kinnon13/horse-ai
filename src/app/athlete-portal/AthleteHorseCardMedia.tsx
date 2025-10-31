@@ -19,7 +19,7 @@ export function AthleteHorseCardMedia({ horse }: AthleteHorseCardMediaProps) {
           <span className="text-sm">Video</span>
         </div>
       )}
-      {horse.performance_videos.length > 0 && (
+      {horse.performance_videos && horse.performance_videos.length > 0 && (
         <div className="flex items-center gap-2">
           <Video className="h-4 w-4 text-gray-500" />
           <span className="text-sm">{horse.performance_videos.length} videos</span>
@@ -28,6 +28,7 @@ export function AthleteHorseCardMedia({ horse }: AthleteHorseCardMediaProps) {
     </div>
   )
 }
+
 
 
 

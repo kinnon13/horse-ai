@@ -1,9 +1,8 @@
+// ChatPage.tsx (50 lines)
 'use client'
 
-import { useChat } from './useChat'
-import { ChatView } from './Chat.view'
+import { EnhancedChat } from './EnhancedChat'
 
 export default function ChatPage() {
-  const vm = useChat()
-  return <ChatView {...vm} />
+  return <EnhancedChat />
 }

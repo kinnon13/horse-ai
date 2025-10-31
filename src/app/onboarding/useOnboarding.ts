@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useAuth } from '@/components/AuthProvider'
 import { useRouter } from 'next/navigation'
 import type { OnboardingStep, OnboardingData } from './Onboarding.types'
-import { ONBOARDING_STEPS } from './Onboarding.constants'
+import { createOnboardingSteps } from './Onboarding.constants'
 import { buildOnboardingVM } from './onboarding.logic'
 
 export interface OnboardingVM {
@@ -22,9 +22,9 @@ export function useOnboarding(): OnboardingVM {
   const router = useRouter()
   const [currentStep, setCurrentStep] = useState(0)
   const [completedSteps, setCompletedSteps] = useState<string[]>([])
-  const [onboardingData, setOnboardingData] = useState<OnboardingData>({})
+  const [onboardingData, setOnboardingData] = useState<OnboardingData>({} as OnboardingData)
 
-  const steps: OnboardingStep[] = ONBOARDING_STEPS({
+  const steps: OnboardingStep[] = createOnboardingSteps({
     currentStep,
     setCurrentStep,
     onboardingData,

@@ -1,3 +1,8 @@
 // TEMP STUB
-export function searchHorseDatabase() { return; }
-export function validateSearchParams() { return; }
+export function searchHorseDatabase(params: any) { 
+  return [] 
+}
+
+export function validateSearchParams(params: any) { 
+  return params 
+}

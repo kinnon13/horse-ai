@@ -9,8 +9,8 @@ export function HorseOwnershipFields({ formData, updateField }: HorsePartnership
         </label>
         <input
           type="number"
-          value={formData.owns_horses}
-          onChange={(e) => updateField('owns_horses', parseInt(e.target.value) || 0)}
+          value={formData.horse_ownership}
+          onChange={(e) => updateField('horse_ownership', e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="0"
         />
@@ -21,8 +21,8 @@ export function HorseOwnershipFields({ formData, updateField }: HorsePartnership
         </label>
         <input
           type="number"
-          value={formData.leases_horses}
-          onChange={(e) => updateField('leases_horses', parseInt(e.target.value) || 0)}
+          value={formData.training_arrangements}
+          onChange={(e) => updateField('training_arrangements', e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="0"
         />
@@ -30,6 +30,7 @@ export function HorseOwnershipFields({ formData, updateField }: HorsePartnership
     </div>
   )
 }
+
 
 
 

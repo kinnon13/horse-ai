@@ -1,0 +1,54 @@
+// payment-processing/route.ts (35 lines) - Stripe payment processing with retry logic
+import { NextRequest, NextResponse } from 'next/server'
+import { stripe } from '@/lib/stripe'
+
+const MAX_RETRIES = 3
+const RETRY_DELAY = 1000
+
+async function processPaymentWithRetry(
+  paymentIntentId: string,
+  amount: number,
+  retries = 0
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId)
+    
+    if (paymentIntent.status === 'succeeded') {
+      console.log(`✅ Payment ${paymentIntentId} succeeded`)
+      return { success: true }
+    }
+    
+    if (paymentIntent.status === 'requires_action' && retries < MAX_RETRIES) {
+      await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * (retries + 1)))
+      return processPaymentWithRetry(paymentIntentId, amount, retries + 1)
+    }
+    
+    return { success: false, error: `Payment failed: ${paymentIntent.status}` }
+  } catch (error: any) {
+    console.error(`❌ Payment processing error (attempt ${retries + 1}):`, error)
+    
+    if (retries < MAX_RETRIES) {
+      await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * (retries + 1)))
+      return processPaymentWithRetry magnitude
+    }
+    
+    return { success: false, error: error.message || 'Payment processing failed' }
+  }
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const { paymentIntentId, amount } = await request.json()
+    
+    if (!paymentIntentId || !amount) {
+      return NextResponse.json({ error: 'Missing paymentIntentId or amount' }, { status: 400 })
+    }
+    
+    const result = await processPaymentWithRetry(paymentIntentId, amount)
+    
+    return NextResponse.json(result, { status: result.success ? 200 : 500 })
+  } catch (error: any) {
+    console.error('Payment workflow error:', error)
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 })
+  }
+}

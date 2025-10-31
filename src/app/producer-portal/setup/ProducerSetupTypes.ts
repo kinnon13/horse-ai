@@ -43,3 +43,4 @@ export interface ProducerSetupData {
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function ProducerSetupData(_props?: any): never { throw new Error("Stubbed component used: ./ProducerSetupTypes.ProducerSetupData"); }
+

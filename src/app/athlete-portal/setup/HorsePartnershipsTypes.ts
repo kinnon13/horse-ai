@@ -9,6 +9,7 @@ export interface HorsePartnershipsFormProps {
     responsibilities: string[]
     communication_preferences: string
     contract_terms: string
+    rides_for_others: boolean
   }
   updateField: (field: string, value: any) => void
 }
@@ -21,10 +22,18 @@ export interface HorsePartnershipsStepProps {
   isValid: boolean
 }
 
+export interface HorsePartnershipsActionsProps {
+  onNext: () => void
+  onBack: () => void
+  isValid: boolean
+  isSaving: boolean
+}
+
 export interface HorsePartnershipsStepState {
   formData: any
   isValid: boolean
   errors: Record<string, string>
+  isSaving: boolean
 }
 
 export interface HorsePartnershipsStepActions {

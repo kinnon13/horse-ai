@@ -83,3 +83,21 @@ dist
 # Temporary folders
 tmp/
 temp/
+
+# SQL consolidation - ignore root-level SQL files (use migrations/)
+# Exception: Keep add_horse_fk.sql if needed
+*.sql
+!supabase/migrations/*.sql
+!supabase/**/*.sql
+!add_horse_fk.sql
+
+# Test file cleanup - ensure tests are in tests/ directory
+e2e-*.test.ts
+!tests/e2e-*.test.ts
+!src/**/e2e-*.test.ts
+
+# Old pillar files (consolidated into migrations)
+supabase/pillar_*.sql
+
+# Deployment scripts (if regenerated)
+deploy_*.sh

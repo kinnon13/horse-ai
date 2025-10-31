@@ -38,3 +38,4 @@ export namespace ProviderProfileTypes {
 
 // --- AUTO-ADDED STUB EXPORTS (safe to replace with real code) ---
 export function ProviderProfileTypes(_props?: any): never { throw new Error("Stubbed component used: ./ProviderProfileTypes.ProviderProfileTypes"); }
+

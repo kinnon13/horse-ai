@@ -138,3 +138,4 @@ CREATE TRIGGER update_provider_availability_timestamp
 
 
 
+

@@ -1,7 +1,6 @@
-import { selectBestProviders } from "./ProviderSelector";
-import { notifyProvider } from "./ProviderNotifier";
+import { providerSelector } from "./ProviderSelector";
 import { tryReserveSlot } from "../availability/ProviderBookingLock";
-import { logEvent, CRITICAL_EVENTS } from "@/lib/logEvent";
+import { buildDispatchCriteria, sendProviderNotification, logDispatchEvent } from "./ProviderDispatchServiceHelpers";
 
 // This is "Uber for horses": find, reserve, ping.
 
@@ -14,12 +13,13 @@ export async function dispatchJob(job: {
   payoutUSD: number;
 }) {
   // 1. pick best fits
-  const candidates = await selectBestProviders(job);
+  const criteria = buildDispatchCriteria(job);
+  const candidates = await providerSelector.findProviders(criteria);
 
   for (const candidate of candidates) {
     // 2. try to lock their slot
     const locked = await tryReserveSlot({
-      providerId: candidate.providerId,
+      providerId: candidate.id,
       jobId: job.jobId,
       startTime: job.neededAtISO
     });
@@ -27,23 +27,14 @@ export async function dispatchJob(job: {
     if (!locked.ok) continue; // someone else got them first, try next person
 
     // 3. notify them with offer
-    await notifyProvider({
-      providerId: candidate.providerId,
-      jobId: job.jobId,
-      offerUSD: job.payoutUSD,
-      neededAtISO: job.neededAtISO
-    });
+    await sendProviderNotification(candidate.id, job);
 
     // 4. log for payout & audit trail
-    await logEvent(CRITICAL_EVENTS.JOB_DISPATCHED, {
-      jobId: job.jobId,
-      providerId: candidate.providerId,
-      offerUSD: job.payoutUSD
-    });
+    await logDispatchEvent(job.jobId, candidate.id, job.payoutUSD);
 
-    return { sentTo: candidate.providerId };
+    return { sentTo: candidate.id };
   }
 
-  await logEvent(CRITICAL_EVENTS.JOB_UNFILLED, { jobId: job.jobId });
+  await logDispatchEvent(job.jobId, null, job.payoutUSD);
   return { sentTo: null };
 }

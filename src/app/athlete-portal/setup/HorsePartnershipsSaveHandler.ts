@@ -1,5 +1,5 @@
 import { AthleteSetupData } from './AthleteSetupTypes'
-import { saveHorsePartnershipsData } from './HorsePartnershipsService'
+import { saveHorsePartnershipsDataService } from './HorsePartnershipsService'
 
 export async function saveHorsePartnershipsWithState(
   formData: AthleteSetupData,
@@ -7,13 +7,14 @@ export async function saveHorsePartnershipsWithState(
 ): Promise<void> {
   setIsSaving(true)
   try {
-    await saveHorsePartnershipsData(formData)
+    await saveHorsePartnershipsDataService(formData)
   } catch (error) {
     console.error('Error saving horse partnerships:', error)
   } finally {
     setIsSaving(false)
   }
 }
+
 
 
 

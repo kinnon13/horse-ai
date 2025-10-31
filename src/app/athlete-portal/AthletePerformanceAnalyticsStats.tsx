@@ -48,6 +48,3 @@ export function AthletePerformanceAnalyticsStats({ analyticsData }: AthletePerfo
     </div>
   )
 }
-
-
-

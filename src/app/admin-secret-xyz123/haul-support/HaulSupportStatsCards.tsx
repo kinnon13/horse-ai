@@ -45,6 +45,3 @@ export function HaulSupportStatsCards({ stats }: HaulSupportStatsCardsProps) {
     </div>
   )
 }
-
-
-

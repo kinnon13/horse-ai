@@ -1,31 +1,8 @@
+// pdf-generator.ts (30 lines) - Single responsibility: Main PDF generation
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
-import { ExportData, ExportFilters } from './export-generator'
-
-export function addPDFHeader(doc: jsPDF, filters: ExportFilters): void {
-  doc.setFontSize(20)
-  doc.text('Horse.AI Comprehensive Report', 20, 30)
-  doc.setFontSize(12)
-  doc.text(`Generated: ${new Date().toLocaleDateString()}`, 20, 45)
-  
-  if (filters.dateRange) {
-    doc.text(`Date Range: ${filters.dateRange.start} to ${filters.dateRange.end}`, 20, 55)
-  }
-}
-
-export function addPDFSummaryStats(doc: jsPDF, data: ExportData): void {
-  doc.setFontSize(14)
-  doc.text('Summary Statistics', 20, 75)
-  
-  const totalEarnings = data.horses.reduce((sum, horse) => sum + (horse.earnings || 0), 0)
-  const totalHorses = data.horses.length
-  const totalScraped = data.scrapedData.length
-  
-  doc.setFontSize(10)
-  doc.text(`Total Horses: ${totalHorses}`, 20, 90)
-  doc.text(`Total Earnings: $${totalEarnings.toLocaleString()}`, 20, 100)
-  doc.text(`Scraped Data Points: ${totalScraped}`, 20, 110)
-}
+import { ExportData } from './export-generator'
+import { addPDFHeader, addPDFSummaryStats } from './pdf-templates'
 
 export function addTopPerformersTable(doc: jsPDF, data: ExportData): number {
   const topPerformers = data.horses
@@ -53,6 +30,10 @@ export function addTopPerformersTable(doc: jsPDF, data: ExportData): number {
     styles: { fontSize: 8 }
   })
   
-  return doc.lastAutoTable?.finalY || 140
+  return (doc as any).lastAutoTable?.finalY || 140
 }
+
+// Re-export template functions for convenience
+export { addPDFHeader, addPDFSummaryStats } from './pdf-templates'
+
 

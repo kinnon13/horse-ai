@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '@/components/AuthProvider'
 import { ProducerProfile, ProducerHorse, ProducerEvent } from './types'
-import { loadProducerData } from './dataLoader'
+import { ProducerDataHelpers } from './useProducerDataHelpers'
 
 export function useProducerData() {
   const { user } = useAuth()
@@ -12,39 +12,17 @@ export function useProducerData() {
 
   useEffect(() => {
     if (user) {
-      loadData()
+      ProducerDataHelpers.loadData(user.id, setProfile, setHorses, setEvents, setLoading)
     } else {
-      setProfile(null)
-      setHorses([])
-      setEvents([])
-      setLoading(false)
+      ProducerDataHelpers.resetData(setProfile, setHorses, setEvents, setLoading)
     }
   }, [user])
-
-  const loadData = async () => {
-    if (!user) return
-
-    try {
-      setLoading(true)
-      const data = await loadProducerData(user.id)
-      setProfile(data.profile)
-      setHorses(data.horses)
-      setEvents(data.events)
-    } catch (error) {
-      console.error('Error loading producer data:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return {
     profile,
     horses,
     events,
     loading,
-    refetch: loadData
+    refetch: () => ProducerDataHelpers.loadData(user?.id, setProfile, setHorses, setEvents, setLoading)
   }
 }
-
-
-

@@ -13,3 +13,4 @@ const Skeleton = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 Skeleton.displayName = 'Skeleton'
 
 export { Skeleton }
+

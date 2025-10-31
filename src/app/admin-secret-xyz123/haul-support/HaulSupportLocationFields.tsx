@@ -33,3 +33,4 @@ export function HaulSupportLocationFields({ formData, setFormData }: HaulSupport
     </>
   )
 }
+

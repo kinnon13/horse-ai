@@ -26,7 +26,7 @@ export function useHorsePerformanceCalculations(horses: any[]): HorsePerformance
   }, {} as Record<string, number>)
 
   const mostCommonBreed = Object.entries(horsesByBreed).reduce((most, [breed, count]) => {
-    return !most || count > most.count ? { breed, count } : most
+    return !most || (count as number) > most.count ? { breed, count: count as number } : most
   }, null as { breed: string; count: number } | null)
 
   return {
@@ -40,6 +40,7 @@ export function useHorsePerformanceCalculations(horses: any[]): HorsePerformance
     mostCommonBreed
   }
 }
+
 
 
 

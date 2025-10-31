@@ -27,10 +27,11 @@ export class ImportService {
       case 'contacts':
         return await DataImporter.validateContactsData(csvData)
       default:
-        throw new Error('Invalid import type')
+        throw new Error('Invalid validation type')
     }
   }
 }
+
 
 
 

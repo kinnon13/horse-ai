@@ -1,67 +1,42 @@
-// Data importer utility functions
-export interface ImportResult {
-  success: boolean
-  importedCount: number
-  errors: string[]
-  warnings: string[]
-}
-
-export interface ImportOptions {
-  validateData: boolean
-  skipDuplicates: boolean
-  updateExisting: boolean
-}
-
+// data-importer.ts (30 lines) - Single responsibility: Data import operations
 export class DataImporter {
-  constructor(private options: ImportOptions = {
-    validateData: true,
-    skipDuplicates: true,
-    updateExisting: false
-  }) {}
-
-  async importHorses(data: any[]): Promise<ImportResult> {
-    // TODO: Implement actual horse data import
-    console.log('Importing horses:', data.length, 'records')
-    
-    return {
-      success: true,
-      importedCount: data.length,
-      errors: [],
-      warnings: []
-    }
+  static async importHorses(csvData: any) {
+    // TODO: Implement horse data import
+    return { success: true, count: 0 }
   }
 
-  async importUsers(data: any[]): Promise<ImportResult> {
-    // TODO: Implement actual user data import
-    console.log('Importing users:', data.length, 'records')
-    
-    return {
-      success: true,
-      importedCount: data.length,
-      errors: [],
-      warnings: []
-    }
+  static async importResults(csvData: any) {
+    // TODO: Implement results data import
+    return { success: true, count: 0 }
   }
 
-  async importBusinesses(data: any[]): Promise<ImportResult> {
-    // TODO: Implement actual business data import
-    console.log('Importing businesses:', data.length, 'records')
-    
-    return {
-      success: true,
-      importedCount: data.length,
-      errors: [],
-      warnings: []
-    }
+  static async importProviders(csvData: any) {
+    // TODO: Implement provider data import
+    return { success: true, count: 0 }
   }
 
-  validateData(data: any[]): { isValid: boolean; errors: string[] } {
-    // TODO: Implement actual data validation
-    return {
-      isValid: true,
-      errors: []
-    }
+  static async importContacts(csvData: any) {
+    // TODO: Implement contact data import
+    return { success: true, count: 0 }
+  }
+
+  static async validateHorsesData(data: any) {
+    // TODO: Implement horse data validation
+    return { valid: true, errors: [] }
+  }
+
+  static async validateResultsData(data: any) {
+    // TODO: Implement results data validation
+    return { valid: true, errors: [] }
+  }
+
+  static async validateProvidersData(data: any) {
+    // TODO: Implement provider data validation
+    return { valid: true, errors: [] }
+  }
+
+  static async validateContactsData(data: any) {
+    // TODO: Implement contact data validation
+    return { valid: true, errors: [] }
   }
 }
-
-export const dataImporter = new DataImporter()
