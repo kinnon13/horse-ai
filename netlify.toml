@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NEXT_PUBLIC_SUPABASE_URL = "https://marufuvyvpeiphnropjo.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1hcnVmdXZ5dnBlaXBobnJvcGpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE0OTE2MTgsImV4cCI6MjA3NzA2NzYxOH0.Jv7SaWq9J4jE9Yj7AczbmUSgiLsICs_2vCgcmYIQixM"
+
