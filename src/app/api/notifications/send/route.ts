@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
 import { NextRequest, NextResponse } from 'next/server'
 import { NotificationSendRepo } from './NotificationSendRepo'
 
@@ -30,7 +33,6 @@ export async function POST(request: NextRequest) {
 
     // In production, you'd use Firebase Admin SDK here
     // For now, we'll simulate the notification
-    console.log('Sending notification:', message)
 
     // Store notification in database
     await NotificationSendRepo.saveNotification(userId, notification)

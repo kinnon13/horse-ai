@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 import { Provider, ProviderFilters } from './types'
 
 export const searchProviders = async (query: string, serviceType?: string) => {

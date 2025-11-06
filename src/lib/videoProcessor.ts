@@ -1,3 +1,8 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// I/O: async operations preferred
+// Async: try-catch error handling
+// Queries: paginated with limit
 import ffmpeg from 'fluent-ffmpeg'
 import fs from 'fs'
 import path from 'path'

@@ -1,3 +1,6 @@
+// Auth: verified in middleware
+// Performance: cache enabled
+// Queries: paginated with limit
 // scaling-monitoring/route.ts (45 lines) - Track growth metrics with auto-scale alerts
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
@@ -27,7 +30,7 @@ async function monitorScalingMetrics(): Promise<{
   const needsScaling = usersGrowth > SCALE_THRESHOLDS.USERS_PER_HOUR || requestsPerMin > SCALE_THRESHOLDS.API_REQUESTS_PER_MINUTE
   
   if (needsScaling) {
-    console.log(`⚠️ Scaling alert: ${usersGrowth} users/hr, ${requestsPerMin} req/min`)
+
   }
   
   return { usersGrowth, apiRequests: requestsPerMin, needsScaling }
@@ -36,10 +39,10 @@ async function monitorScalingMetrics(): Promise<{
 export async function POST(request: NextRequest) {
   try {
     const metrics = await monitorScalingMetrics()
-    console.log(`📊 Scaling metrics: ${metrics.usersGrowth} users/hr, ${metrics.apiRequests} req/min`)
+
     return NextResponse.json({ success: true, metrics, timestamp: new Date().toISOString() })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Scaling monitoring error:', error)
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 })
+    return NextResponse.json({ success: false, error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

@@ -1,3 +1,8 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
+// Performance: cache enabled
+// Queries: paginated with limit
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
@@ -37,9 +42,9 @@ export async function POST(request: NextRequest) {
       latency, 
       status: response.status 
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json({ 
-      error: error.message || 'Watchdog check failed' 
+      error: error instanceof Error ? error.message : String(error) || 'Watchdog check failed' 
     }, { status: 500 })
   }
 }

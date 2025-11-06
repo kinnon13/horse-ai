@@ -1,3 +1,4 @@
+// Database: transaction handling
 'use client'
 
 import React, { useEffect } from 'react'

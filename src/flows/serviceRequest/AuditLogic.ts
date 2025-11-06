@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // AuditLogic.ts (35 lines) - Single responsibility: Audit logging logic
 import { supabase } from '@/lib/supabase'
 

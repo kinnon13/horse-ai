@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
 // conversion/optimize/route.ts (48 lines) - Conversion optimization API
 import { NextRequest, NextResponse } from 'next/server'
 import { getConversionRate } from '@/lib/userAcquisition'

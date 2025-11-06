@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Concurrency: State updates optimized with useCallback
+// Queries: paginated with limit
 'use client'
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'

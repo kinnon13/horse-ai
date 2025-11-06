@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 import { supabase } from '../supabase'
 
 export class SearchAnalyticsService {

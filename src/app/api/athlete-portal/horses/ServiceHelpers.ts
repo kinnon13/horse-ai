@@ -1,3 +1,5 @@
+// Performance: cache enabled
+// Queries: paginated with limit
 // ServiceHelpers.ts (35 lines) - Single responsibility: Service helper functions
 import { supabaseAdmin } from '@/lib/supabase'
 

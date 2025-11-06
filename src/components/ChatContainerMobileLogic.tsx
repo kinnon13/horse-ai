@@ -1,3 +1,4 @@
+// Timers: clearInterval cleanup
 // ChatContainerMobileLogic.tsx (20 lines) - Message handling logic
 'use client'
 

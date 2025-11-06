@@ -33,6 +33,6 @@ export class CodeAuditor {
       audit.issues.forEach(issue => console.error(`  - ${issue}`));
       process.exit(1);
     }
-    console.log('✅ All checks passed - merge approved');
+
   }
 }

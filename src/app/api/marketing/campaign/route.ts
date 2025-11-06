@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
 // route.ts - Marketing campaign management API endpoint
 import { NextRequest, NextResponse } from 'next/server'
 import { createCampaign, updateCampaignPerformance } from '@/lib/marketingCampaignManager'

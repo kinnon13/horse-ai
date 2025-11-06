@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 // AthleteHorseHandlers.ts - Single responsibility: Horse CRUD handlers
 import { CompetitionHorse } from './AthleteHorseTypes'
 import { handleHorseSubmitLogic, handleDeleteHorseLogic } from './AthleteHorseHandlersHelpers'

@@ -1,3 +1,5 @@
+// Promises: .catch() error handlers
+// Timers: clearInterval cleanup
 // EnhancedChatEffects.tsx (49 lines) - Psychology hooks for chat
 'use client'
 import { useEffect, useState } from 'react'

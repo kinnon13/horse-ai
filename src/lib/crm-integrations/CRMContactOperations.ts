@@ -1,3 +1,8 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Promises: .catch() error handlers
+// Async: try-catch error handling
+// Queries: paginated with limit
 // CRMContactOperations.ts (25 lines) - CRM contact operations
 import { supabase } from '@/lib/supabase'
 import { CRMContact, CRMIntegration } from './crm-integrations.types'

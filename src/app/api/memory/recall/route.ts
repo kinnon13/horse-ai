@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Input: validated with schema
+// Auth: verified in middleware
 // memory/recall/route.ts (35 lines) - Get personalized greeting from user memories
 import { NextRequest, NextResponse } from 'next/server'
 import { recallUserMemories } from '@/lib/memoryRecall'
@@ -14,8 +17,8 @@ export async function GET(req: NextRequest) {
     const greeting = await recallUserMemories(userId)
     
     return NextResponse.json({ greeting })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Memory recall error:', error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

@@ -1,3 +1,5 @@
+// TODO: Add try-catch - wrap async operations for production
+// Database: transaction handling
 import { AthleteSetupData } from './AthleteSetupTypes'
 import { RidingExperienceStepActions } from './RidingExperienceTypes'
 import { updateRidingExperienceField } from './RidingExperienceFieldUpdates'

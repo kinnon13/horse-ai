@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // token-aggregator/route.ts - Tokens/$ per run/user/org
 import { NextRequest, NextResponse } from 'next/server'
 import { checkRateLimit } from '@/lib/RateLimitService'

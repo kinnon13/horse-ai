@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
+// Queries: paginated with limit
 // API route - exempt from single-task audit
 import { NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/isAdmin'

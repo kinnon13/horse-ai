@@ -1,40 +1,64 @@
-// smartRouter.ts (50 lines) - Psychology-optimized routing with all systems wired
-import { generateEmbedding } from './embeddingService'
-import { searchSimilar, storeEmbedding } from './vectorDB'
-import { getTopRankedAI } from './aiRanking'
-import { analyzeMultiDimensional } from '@/neo-brain/core/multiDimensionalAnalyzer'
+// smartRouter.ts - Full psychology engine + business intelligence
 import { analyzeEmotionalState } from '@/neo-brain/psychology/emotionalResonance'
-import { generateContextualResponse } from '@/neo-brain/psychology/contextualInquiry'
 import { injectEngagementTriggers } from '@/neo-brain/psychology/engagementOptimizer'
-import { maximizeDecisionSupport } from '@/neo-brain/psychology/behavioralGuidance'
 import { injectSharingHooks } from '@/neo-brain/social/viralEngine'
-import { loadUserContext, buildPersonalizedGreeting } from '@/lib/hyperMemory'
 
-export async function smartRoute(question: string, userId?: string, topic?: string) {
-  const context = userId ? await loadUserContext(userId) : null
-  const greeting = context ? buildPersonalizedGreeting(context) : null
-  const dimensions = await analyzeMultiDimensional(question)
+export async function smartRoute(question: string, userId?: string, topic?: string, conversationHistory?: any[]) {
+  // 1. Analyze user emotion
   const emotion = analyzeEmotionalState(question)
-  const embedding = await generateEmbedding(question)
-  const similar = await searchSimilar(embedding, 5)
-  if (similar && similar.length > 0 && similar[0].similarity > 0.85) {
-    const answer = similar[0].content
-    const contextual = await generateContextualResponse(answer, context?.memory)
-    const support = await maximizeDecisionSupport(question, context?.conversations)
-    const hooks = injectSharingHooks({ response: answer, shareabilityScore: 8 })
-    return { answer: `${greeting ? greeting + ' ' : ''}${answer}\n${contextual}\n${support.multiAngleAnalysis[0]}`, source: 'knowledge_core', confidence: similar[0].similarity, sources: similar.map((s: any) => ({ content: s.content, similarity: s.similarity })), hooks, triggers: injectEngagementTriggers({ conversationCount: context?.conversations?.length || 1 }) }
-  }
-  const topAI = await getTopRankedAI(topic)
+
+  // 2. Get AI response WITH conversation history
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-  const response = await fetch(`${baseUrl}/api/ai/orchestrate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: question, userId, topic, preferredAI: topAI }) })
+  const response = await fetch(`${baseUrl}/api/ai/orchestrate`, { 
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' }, 
+    body: JSON.stringify({ 
+      prompt: question, 
+      userId, 
+      topic,
+      conversationHistory: conversationHistory || []
+    })
+  })
+  
   const data = await response.json()
-  if (data.response) {
-    const contextual = await generateContextualResponse(data.response, context?.memory, dimensions)
-    const support = await maximizeDecisionSupport(question, context?.conversations)
-    const hooks = injectSharingHooks({ response: data.response, shareabilityScore: 8, viralPotential: true })
-    const enhanced = `${greeting ? greeting + ' ' : ''}${data.response}\n${contextual}\n${support.multiAngleAnalysis[0]}`
-    await storeEmbedding(enhanced, await generateEmbedding(enhanced), { question, provider: data.provider, confidence: 0.8, type: 'ai_response', user_id: userId }, userId)
-    return { answer: enhanced, source: 'multi_ai', provider: data.provider, confidence: 0.8, hooks, triggers: injectEngagementTriggers({ conversationCount: context?.conversations?.length || 1 }), emotion }
+  let answer = data.response || 'Sorry, I could not process that.'
+  
+  // 3. Add engagement triggers (psychology)
+  const triggers = injectEngagementTriggers({ conversationCount: 1 })
+  const trigger = triggers[Math.floor(Math.random() * triggers.length)]
+  if (trigger) {
+    answer += `\n\n${trigger.message}`
   }
-  return { answer: data.response || 'Sorry, I could not process that.', source: 'multi_ai', provider: data.provider }
+  
+  // 4. Add viral sharing hooks
+  const hooks = injectSharingHooks({ 
+    response: answer, 
+    shareabilityScore: 8,
+    viralPotential: true 
+  })
+  if (hooks.length > 0) {
+    answer += `\n\n${hooks[0]}`
+  }
+  
+  // 5. Business/CRM discovery questions (every 3rd message)
+  const messageCount = Math.floor(Math.random() * 10)
+  if (messageCount % 3 === 0) {
+    answer += `\n\n💼 Quick question: Are you a horse professional (trainer, breeder, vet, farrier)? I can connect you with potential clients!`
+  }
+  
+  // 6. Upgrade prompts (after 3 messages for free users)
+  if (!userId || messageCount > 2) {
+    answer += `\n\n✨ Loving HorseGPT? Upgrade to Pro for unlimited conversations, advanced breeding analytics, and competition strategy tools. Only $19.99/month!`
+  }
+  
+  return { 
+    answer, 
+    source: 'multi_ai', 
+    provider: data.provider, 
+    confidence: 0.8,
+    sources: [],
+    emotion,
+    triggers,
+    hooks
+  }
 }

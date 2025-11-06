@@ -1,3 +1,7 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
+// Queries: paginated with limit
 // UserHorsesRepo.repo.ts (35 lines) - Single responsibility: Main repository functions
 import { supabase } from '@/lib/supabase'
 import { UserHorsesRepoHelpers } from './UserHorsesRepoHelpers'

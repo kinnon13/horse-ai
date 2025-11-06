@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 // SaveHorseModal.tsx
 'use client'
 

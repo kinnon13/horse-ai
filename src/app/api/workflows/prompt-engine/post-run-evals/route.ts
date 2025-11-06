@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // post-run-evals/route.ts - Score outputs, auto-block bad
 import { NextRequest, NextResponse } from 'next/server'
 import { checkRateLimit } from '@/lib/RateLimitService'
@@ -35,5 +37,5 @@ function evaluateOutput(output: string): { score: number; shouldBlock: boolean; 
 }
 
 async function blockBadProvider(userId: string, provider: string | undefined, reasons: string[]): Promise<void> {
-  console.log(`Blocking provider ${provider} for user ${userId}, reasons: ${reasons.join(', ')}`)
+  }`)
 }

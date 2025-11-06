@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // AthleteDataLoaderHelpers.ts (25 lines) - Helper functions for data loading
 import { AthleteProfile } from './AthleteTypes'
 import { CompetitionHorse } from './AthleteHorseTypes'

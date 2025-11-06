@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // RepoHelpers.ts (35 lines) - Single responsibility: Repository helper functions
 import { supabase } from '@/lib/supabase'
 import { CRMProvider, CRMContact, CRMIntegration } from './crm-integrations.types'

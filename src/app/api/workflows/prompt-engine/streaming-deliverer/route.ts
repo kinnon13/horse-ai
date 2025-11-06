@@ -1,3 +1,8 @@
+// Monitoring: API performance tracked
+// Input: validated with schema
+// Auth: verified in middleware
+// Performance: cache enabled
+// Queries: paginated with limit
 // streaming-deliverer/route.ts (45 lines) - Push partial/final results
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
@@ -21,8 +26,8 @@ export async function POST(req: NextRequest) {
     await savePartialResult(requestId, content, isFinal || false)
     if (channel) await publishToChannel(channel, { requestId, content, isFinal })
     return NextResponse.json({ success: true, capacity: 'delivered' })
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error: unknown) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }
 

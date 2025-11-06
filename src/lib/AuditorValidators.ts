@@ -1,3 +1,4 @@
+// I/O: async operations preferred
 // AuditorValidators.ts (35 lines) - Single responsibility: Audit validation functions
 import { execSync } from 'child_process';
 

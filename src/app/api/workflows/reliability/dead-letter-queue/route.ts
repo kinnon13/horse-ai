@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
@@ -6,7 +9,7 @@ export async function POST(request: NextRequest) {
     const { taskId, error, retryCount = 0 } = await request.json()
     if (retryCount >= 3) {
       await supabase.from('dead_letter_queue').insert({
-        task_id: taskId, error: error.message || String(error), retry_count: retryCount, quarantined_at: new Date().toISOString()
+        task_id: taskId, error: error instanceof Error ? error.message : String(error) || String(error), retry_count: retryCount, quarantined_at: new Date().toISOString()
       })
       return NextResponse.json({ quarantined: true })
     }
@@ -16,8 +19,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ replay: true, retryCount: dlq.retry_count + 1 })
     }
     return NextResponse.json({ processed: true })
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error: unknown) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }
 

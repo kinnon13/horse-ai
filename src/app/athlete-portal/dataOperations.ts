@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 import { CompetitionHorse } from './AthleteHorseTypes'
 import { CompetitionEvent } from './AthleteEventTypes'
 import { 

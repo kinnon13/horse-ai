@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 'use client'
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'

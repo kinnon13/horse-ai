@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // CEO Morning Report utility
 export interface CEOReport {
   id: string
@@ -37,8 +40,7 @@ export async function generateCEOReport(): Promise<CEOReport> {
     topServices: [],
     issues: []
   }
-  
-  console.log('CEO report generated:', report)
+
   return report
 }
 

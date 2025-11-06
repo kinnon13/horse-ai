@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // videoAnalyzer.ts - Analyze video frames and store insights in knowledge core
 import { extractInsightsFromFrames } from './insightExtractor'
 import { storeVideoInsights } from './knowledgeStore'

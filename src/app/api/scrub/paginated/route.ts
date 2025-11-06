@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Input: validated with schema
+// Auth: verified in middleware
+// Performance: cache enabled
 // API route - exempt from single-task audit
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'

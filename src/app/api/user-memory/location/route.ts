@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { UserMemoryLocationService } from './UserMemoryLocationService'
 
@@ -17,9 +19,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, user: updatedUser })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Location update error:', error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }
 
@@ -30,9 +32,9 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ success: true, location })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Get location error:', error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }
 
@@ -43,8 +45,8 @@ export async function DELETE(request: NextRequest) {
 
     return NextResponse.json({ success: true, user: updatedUser })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Location opt-out error:', error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

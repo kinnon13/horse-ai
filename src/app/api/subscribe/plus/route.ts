@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // route.ts (25 lines) - Main Stripe checkout route
 import { NextRequest, NextResponse } from 'next/server'
 import { createStripeCustomer, createCheckoutSession } from './StripeCheckoutHelpers'

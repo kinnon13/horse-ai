@@ -7,8 +7,8 @@ import { CalendarEventForm } from './CalendarEventForm'
 interface CalendarEventFormsProps {
   showAddForm: boolean
   editingEvent: any
-  onAddSubmit: (data: any) => void
-  onEditSubmit: (data: any) => void
+  onAddSubmit: (data: unknown) => void
+  onEditSubmit: (data: unknown) => void
   onAddCancel: () => void
   onEditCancel: () => void
 }

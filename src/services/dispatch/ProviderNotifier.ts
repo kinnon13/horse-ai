@@ -10,7 +10,6 @@ export class ProviderNotifier {
       status: 'sent'
     }
     
-    console.log('Notification sent:', newNotification)
     return newNotification
   }
 
@@ -23,7 +22,6 @@ export class ProviderNotifier {
   }
 
   async updateNotificationStatus(notificationId: string, status: Notification['status']): Promise<void> {
-    console.log(`Notification ${notificationId} status updated to ${status}`)
   }
 }
 

@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/isAdmin'
 
@@ -13,7 +15,7 @@ export async function POST(req: NextRequest) {
     switch (action) {
       case 'create_contract':
         // Create partnership contract
-        console.log('Contract created:', { contractId, partnerId })
+
         return NextResponse.json({ 
           success: true, 
           contractId: contractId || `contract_${Date.now()}` 

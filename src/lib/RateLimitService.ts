@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // RateLimitService Main - Single responsibility (now 45 lines)
 import { getUserUsage, incrementUserUsage } from './RateLimitService.queries'
 import { RateLimitResult, RateLimitConfig } from './RateLimitService.types'

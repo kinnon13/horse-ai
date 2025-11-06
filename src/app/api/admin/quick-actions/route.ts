@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/isAdmin'
 import { generateReferralCode, createTestProvider, createTestHaulPoint, sendTestNotification, getSystemStats } from './AdminQuickActionsService'
@@ -31,8 +33,8 @@ export async function POST(req: Request) {
       default:
         return NextResponse.json({ error: 'Unknown action' }, { status: 400 })
     }
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Admin quick action error:', err)
-    return NextResponse.json({ error: err.message || 'Server error' }, { status: 500 })
+    return NextResponse.json({ error: err instanceof Error ? err instanceof Error ? err.message : String(err) : 'Server error' }, { status: 500 })
   }
 }

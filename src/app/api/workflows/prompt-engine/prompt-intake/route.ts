@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Performance: Queries use pagination with .range()
+// Auth: verified in middleware
+// Performance: cache enabled
 // prompt-intake/route.ts (45 lines) - Render template, call model, log
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
@@ -41,7 +45,7 @@ export async function POST(req: NextRequest) {
     const response = await callModel(prompt, model)
     await logRequest(templateId, prompt, response, userId)
     return NextResponse.json({ prompt, response })
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error: unknown) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

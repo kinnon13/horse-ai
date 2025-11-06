@@ -1,5 +1,5 @@
 // ProviderErrorHandlers.ts - Error handling utilities for provider operations
-export function handleProviderError(operation: string, error: any) {
+export function handleProviderError(operation: string, error: unknown) {
   console.error(`Error ${operation}:`, error)
   alert(`Failed to ${operation}`)
 }

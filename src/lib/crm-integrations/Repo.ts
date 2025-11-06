@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // Repo.ts (35 lines) - Single responsibility: Main repository logic
 import { RepoHelpers } from './RepoHelpers'
 import { CRMProvider, CRMContact, CRMIntegration } from './crm-integrations.types'

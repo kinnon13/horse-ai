@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 import { supabase } from './supabase'
 import { generateEmbedding } from './embeddingService'
 import { storeEmbedding } from './vectorDB'

@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // AuditHelpers.ts (35 lines) - Single responsibility: Audit helper functions
 import { supabase } from '@/lib/supabase'
 
@@ -33,7 +34,7 @@ export class AuditHelpers {
     }
   }
 
-  static formatAuditPayload(eventType: string, data: any): any {
+  static formatAuditPayload(eventType: string, data: unknown): any {
     return {
       event_type: eventType,
       timestamp: new Date().toISOString(),

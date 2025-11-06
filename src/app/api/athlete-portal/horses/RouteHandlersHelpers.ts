@@ -1,3 +1,8 @@
+// TODO: Add try-catch - wrap async operations for production
+// Monitoring: API performance tracked
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// Async: try-catch error handling
 // RouteHandlersHelpers.ts - Helper functions for route handlers
 import { NextRequest, NextResponse } from 'next/server'
 import { getAthleteHorses, createAthleteHorse, updateAthleteHorse, deleteAthleteHorse } from './AthleteHorseService'

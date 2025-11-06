@@ -14,12 +14,12 @@ export class ServiceRequestOperations {
 
   static async updateServiceRequestStatus(requestId: string, status: string) {
     // TODO: Implement actual status update
-    console.log('Updating request status:', requestId, status)
+
   }
 
   static async notifyUserOfClaim(userId: string, providerName: string, serviceType: string) {
     // TODO: Implement actual notification
-    console.log('Notifying user of claim:', { userId, providerName, serviceType })
+
   }
 }
 

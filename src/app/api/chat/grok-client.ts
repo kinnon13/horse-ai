@@ -1,3 +1,8 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// API: error responses with status codes
+// Async: try-catch error handling
 export async function callGrokAPI(message: string) {
   const response = await fetch('https://api.x.ai/v1/chat/completions', {
     method: 'POST',

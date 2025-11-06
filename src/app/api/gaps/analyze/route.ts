@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
 // analyze route.ts (24 lines) - Gap analysis endpoint
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'

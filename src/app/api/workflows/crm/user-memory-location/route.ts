@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // user-memory-location/route.ts - Capture/update user geo
 import { NextRequest, NextResponse } from 'next/server'
 import { locationMemoryWorkflow } from './location.service'

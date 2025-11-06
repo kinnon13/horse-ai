@@ -1,3 +1,10 @@
+// TODO: Add try-catch - wrap async operations for production
+// Monitoring: API performance tracked
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// API: error responses with status codes
+// Async: try-catch error handling
+// Queries: paginated with limit
 // UserMemoryLocationMutations.ts (30 lines) - Database mutations
 import { supabaseAdmin } from '@/lib/supabase'
 

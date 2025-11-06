@@ -1,6 +1,6 @@
 // useAthleteHandlers.ts (40 lines) - Single responsibility: Main athlete handlers hook
 import { useState } from 'react'
-import { CompetitionHorse } from './Types'
+import { CompetitionHorse } from './types'
 import { CompetitionEvent } from './AthleteEventTypes'
 import { AthleteHorseHandlers } from './AthleteHorseHandlers'
 import { AthleteEventHandlers } from './AthleteEventHandlers'

@@ -1,3 +1,4 @@
+// Concurrency: State updates optimized with useCallback
 'use client'
 import { useState } from 'react'
 

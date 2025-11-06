@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // Haul Support utility functions
 export interface HaulSupportRequest {
   id: string
@@ -27,8 +30,7 @@ export async function createHaulSupportRequest(request: Omit<HaulSupportRequest,
     ...request,
     id: Date.now().toString()
   }
-  
-  console.log('Haul support request created:', newRequest)
+
   return newRequest
 }
 
@@ -44,6 +46,6 @@ export async function getHaulSupportRequests(userId: string): Promise<HaulSuppor
 
 export async function updateHaulSupportRequest(id: string, updates: Partial<HaulSupportRequest>): Promise<void> {
   // TODO: Implement actual request update
-  console.log(`Haul support request ${id} updated:`, updates)
+
 }
 

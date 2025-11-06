@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 import { supabase } from '@/lib/supabase'
 import { AthleteProfile } from './AthleteTypes'
 import { CompetitionHorse } from './AthleteHorseTypes'

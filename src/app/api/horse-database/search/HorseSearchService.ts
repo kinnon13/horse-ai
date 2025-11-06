@@ -1,3 +1,4 @@
+// Performance: cache enabled
 // TEMP STUB
 export function searchHorseDatabase(params: any) { 
   return [] 

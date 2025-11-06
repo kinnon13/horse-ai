@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // export-data-formatters.ts (30 lines) - Single responsibility: Data formatting utilities
 import { supabase } from './supabase'
 import { ExportFilters } from './export-generator'

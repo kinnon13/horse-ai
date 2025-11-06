@@ -1,6 +1,6 @@
 // Logging utility for events
 export function logEvent(event: string, data?: any) {
-  console.log(`Event: ${event}`, data)
+
 }
 
 export const CRITICAL_EVENTS = {

@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 // chat-actions.ts - Single responsibility: Chat actions
 import { ChatRepository } from './chat.repo'
 import { ChatState } from './chat-types'

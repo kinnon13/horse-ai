@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // export-data.ts (35 lines) - Single responsibility: Main data gathering
 import { ExportData, ExportFilters } from './export-generator'
 import { fetchHorses } from './export-generator-data-horses'

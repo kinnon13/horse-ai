@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
 // security-auditing/route.ts (45 lines) - Daily security scans with auto-block
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
@@ -38,11 +41,11 @@ async function scanSecurityThreats(): Promise<{ threats: number; blocked: number
 export async function POST(request: NextRequest) {
   try {
     const { threats, blocked } = await scanSecurityThreats()
-    console.log(`🔒 Security scan: ${threats} threats found, ${blocked} IPs blocked`)
+
     if (threats > 0) console.error('🚨 SECURITY THREAT DETECTED')
     return NextResponse.json({ success: true, threats, blocked, timestamp: new Date().toISOString() })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Security audit error:', error)
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 })
+    return NextResponse.json({ success: false, error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

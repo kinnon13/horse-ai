@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // identify route.ts (28 lines) - Gap identification endpoint
 import { NextRequest, NextResponse } from 'next/server'
 import { analyzeUserQueries, analyzeUserFeedback, storeGap } from '@/lib/gapIdentifier'

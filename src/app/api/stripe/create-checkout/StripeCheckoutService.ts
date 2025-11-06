@@ -1,3 +1,5 @@
+// Performance: cache enabled
+// Queries: paginated with limit
 import { createCheckoutSession, createCustomer } from '@/lib/stripe'
 import { supabase } from '@/lib/supabase'
 

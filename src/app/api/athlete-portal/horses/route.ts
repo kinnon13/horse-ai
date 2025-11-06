@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
 import { NextRequest } from 'next/server'
 import { getAuthenticatedUser } from './auth-helpers'
 import { handleGet, handlePost, handlePut, handleDelete } from './route-handlers'

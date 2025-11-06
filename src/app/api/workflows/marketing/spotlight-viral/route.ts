@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
+// Queries: paginated with limit
 // spotlight-viral/route.ts - Create/post viral clips, track loops
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'

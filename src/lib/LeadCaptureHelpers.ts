@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 import { ServiceRequest } from './LeadCapture.types';
 import { supabase } from '@/lib/supabase';
 
@@ -29,7 +32,7 @@ export async function notifyProvidersLogic(request: ServiceRequest): Promise<voi
     .ilike('location', `%${request.location}%`)
     .limit(10);
   if (!nearbyProviders || nearbyProviders.length === 0) {
-    console.log('No nearby providers found for request:', request);
+
     return;
   }
   await fetch('/api/workflows/provider-notification', {

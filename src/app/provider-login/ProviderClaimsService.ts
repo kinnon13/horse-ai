@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 import type { ProviderType } from './ProviderLoginTypes'
 import { supabase } from '@/lib/supabase'
 
@@ -14,10 +15,7 @@ export async function claimServiceRequest(providerId: string, requestId: string)
     if (error) throw error
     
     // Log analytics event
-    console.log('PROVIDER_CLAIM_REQUEST', {
-      provider_id: providerId,
-      service_request_id: requestId,
-      timestamp: new Date().toISOString()
+    .toISOString()
     })
   } catch (error) {
     console.error('Error claiming request:', error)

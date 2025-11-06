@@ -1,8 +1,8 @@
 // ConciergeRequestService.ts - Stub implementation
 export class ConciergeRequestService {
-  static async createRequest(data: any) {
+  static async createRequest(data: unknown) {
     // TODO: Implement request creation
-    return { id: 'req_' + Date.now(), ...data }
+    return { id: 'req_' + Date.now(), ...(data as object) }
   }
 
   static async getRequest(id: string) {
@@ -10,9 +10,9 @@ export class ConciergeRequestService {
     return { id, status: 'pending' }
   }
 
-  static async updateRequest(id: string, data: any) {
+  static async updateRequest(id: string, data: unknown) {
     // TODO: Implement request update
-    return { id, ...data }
+    return { id, ...(data as object) }
   }
 
   static async saveConciergeRequest(userId: string, serviceType: string, location: string, urgency: string, amount: number, sessionId: string) {

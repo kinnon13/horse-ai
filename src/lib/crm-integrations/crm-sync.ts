@@ -1,3 +1,7 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Promises: .catch() error handlers
+// Async: try-catch error handling
 import { CRMIntegration } from './crm-integrations.types'
 import { getCRMProviders } from './crm-provider-ops'
 import { getCRMContacts } from './crm-contact-ops'

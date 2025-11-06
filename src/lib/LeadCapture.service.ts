@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 import { supabase } from '@/lib/supabase';
 import { ServiceRequest } from './LeadCapture.types';
 import { extractServiceRequestLogic, notifyProvidersLogic } from './LeadCaptureHelpers';

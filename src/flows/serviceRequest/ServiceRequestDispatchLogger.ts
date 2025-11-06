@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // ServiceRequestDispatchLogger.ts (30 lines) - Single responsibility: Dispatch logging
 import { supabase } from '@/lib/supabase'
 import { ServiceRequestIntent } from './ServiceRequestParser'

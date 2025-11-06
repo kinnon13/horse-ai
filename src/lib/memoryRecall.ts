@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // memoryRecall.ts (49 lines) - Recall user memories from knowledge embeddings
 import { supabase } from '@/lib/supabase'
 

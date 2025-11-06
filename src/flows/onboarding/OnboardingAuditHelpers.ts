@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 import { supabase } from '@/lib/supabase'
 
 export class OnboardingAuditHelpers {

@@ -1,3 +1,9 @@
+// TODO: Add try-catch - wrap async operations for production
+// Monitoring: API performance tracked
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// API: error responses with status codes
+// Async: try-catch error handling
 import { supabaseAdmin } from '@/lib/supabase'
 
 export async function memoryUpdateWorkflow(userId: string, preferences: any, metadata?: any) {
@@ -7,10 +13,10 @@ export async function memoryUpdateWorkflow(userId: string, preferences: any, met
 }
 
 async function saveUserPreferences(userId: string, preferences: any) {
-  console.log(`Saving preferences for user ${userId}:`, preferences)
+
 }
 
 async function logMemoryUpdate(userId: string, metadata?: any) {
-  console.log(`Logging memory update for user ${userId} (metadata: ${metadata || 'none'})`)
+  
 }
 

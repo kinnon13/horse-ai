@@ -13,7 +13,6 @@ export class AuditorAgent {
     }
     
     try {
-      console.log('🔍 Checking file sizes...')
       const largeFiles = findLargeFiles()
       if (largeFiles.length > 0) {
         errors.push(`Files exceed 50 lines: ${largeFiles.join(', ')}`)
@@ -29,9 +28,7 @@ export class AuditorAgent {
 
 export async function runAudit() {
   const result = await AuditorAgent.runFullAudit()
-  console.log(result.passed ? '✅ AUDIT PASSED' : '❌ AUDIT FAILED')
   if (result.errors.length > 0) {
-    console.log('Errors:', result.errors)
   }
   return result
 }

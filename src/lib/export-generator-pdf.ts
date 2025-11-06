@@ -22,7 +22,7 @@ export function addTopPerformersTable(doc: jsPDF, data: ExportData): number {
     horse.discipline || ''
   ])
   
-  // @ts-ignore - jsPDF autotable types
+  // @ts-expect-error - jsPDF autotable types
   doc.autoTable({
     head: [['Horse', 'Breed', 'Earnings', 'Discipline']],
     body: tableData,

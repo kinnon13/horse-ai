@@ -20,7 +20,6 @@ export interface SelectionCriteria {
 export class ProviderSelector {
   async findProviders(criteria: SelectionCriteria): Promise<Provider[]> {
     // TODO: Implement actual provider selection logic
-    console.log('Finding providers for criteria:', criteria)
     return []
   }
 

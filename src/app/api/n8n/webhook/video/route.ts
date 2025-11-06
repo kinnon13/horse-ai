@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
 // route.ts - n8n webhook endpoint for video analysis
 import { NextRequest, NextResponse } from 'next/server'
 import { analyzeVideoFrames } from '@/lib/videoAnalyzer'

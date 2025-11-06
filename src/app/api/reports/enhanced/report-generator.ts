@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // report-generator.ts (30 lines) - Single responsibility: Report generation
 export class ReportGeneratorService {
   static async generatePinkBuckleReport(userId: string, horseName: string) {

@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // HorseData.repo.ts (30 lines)
 import { supabase } from '@/lib/supabase-client';
 

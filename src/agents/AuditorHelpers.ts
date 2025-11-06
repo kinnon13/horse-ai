@@ -1,10 +1,10 @@
+// I/O: async operations preferred
 // AuditorHelpers.ts - Helper functions for auditor agent
 import { execSync } from 'child_process'
 import { writeFileSync } from 'fs'
 
 export function runTypeScriptCheck(): boolean {
   try {
-    console.log('🔍 Running TypeScript check...')
     execSync('npx tsc --noEmit --skipLibCheck', { stdio: 'pipe' })
     return true
   } catch (error) {
@@ -14,7 +14,6 @@ export function runTypeScriptCheck(): boolean {
 
 export function runESLintCheck(): boolean {
   try {
-    console.log('🔍 Running ESLint...')
     execSync('npx eslint src --ext .ts,.tsx', { stdio: 'pipe' })
     return true
   } catch (error) {

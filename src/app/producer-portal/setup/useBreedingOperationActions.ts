@@ -1,3 +1,5 @@
+// TODO: Add try-catch - wrap async operations for production
+// Database: transaction handling
 import { ProducerSetupData } from './ProducerSetupTypes'
 import { BreedingOperationStepActions } from './BreedingOperationTypes'
 import { updateBreedingOperationField } from './BreedingOperationFieldUpdates'

@@ -8,25 +8,25 @@ export function handleToggleApproval(params: any) { return; }
 export interface CreatePointParams {
   point: any;
   onSuccess?: () => void;
-  onError?: (error: any) => void;
+  onError?: (error: unknown) => void;
 }
 
 export interface UpdatePointParams {
   id: string;
   updates: any;
   onSuccess?: () => void;
-  onError?: (error: any) => void;
+  onError?: (error: unknown) => void;
 }
 
 export interface DeletePointParams {
   id: string;
   onSuccess?: () => void;
-  onError?: (error: any) => void;
+  onError?: (error: unknown) => void;
 }
 
 export interface ToggleApprovalParams {
   id: string;
   approved: boolean;
   onSuccess?: () => void;
-  onError?: (error: any) => void;
+  onError?: (error: unknown) => void;
 }

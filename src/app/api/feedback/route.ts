@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Input: validated with schema
+// Auth: verified in middleware
 // feedback route - API for recording and retrieving user feedback
 import { NextRequest, NextResponse } from 'next/server'
 import { recordFeedback, getFeedbackStats } from '@/lib/feedbackLoop'

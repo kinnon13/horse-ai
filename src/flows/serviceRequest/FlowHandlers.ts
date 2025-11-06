@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // FlowHandlers.ts (30 lines) - Single responsibility: Flow event handlers
 import { ServiceRequestIntent } from './ServiceRequestParser'
 import { ServiceRequestResponse } from './ServiceRequestResponseGenerator'

@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // vision/route.ts (45 lines) - Image/video analysis using OpenAI Vision
 import { NextRequest, NextResponse } from 'next/server'
 import { analyzeImage, validateImageInput } from './helpers'
@@ -26,8 +28,8 @@ export async function POST(req: NextRequest) {
       timestamp: new Date().toISOString()
     })
     
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Vision API error:', error)
-    return NextResponse.json({ error: error.message || 'Failed to analyze image' }, { status: 500 })
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) || 'Failed to analyze image' }, { status: 500 })
   }
 }

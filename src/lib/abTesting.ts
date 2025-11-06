@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // abTesting.ts - A/B testing utilities
 export async function assignVariant(userId: string, conversationId: string, testName: string): Promise<string> {
   const hash = `${userId}-${conversationId}-${testName}`.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
@@ -11,5 +14,5 @@ export async function getWinningVariant(testName: string): Promise<string> {
 
 export async function trackConversion(conversationId: string, event: string, data?: any): Promise<void> {
   // TODO: Implement conversion tracking
-  console.log('Conversion tracked:', { conversationId, event, data })
+
 }

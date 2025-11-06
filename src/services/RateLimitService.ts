@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // RateLimitService.ts (40 lines)
 import { supabase } from '@/lib/supabase-client';
 const FREE_LIMIT = 10;

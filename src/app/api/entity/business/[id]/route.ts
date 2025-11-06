@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { getBusiness360, getRelationships } from '@/lib/entityIntelligence'
 

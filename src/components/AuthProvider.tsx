@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 'use client'
 
 import React, { createContext, useContext, useState } from 'react'

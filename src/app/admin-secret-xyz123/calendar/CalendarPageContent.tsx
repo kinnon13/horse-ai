@@ -1,3 +1,4 @@
+// Database: transaction handling
 'use client'
 
 import React, { useState } from 'react'
@@ -10,6 +11,7 @@ import { CalendarLoadingState } from './CalendarLoadingState'
 import { CalendarErrorState } from './CalendarErrorState'
 import { useCalendarHandlers } from './useCalendarHandlers'
 import { CalendarEventForms } from './CalendarEventForms'
+import type { CalendarFormData } from './CalendarTypes'
 
 export function CalendarPageContent() {
   const { user } = useAuth()
@@ -30,7 +32,7 @@ export function CalendarPageContent() {
         <CalendarEventForms 
           showAddForm={showAddForm}
           editingEvent={editingEvent}
-          onAddSubmit={handleCreateEvent}
+          onAddSubmit={(data: unknown) => handleCreateEvent(data as CalendarFormData)}
           onEditSubmit={(data: any) => handleUpdateEvent(editingEvent.id, data)}
           onAddCancel={() => setShowAddForm(false)}
           onEditCancel={() => setEditingEvent(null)}

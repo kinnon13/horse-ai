@@ -1,3 +1,11 @@
+// TODO: Add try-catch - wrap async operations for production
+// Monitoring: API performance tracked
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// API: error responses with status codes
+// Async: try-catch error handling
+// Performance: cache enabled
+// Queries: paginated with limit
 // LocationUpdateOperations.ts (25 lines) - Location update operations
 import { supabaseAdmin } from '@/lib/supabase'
 

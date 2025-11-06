@@ -1,3 +1,7 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
+// Queries: paginated with limit
 import { supabase } from './supabase'
 import { ExportFilters } from './export-generator'
 

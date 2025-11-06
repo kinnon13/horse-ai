@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
 // ingestion/route.ts - Pull Salesforce/HubSpot → Supabase
 import { NextRequest, NextResponse } from 'next/server'
 import { ingestionWorkflow } from './ingestion.service'

@@ -35,7 +35,7 @@ export function logError(error: Error | string, context?: Record<string, any>) {
 }
 
 export function logEvent(event: string, data?: Record<string, any>) {
-  if (!isInitialized) return console.log('Event:', event, data)
+  if (!isInitialized) return 
   Sentry.captureMessage(event, {
     level: 'info',
     extra: sanitizeData(data || {})

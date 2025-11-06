@@ -18,7 +18,7 @@ export function addBreedingInsightsTable(doc: jsPDF, data: ExportData): number {
     ])
   
   if (breedingData.length > 0) {
-    // @ts-ignore
+    // @ts-expect-error
     doc.autoTable({
       head: [['Horse', 'Sire', 'Dam', 'Earnings']],
       body: breedingData,

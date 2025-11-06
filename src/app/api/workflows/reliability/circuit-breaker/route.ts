@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
+// Queries: paginated with limit
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
@@ -27,8 +31,8 @@ export async function POST(request: NextRequest) {
       }
     }
     return NextResponse.json({ state: circuit?.state || 'closed' })
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error: unknown) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }
 

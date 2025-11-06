@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // product-recommendation/route.ts - AI gear/services recommendations
 import { NextRequest, NextResponse } from 'next/server'
 import { generateProductRecommendations } from './recommendation.service'

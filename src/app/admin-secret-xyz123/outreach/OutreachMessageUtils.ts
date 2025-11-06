@@ -14,7 +14,7 @@ export class OutreachMessageUtils {
 
   static updateMessage(messageId: string, updates: Partial<OutreachMessage>): void {
     // TODO: Implement actual message updating
-    console.log('Updating message:', messageId, updates)
+
   }
 
   static createMessage(data: ComposeData): OutreachMessage {

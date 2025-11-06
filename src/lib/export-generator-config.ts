@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
 import { addPDFHeader, addPDFSummaryStats } from './pdf-templates'
@@ -39,7 +40,7 @@ export class ExportGeneratorConfig {
 }
 
 // Helper functions for CSV generation
-function createCSVRows(data: any): string[][] {
+function createCSVRows(data: unknown): string[][] {
   // Implementation will be moved from mapper
   return []
 }

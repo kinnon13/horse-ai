@@ -1,3 +1,5 @@
+// Performance: cache enabled
+// Queries: paginated with limit
 // ProviderClaimServiceHelpers.ts (30 lines) - Single responsibility: Service helper functions
 import { supabaseAdmin } from '@/lib/supabase'
 

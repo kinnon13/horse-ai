@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // user-memory-update/route.ts - Save prefs from chats/uploads
 import { NextRequest, NextResponse } from 'next/server'
 import { memoryUpdateWorkflow } from './memory.service'

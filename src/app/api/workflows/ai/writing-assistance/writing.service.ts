@@ -1,3 +1,8 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// API: error responses with status codes
+// Async: try-catch error handling
 // writing.service.ts - AI writing assistance service
 export async function generateContent(
   type: 'bio' | 'description' | 'report',

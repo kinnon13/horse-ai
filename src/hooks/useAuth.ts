@@ -1,3 +1,5 @@
+// TODO: Add try-catch - wrap async operations for production
+// Queries: paginated with limit
 // useAuth.ts (35 lines)
 'use client'
 

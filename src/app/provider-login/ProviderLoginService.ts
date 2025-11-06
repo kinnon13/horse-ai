@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 import type { ProviderType } from './ProviderLoginTypes'
 import { supabase } from '@/lib/supabase'
 

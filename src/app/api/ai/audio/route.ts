@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // route.ts - Audio transcription API using OpenAI Whisper
 import { NextRequest, NextResponse } from 'next/server'
 import { processAudioInput, transcribeWithWhisper, validateAudioFile, AudioUpload } from './helpers'

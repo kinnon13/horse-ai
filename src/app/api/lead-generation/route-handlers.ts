@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { LeadGenerationService } from './LeadGenerationService'
 import { LeadGenerationRequest } from './route.types'
@@ -24,17 +26,17 @@ export async function handlePostLeadGeneration(request: NextRequest): Promise<Ne
 
     return NextResponse.json({ success: true, leads, leadData })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Lead generation error:', error)
     
-    if (error.message.includes('Plus tier')) {
+    if (error instanceof Error ? error.message : String(error).includes('Plus tier')) {
       return NextResponse.json({ 
-        error: error.message,
+        error: error instanceof Error ? error.message : String(error),
         upgradeRequired: true 
       }, { status: 403 })
     }
 
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }
 

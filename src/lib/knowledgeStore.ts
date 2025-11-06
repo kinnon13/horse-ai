@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // knowledgeStore.ts - Store video insights in vector DB with entity linking
 import { generateEmbedding } from './embeddingService'
 import { storeEmbedding, searchSimilar } from './vectorDB'

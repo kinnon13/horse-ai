@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // route.ts (30 lines) - Single responsibility: HTTP handler
 import { NextRequest, NextResponse } from 'next/server'
 import { WebSearchService } from './WebSearchService'

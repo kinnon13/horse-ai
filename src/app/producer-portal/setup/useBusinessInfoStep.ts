@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 import { ProducerSetupData } from './ProducerSetupTypes'
 import { BusinessInfoStepState, BusinessInfoStepActions } from './BusinessInfoTypes'
 import { useBusinessInfoState } from './useBusinessInfoState'
@@ -16,7 +17,7 @@ export function useBusinessInfoStep(
     ...actions,
     isValid: actions.validateForm(),
     saveData: async () => {
-      console.log('Saving business info data')
+
     }
   }
 }

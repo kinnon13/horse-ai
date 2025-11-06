@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // FlowSteps.ts (30 lines) - Single responsibility: Individual flow step implementations
 import { HaulSupportParser, HaulSupportIntent } from './HaulSupportParser'
 import { HaulSupportDataFetcher } from './HaulSupportDataFetcher'

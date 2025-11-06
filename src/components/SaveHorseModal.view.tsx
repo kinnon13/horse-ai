@@ -1,3 +1,5 @@
+// TODO: Add try-catch - wrap async operations for production
+// Queries: paginated with limit
 // SaveHorseModal.view.tsx (48 lines)
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/Dialog'
 import { Button } from '@/components/ui/Button'

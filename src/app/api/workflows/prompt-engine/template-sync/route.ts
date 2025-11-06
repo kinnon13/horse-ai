@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
+// Queries: paginated with limit
 // template-sync/route.ts (45 lines) - GitHub→Supabase sync
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
@@ -36,7 +40,7 @@ export async function POST(req: NextRequest) {
     const templates = await fetchGitHubTemplates(repo, path, token)
     await syncToSupabase(templates)
     return NextResponse.json({ success: true, synced: templates.length })
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error: unknown) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

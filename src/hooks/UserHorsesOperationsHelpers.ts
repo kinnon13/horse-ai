@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // UserHorsesOperationsHelpers.ts (30 lines) - Single responsibility: Operations helper functions
 import { supabase } from '@/lib/supabase'
 import { UserHorse } from './UserHorsesOperations.repo'

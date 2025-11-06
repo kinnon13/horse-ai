@@ -1,5 +1,5 @@
 // AthleteHorseErrorHandlers.ts - Error handling utilities for athlete horse operations
-export function handleHorseError(operation: string, error: any) {
+export function handleHorseError(operation: string, error: unknown) {
   console.error(`Error ${operation}:`, error)
   // Could add user notification here
 }

@@ -1,3 +1,5 @@
+// TODO: Add try-catch - wrap async operations for production
+// Database: transaction handling
 // HaulSupportHandlerFactory.ts - Factory for creating haul support handlers
 import { HaulSupportPoint, HaulSupportStats } from './HaulSupportTypes'
 import { loadHaulSupportData } from './HaulSupportOperations'

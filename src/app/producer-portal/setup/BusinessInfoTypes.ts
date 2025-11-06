@@ -1,3 +1,4 @@
+// Database: transaction handling
 import { ProducerSetupData } from './ProducerSetupTypes'
 
 export interface BusinessInfoStepProps {

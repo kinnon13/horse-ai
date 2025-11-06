@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // ServiceRequestDispatcher.ts (40 lines) - Single responsibility: Main dispatch orchestration
 import { supabase } from '@/lib/supabase'
 import { ServiceRequestIntent } from './ServiceRequestParser'

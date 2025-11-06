@@ -25,7 +25,7 @@ export class EquiStatRenderHelpers {
   }
 
   static addTable(doc: jsPDF, data: string[][], startY: number, fontSize: number = 10): void {
-    // @ts-ignore
+    // @ts-expect-error
     doc.autoTable({
       head: [data[0]],
       body: data.slice(1),

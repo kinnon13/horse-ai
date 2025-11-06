@@ -1,38 +1,38 @@
 // Data Importer - Single responsibility
 export class DataImporter {
-  static async importHorses(data: any[]) {
-    console.log('Importing horses:', data.length)
+  static async importHorses(data: unknown[]) {
+
     return { success: true, imported: data.length }
   }
 
-  static async importResults(data: any[]) {
-    console.log('Importing results:', data.length)
+  static async importResults(data: unknown[]) {
+
     return { success: true, imported: data.length }
   }
 
-  static async importProviders(data: any[]) {
-    console.log('Importing providers:', data.length)
+  static async importProviders(data: unknown[]) {
+
     return { success: true, imported: data.length }
   }
 
-  static async importContacts(data: any[]) {
-    console.log('Importing contacts:', data.length)
+  static async importContacts(data: unknown[]) {
+
     return { success: true, imported: data.length }
   }
 
-  static async validateHorsesData(data: any[]) {
+  static async validateHorsesData(data: unknown[]) {
     return { valid: true, errors: [] }
   }
 
-  static async validateResultsData(data: any[]) {
+  static async validateResultsData(data: unknown[]) {
     return { valid: true, errors: [] }
   }
 
-  static async validateProvidersData(data: any[]) {
+  static async validateProvidersData(data: unknown[]) {
     return { valid: true, errors: [] }
   }
 
-  static async validateContactsData(data: any[]) {
+  static async validateContactsData(data: unknown[]) {
     return { valid: true, errors: [] }
   }
 }

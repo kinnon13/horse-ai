@@ -7,9 +7,9 @@ export class DataImporterService {
     updateExisting: false
   }) {}
 
-  async importHorses(data: any[]): Promise<ImportResult> {
+  async importHorses(data: unknown[]): Promise<ImportResult> {
     // TODO: Implement actual horse data import
-    console.log('Importing horses:', data.length, 'records')
+
     return {
       success: true,
       importedCount: data.length,
@@ -18,9 +18,9 @@ export class DataImporterService {
     }
   }
 
-  async importUsers(data: any[]): Promise<ImportResult> {
+  async importUsers(data: unknown[]): Promise<ImportResult> {
     // TODO: Implement actual user data import
-    console.log('Importing users:', data.length, 'records')
+
     return {
       success: true,
       importedCount: data.length,
@@ -29,9 +29,9 @@ export class DataImporterService {
     }
   }
 
-  async importBusinesses(data: any[]): Promise<ImportResult> {
+  async importBusinesses(data: unknown[]): Promise<ImportResult> {
     // TODO: Implement actual business data import
-    console.log('Importing businesses:', data.length, 'records')
+
     return {
       success: true,
       importedCount: data.length,
@@ -40,7 +40,7 @@ export class DataImporterService {
     }
   }
 
-  validateData(data: any[]): ValidationResult {
+  validateData(data: unknown[]): ValidationResult {
     // TODO: Implement actual data validation
     return {
       isValid: true,

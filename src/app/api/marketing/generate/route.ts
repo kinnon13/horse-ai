@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // route.ts - Marketing content generation API endpoint
 import { NextRequest, NextResponse } from 'next/server'
 import { generateMarketingContent } from '@/lib/marketingContentGenerator'

@@ -1,0 +1,58 @@
+🚀 COPY AND PASTE THESE COMMANDS ONE AT A TIME
+
+===================================================
+STEP 1: Go to your project folder
+===================================================
+
+cd /Users/kinnonpeck/Desktop/horse-ai
+
+
+===================================================
+STEP 2: Deploy to Vercel (will ask you to login)
+===================================================
+
+npx vercel --prod
+
+
+WHAT WILL HAPPEN:
+1. It will open a browser and ask you to login/signup to Vercel
+2. Login with GitHub, Google, or Email (I recommend GitHub)
+3. Come back to Terminal and it will continue
+4. Answer the questions:
+   - Set up and deploy? → Y
+   - Which scope? → Press Enter
+   - Link to existing project? → N
+   - Project name? → horsegpt
+   - Which directory? → Press Enter
+   - Override settings? → N
+
+5. WAIT 2-3 MINUTES
+
+6. YOU'LL SEE: ✓ Production: https://horsegpt-xxxxx.vercel.app
+
+7. COPY THAT URL AND OPEN IT - YOU'RE LIVE! 🎉
+
+
+===================================================
+TROUBLESHOOTING:
+===================================================
+
+If it says "token not valid":
+→ Run: npx vercel login
+→ Then run: npx vercel --prod again
+
+If it asks about git:
+→ Just press Enter (it will deploy anyway)
+
+If build fails:
+→ Show me the error message
+
+
+===================================================
+AFTER IT'S LIVE:
+===================================================
+
+Go to https://vercel.com/dashboard
+Click your project → Settings → Environment Variables
+Add the 3 variables from DEPLOY_NOW.md
+

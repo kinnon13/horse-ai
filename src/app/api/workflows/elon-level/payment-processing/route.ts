@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Timers: clearInterval cleanup
 // payment-processing/route.ts (45 lines) - Stripe payment processing with retry logic
 import { NextRequest, NextResponse } from 'next/server'
 import { stripe } from '@/lib/stripe'
@@ -12,7 +15,7 @@ async function processPaymentWithRetry(
   try {
     const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId)
     if (paymentIntent.status === 'succeeded') {
-      console.log(`✅ Payment ${paymentIntentId} succeeded`)
+
       return { success: true }
     }
     if (paymentIntent.status === 'requires_action' && retries < MAX_RETRIES) {
@@ -20,13 +23,13 @@ async function processPaymentWithRetry(
       return processPaymentWithRetry(paymentIntentId, retries + 1)
     }
     return { success: false, error: `Payment failed: ${paymentIntent.status}` }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error(`❌ Payment error (attempt ${retries + 1}):`, error)
     if (retries < MAX_RETRIES) {
       await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * (retries + 1)))
       return processPaymentWithRetry(paymentIntentId, retries + 1)
     }
-    return { success: false, error: error.message || 'Payment processing failed' }
+    return { success: false, error: error instanceof Error ? error.message : String(error) || 'Payment processing failed' }
   }
 }
 
@@ -38,8 +41,8 @@ export async function POST(request: NextRequest) {
     }
     const result = await processPaymentWithRetry(paymentIntentId)
     return NextResponse.json(result, { status: result.success ? 200 : 500 })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Payment workflow error:', error)
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 })
+    return NextResponse.json({ success: false, error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

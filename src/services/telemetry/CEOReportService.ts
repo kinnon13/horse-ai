@@ -24,7 +24,6 @@ export class CEOReportService {
 
   static async sendReport(data: CEOReportData): Promise<void> {
     // TODO: Implement report sending
-    console.log('CEO Report:', data)
   }
 
   static async getKPIs(): Promise<CEOReportData> {

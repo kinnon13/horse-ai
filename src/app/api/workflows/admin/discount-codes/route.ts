@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/isAdmin'
 import { listPromotionCodes, updatePromotionCode } from '@/app/api/admin/discount-codes/DiscountCodeOperations'

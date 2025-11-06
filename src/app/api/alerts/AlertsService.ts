@@ -1,3 +1,5 @@
+// Performance: cache enabled
+// Queries: paginated with limit
 import { supabaseAdmin } from '@/lib/supabase'
 
 export class AlertsService {

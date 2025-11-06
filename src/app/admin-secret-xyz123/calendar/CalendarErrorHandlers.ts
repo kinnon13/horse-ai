@@ -1,5 +1,5 @@
 // CalendarErrorHandlers.ts - Error handling utilities for calendar operations
-export function handleCalendarError(operation: string, error: any) {
+export function handleCalendarError(operation: string, error: unknown) {
   console.error(`Error ${operation}:`, error)
   alert(`Failed to ${operation}`)
 }

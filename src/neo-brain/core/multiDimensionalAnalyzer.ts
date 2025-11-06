@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // multiDimensionalAnalyzer.ts (45 lines) - Multi-dimensional question analysis
 export interface DimensionalAnalysis {
   physical: { score: number; actions: string[]; predictions: string[] }

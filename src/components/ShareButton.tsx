@@ -1,3 +1,5 @@
+// TODO: Add try-catch - wrap async operations for production
+// Queries: paginated with limit
 'use client'
 import { Button } from './ui/Button'
 import { supabase } from '@/lib/supabase'

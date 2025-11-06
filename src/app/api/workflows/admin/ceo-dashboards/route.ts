@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/isAdmin'
 import { generateCEOReport, formatCEOReport } from '@/lib/CEOMorningReport'
@@ -32,7 +34,7 @@ export async function POST(req: NextRequest) {
   try {
     const { channel, report } = await req.json()
     // Send to email/Slack based on channel
-    console.log(`Sending CEO report to ${channel}`)
+
     return NextResponse.json({ success: true, sentTo: channel })
   } catch (error) {
     return NextResponse.json({ error: 'Failed to send report' }, { status: 500 })

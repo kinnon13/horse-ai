@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
 // writing-assistance/route.ts - Generate bios/descriptions/reports
 import { NextRequest, NextResponse } from 'next/server'
 import { generateContent } from './writing.service'

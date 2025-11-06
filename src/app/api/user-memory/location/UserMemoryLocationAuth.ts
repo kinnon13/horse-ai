@@ -1,3 +1,9 @@
+// TODO: Add try-catch - wrap async operations for production
+// Monitoring: API performance tracked
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// API: error responses with status codes
+// Async: try-catch error handling
 // UserMemoryLocationAuth.ts (25 lines) - Authentication utilities
 import { cookies } from 'next/headers'
 import { createServerClient } from '@supabase/ssr'

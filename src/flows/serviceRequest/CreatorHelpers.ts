@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // CreatorHelpers.ts (30 lines) - Single responsibility: Helper functions for service request creation
 import { supabase } from '@/lib/supabase'
 import { ServiceRequestIntent } from './ServiceRequestParser'

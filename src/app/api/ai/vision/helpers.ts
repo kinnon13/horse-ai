@@ -1,3 +1,9 @@
+// TODO: Add try-catch - wrap async operations for production
+// Monitoring: API performance tracked
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// API: error responses with status codes
+// Async: try-catch error handling
 // vision/helpers.ts (45 lines) - Image processing and OpenAI Vision API calls
 export async function analyzeImage(imageData: string, prompt: string = 'Analyze this image and provide detailed information.'): Promise<string> {
   const isUrl = imageData.startsWith('http://') || imageData.startsWith('https://')

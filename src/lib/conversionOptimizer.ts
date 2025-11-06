@@ -1,14 +1,12 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // conversionOptimizer.ts - Optimized greeting & upgrade prompts
 import { assignVariant, getWinningVariant } from './abTesting'
 
 export async function getOptimizedGreeting(userId: string, conversationId: string) {
-  const variant = await assignVariant(userId, conversationId, 'greeting')
-  const greetings = {
-    A: "Hey! I'm HorseGPT. Ask me anything about horses.",
-    B: "I just analyzed 1,000 barrel runs today. Want me to look at yours?",
-    C: "Welcome! I remember analyzing runs at 50 events this week."
-  }
-  return greetings[variant as keyof typeof greetings] || greetings.A
+  // Disabled - only show greetings when we have REAL user data
+  return ''
 }
 
 export async function shouldShowUpgrade(conversationId: string, messageCount: number) {

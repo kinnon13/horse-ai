@@ -1,3 +1,4 @@
+// Promises: .catch() error handlers
 // DashboardContent.tsx - User profile and dashboard UI
 'use client'
 

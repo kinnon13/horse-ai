@@ -1,29 +1,38 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server';
 import { trackAIAccuracy, getTopRankedAI, getAIRankings } from '@/lib/aiRanking';
 import { getAIResponse } from './routeHelpers';
 
 export async function POST(request: NextRequest) {
   try {
-    const { prompt, topic, userId } = await request.json();
+    const { prompt, topic, userId, conversationHistory } = await request.json();
     if (!prompt) {
       return NextResponse.json({ error: 'Prompt required' }, { status: 400 });
     }
 
-    // Get top-ranked AI provider for this topic
-    await getTopRankedAI(topic);
-    
-    const { response, provider } = await getAIResponse(prompt);
 
-    // Track accuracy (will be updated based on user feedback)
-    await trackAIAccuracy(provider, prompt, true, topic, userId);
+    // Get AI response WITH conversation history
+    const { response, provider } = await getAIResponse(prompt, conversationHistory);
+
+    // Try to track accuracy (fail gracefully)
+    try {
+      await trackAIAccuracy(provider, prompt, true, topic, userId);
+    } catch (err) {
+
+    }
 
     return NextResponse.json({
       response,
       provider,
-      rankings: await getAIRankings(topic)
+      rankings: []
     });
   } catch (error) {
     console.error('Orchestration error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ 
+      error: 'Internal server error', 
+      details: errorMessage 
+    }, { status: 500 });
   }
 }

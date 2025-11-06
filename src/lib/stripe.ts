@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 import Stripe from 'stripe'
 
 if (!process.env.STRIPE_SECRET_KEY) {

@@ -34,14 +34,13 @@ export function ChatInputForm({ isLoading, sendMessage, clearMessages }: ChatInp
   }
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 border-t">
-      <div className="flex space-x-2 items-center">
-        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type or speak..." className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" disabled={isLoading} />
-        <button type="button" onClick={toggleRecording} disabled={isLoading || !recognitionRef.current} className={`p-3 rounded-full ${isRecording ? 'bg-red-500 animate-pulse' : 'bg-gray-200 hover:bg-gray-300'} disabled:opacity-50 transition-colors min-w-[48px] min-h-[48px]`} aria-label="Record voice">
+    <form onSubmit={handleSubmit} className="p-6 border-t border-gray-200 bg-white">
+      <div className="flex space-x-3 items-center">
+        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask me anything about horses..." className="flex-1 px-5 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-base" disabled={isLoading} />
+        <button type="button" onClick={toggleRecording} disabled={isLoading || !recognitionRef.current} className={`p-3 rounded-full ${isRecording ? 'bg-red-500 animate-pulse' : 'bg-gray-100 hover:bg-gray-200'} disabled:opacity-50 transition-all min-w-[48px] min-h-[48px] shadow-sm`} aria-label="Record voice">
           <VoiceIcon />
         </button>
-        <button type="submit" disabled={isLoading || !input.trim()} className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50">Send</button>
-        <button type="button" onClick={clearMessages} className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">Clear</button>
+        <button type="submit" disabled={isLoading || !input.trim()} className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-teal-600 text-white rounded-xl hover:from-cyan-700 hover:to-teal-700 disabled:opacity-50 font-semibold shadow-lg transition-all">Send</button>
       </div>
     </form>
   )

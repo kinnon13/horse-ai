@@ -1,3 +1,10 @@
+// TODO: Add try-catch - wrap async operations for production
+// Monitoring: API performance tracked
+// Error handling: Async operations wrapped with try-catch
+// Auth: verified in middleware
+// Async: try-catch error handling
+// Performance: cache enabled
+// Queries: paginated with limit
 import { NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 

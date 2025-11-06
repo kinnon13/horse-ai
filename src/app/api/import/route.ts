@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { ImportService } from './ImportService'
 
@@ -14,11 +16,11 @@ export async function POST(request: NextRequest) {
     const result = await importService.importData(type, csvData)
     return NextResponse.json({ success: true, result })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Import error:', error)
     return NextResponse.json({ 
       success: false, 
-      error: error.message || 'Import failed' 
+      error: error instanceof Error ? error.message : String(error) || 'Import failed' 
     }, { status: 500 })
   }
 }
@@ -34,11 +36,11 @@ export async function PUT(request: NextRequest) {
     const result = await importService.validateImportData(type, csvData)
     return NextResponse.json({ success: true, result })
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Validation error:', error)
     return NextResponse.json({ 
       success: false, 
-      error: error.message || 'Validation failed' 
+      error: error instanceof Error ? error.message : String(error) || 'Validation failed' 
     }, { status: 500 })
   }
 }

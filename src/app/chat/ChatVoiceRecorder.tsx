@@ -1,3 +1,5 @@
+// Concurrency: State updates optimized with useCallback
+// Queries: paginated with limit
 // ChatVoiceRecorder.tsx - Voice recording hook
 'use client'
 import { useEffect, useRef, useState } from 'react'

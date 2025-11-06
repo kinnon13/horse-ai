@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
 import { NextRequest, NextResponse } from 'next/server'
 import { extractFrames, extractAudio } from '@/lib/videoProcessor'
 

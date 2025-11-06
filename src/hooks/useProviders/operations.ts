@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 import { supabase } from '@/lib/supabase'
 import { Provider, ProviderFilters } from './types'
 import { mapProviderFromDb, mapProviderToDb } from './operationsHelpers'

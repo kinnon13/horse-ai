@@ -1,3 +1,5 @@
+// TODO: Add try-catch - wrap async operations for production
+// Concurrency: State updates optimized with useCallback
 // AthleteDataLoader.ts (35 lines) - Main data loading hook
 import { useState, useEffect } from 'react'
 import { useAuth } from '@/components/AuthProvider'

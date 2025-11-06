@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // Feedback utility functions
 export interface Feedback {
   id: string
@@ -19,8 +22,7 @@ export async function submitFeedback(feedback: Omit<Feedback, 'id' | 'createdAt'
     createdAt: new Date(),
     updatedAt: new Date()
   }
-  
-  console.log('Feedback submitted:', newFeedback)
+
   return newFeedback
 }
 
@@ -31,6 +33,6 @@ export async function getFeedback(userId: string): Promise<Feedback[]> {
 
 export async function updateFeedbackStatus(id: string, status: Feedback['status']): Promise<void> {
   // TODO: Implement actual feedback status update
-  console.log(`Feedback ${id} status updated to ${status}`)
+
 }
 

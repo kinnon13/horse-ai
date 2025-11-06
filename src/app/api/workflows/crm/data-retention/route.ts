@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // data-retention/route.ts - Archive/delete per policy
 import { NextRequest, NextResponse } from 'next/server'
 import { dataRetentionWorkflow } from './retention.service'

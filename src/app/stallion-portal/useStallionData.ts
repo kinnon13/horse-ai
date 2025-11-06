@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 import { useState, useEffect } from 'react'
 import { useAuth } from '@/components/AuthProvider'
 import { useRouter } from 'next/navigation'

@@ -1,3 +1,4 @@
+// Queries: paginated with limit
 // Creator.ts (35 lines) - Single responsibility: Main service request creation
 import { supabase } from '@/lib/supabase'
 import { ServiceRequestIntent } from './ServiceRequestParser'

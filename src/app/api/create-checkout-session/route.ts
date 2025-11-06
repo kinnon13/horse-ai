@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // create-checkout-session/route.ts (50 lines)
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';

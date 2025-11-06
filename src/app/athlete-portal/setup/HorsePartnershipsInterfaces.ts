@@ -1,3 +1,4 @@
+// Database: transaction handling
 import { AthleteSetupData } from './AthleteSetupTypes'
 
 export interface HorsePartnershipsStepProps {

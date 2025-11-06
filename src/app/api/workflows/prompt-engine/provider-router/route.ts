@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // provider-router/route.ts - Route by SLA/cost/flags
 import { NextRequest, NextResponse } from 'next/server'
 import { checkRateLimit } from '@/lib/RateLimitService'

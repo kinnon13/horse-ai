@@ -1,3 +1,4 @@
+// Database: transaction handling
 import { AthleteSetupData } from './AthleteSetupTypes'
 import { CONTACT_PREFERENCES, ALLOWED_COUNTRIES } from './PersonalInfoConstants'
 

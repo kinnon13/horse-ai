@@ -1,3 +1,4 @@
+// TODO: Add try-catch - wrap async operations for production
 'use client'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/Dialog'
 import { Button } from '@/components/ui/Button'

@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// Performance: cache enabled
+// Queries: paginated with limit
 // template-promotion/route.ts (45 lines) - Canary → prod, rollback
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
@@ -36,7 +40,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, action: 'rolled_back' })
     }
     return NextResponse.json({ error: 'Invalid action' }, { status: 400 })
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+  } catch (error: unknown) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : String(error) }, { status: 500 })
   }
 }

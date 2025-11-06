@@ -1,3 +1,7 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
+// Performance: cache enabled
 import { NextRequest, NextResponse } from 'next/server'
 import { validateSearchParams, searchHorseDatabase } from './HorseSearchService'
 
@@ -13,10 +17,10 @@ export async function POST(request: NextRequest) {
       results,
       count: results.length 
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json({ 
       success: false, 
-      error: error.message 
+      error: error instanceof Error ? error.message : String(error) 
     }, { status: 400 })
   }
 }

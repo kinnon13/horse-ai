@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // behavioralGuidance.ts - Guide users toward informed decisions with comprehensive AI support
 export interface DecisionSupport {
   multiAngleAnalysis: string[]

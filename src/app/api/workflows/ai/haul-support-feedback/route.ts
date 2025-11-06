@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
 // haul-support-feedback/route.ts - Ingest + score hauler reviews
 import { NextRequest, NextResponse } from 'next/server'
 import { processHaulerReview } from './feedback.service'

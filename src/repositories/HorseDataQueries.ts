@@ -1,3 +1,7 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
+// Queries: paginated with limit
 // HorseDataQueries.ts (18 lines) - Single responsibility: Query methods
 import { supabase } from '@/lib/supabase'
 

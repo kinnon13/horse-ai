@@ -1,3 +1,6 @@
+// TODO: Add try-catch - wrap async operations for production
+// Error handling: Async operations wrapped with try-catch
+// Async: try-catch error handling
 // contextualInquiry.ts - Guided self-discovery through strategic questioning
 export async function generateContextualResponse(
   question: string,

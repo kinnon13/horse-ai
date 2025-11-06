@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { requireAdmin } from '@/lib/isAdmin'
 
@@ -13,7 +15,7 @@ export async function POST(req: NextRequest) {
     switch (action) {
       case 'send_outreach':
         // Send outreach email to partner
-        console.log('Outreach sent:', { partnerId, subject, message })
+
         return NextResponse.json({ success: true, messageId: Date.now().toString() })
       
       case 'track_partnership':

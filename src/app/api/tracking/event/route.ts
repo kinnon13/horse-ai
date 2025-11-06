@@ -1,3 +1,5 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
 // tracking/event/route.ts (28 lines) - Event tracking API endpoint
 import { NextRequest, NextResponse } from 'next/server'
 import { trackEvent } from '@/lib/userAcquisition'

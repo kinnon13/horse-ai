@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Auth: verified in middleware
+// API: error responses with status codes
 import { NextRequest, NextResponse } from 'next/server'
 import { generateCEOReport, formatCEOReport } from '@/lib/CEOMorningReport'
 

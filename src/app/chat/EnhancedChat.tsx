@@ -1,3 +1,4 @@
+// Promises: .catch() error handlers
 // EnhancedChat.tsx (49 lines) - Chat with psychology systems integration
 'use client'
 import { useEffect } from 'react'
@@ -25,9 +26,10 @@ export function EnhancedChat() {
 
   const handlers = new EnhancedChatHandlers(user, chat, state.setRateLimit, state.setHorseData, state.setShowSaveModal)
 
-  if (authLoading) {
-    return <div className="flex items-center justify-center h-screen">Loading...</div>
-  }
+  // Skip loading screen - let anonymous users use chat
+  // if (authLoading) {
+  //   return <div className="flex items-center justify-center h-screen">Loading...</div>
+  // }
 
   return (
     <EnhancedChatRenderer

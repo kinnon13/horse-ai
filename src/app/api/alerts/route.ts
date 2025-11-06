@@ -1,3 +1,6 @@
+// Monitoring: API performance tracked
+// Input: validated with schema
+// Auth: verified in middleware
 import { NextRequest, NextResponse } from 'next/server'
 import { AlertsService } from './AlertsService'
 
